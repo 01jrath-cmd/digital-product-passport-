@@ -21,7 +21,7 @@ import streamlit as st
 
 # After you deploy on Streamlit Community Cloud, paste your app's link here
 # (no "/" at the end). The QR codes are built from this link.
-APP_URL = "https://your-app-name.streamlit.app"
+APP_URL = "https://rvce-dpptrial.streamlit.app/"
 
 # LIVE prices: fetched from the free Gold-API service (no API key needed).
 # Symbol for each metal on https://gold-api.com
