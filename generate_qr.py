@@ -8,12 +8,12 @@
 
 import os
 
-import pandas as pd
+import json
 import qrcode
 from PIL import Image, ImageDraw, ImageFont
 
 # Paste the SAME link you put in app.py (no "/" at the end)
-APP_URL = "https://your-app-name.streamlit.app"
+APP_URL = "https://rvce-dpptrial.streamlit.app"
 
 OUTPUT_FOLDER = "qr_codes"
 GREEN = (27, 127, 90)
@@ -51,14 +51,16 @@ def main():
         print("WARNING: APP_URL is still the placeholder. Paste your real app link first.\n")
 
     os.makedirs(OUTPUT_FOLDER, exist_ok=True)
-    devices = pd.read_csv("devices.csv", dtype={"id": str})
+    with open("devices.json", encoding="utf-8") as f:
+        devices = json.load(f)["devices"]
 
     stickers = []
-    for _, row in devices.iterrows():
-        sticker = make_sticker(row["id"].strip(), row["device"])
-        sticker.save(os.path.join(OUTPUT_FOLDER, f"{row['id'].strip()}.png"))
+    for d in devices:
+        device_id = d["id"].strip()
+        sticker = make_sticker(device_id, d["device"])
+        sticker.save(os.path.join(OUTPUT_FOLDER, f"{device_id}.png"))
         stickers.append(sticker)
-        print(f"Made sticker for {row['id']}  ->  {APP_URL}/?id={row['id'].strip()}")
+        print(f"Made sticker for {device_id}  ->  {APP_URL}/?id={device_id}")
 
     # Arrange stickers on A4 pages (3 across, 3 down) for printing
     page_w, page_h, cols, rows = 1240, 1754, 3, 3

@@ -1,0 +1,465 @@
+{
+  "devices": [
+    {
+      "id": "DPP-001",
+      "device": "Dell Inspiron 6400",
+      "model": "Regulatory Model PP20L",
+      "brand": "Dell",
+      "category": "Laptop",
+      "author": "By Saikrushna Rath - RVCE26BEC252",
+      "image": "images/dell-inspiron-6400.png",
+      "year": 2006,
+      "weight_g": 2900,
+      "condition": "Working",
+      "status": "In use",
+      "value_basis": {
+        "_note": "Amounts used for the live metal-value estimate (middle of each range in section 4)",
+        "gold_mg": 120,
+        "silver_mg": 395,
+        "palladium_mg": 40,
+        "copper_g": 386,
+        "cobalt_g": 57.5,
+        "lithium_g": 7
+      },
+      "sections": [
+        {
+          "title": "1. Identity and Specifications",
+          "table": {
+            "columns": [
+              "Parameter",
+              "Value"
+            ],
+            "rows": [
+              [
+                "Model",
+                "Inspiron 6400 (also sold as Inspiron E1505), regulatory model **PP20L**, released 2006"
+              ],
+              [
+                "Processor options",
+                "Intel Core 2 Duo, Core Duo, Pentium Dual-Core or Celeron M; 533 / 667 MHz front-side bus"
+              ],
+              [
+                "Chipset",
+                "Intel 945GM or 945PM, with ICH7 controller"
+              ],
+              [
+                "Memory",
+                "2 × DDR2 SODIMM slots (1.8 V), 256 MB to 2 GB"
+              ],
+              [
+                "Graphics",
+                "Integrated Intel (945GM), or discrete ATI Radeon X1300 / X1400 or nVidia GeForce Go 7300"
+              ],
+              [
+                "Display",
+                "15.4\" active-matrix TFT, 1280×800 or 1680×1050, **CCFL backlight** (mercury lamp driven by an inverter board)"
+              ],
+              [
+                "Main battery",
+                "Lithium-ion, 11.1 V. **6-cell: 0.32 kg. 9-cell: 0.48 kg, 85 Wh.** Rated life about 300 charge cycles"
+              ],
+              [
+                "BIOS battery",
+                "CR-2032 lithium coin cell"
+              ],
+              [
+                "AC adapter",
+                "65 W or 90 W, 19.5 V output, 0.4 kg with cables"
+              ],
+              [
+                "Size and weight",
+                "356 × 265.5 × 36 mm; just under 2.9 kg with the 6-cell battery"
+              ],
+              [
+                "Power use (measured)",
+                "15.2 W minimum, 22.5 W idle at full brightness, 40.4 W at full load"
+              ]
+            ]
+          }
+        },
+        {
+          "title": "2. Internal Components",
+          "intro": "**Each of these can be removed separately, which is useful for your repair and reuse argument:**",
+          "table": {
+            "columns": [
+              "Group",
+              "Components"
+            ],
+            "rows": [
+              [
+                "Storage and drives",
+                "Hard drive (2.5\"), optical drive (CD/DVD), ExpressCard / hard-drive bay assembly"
+              ],
+              [
+                "Boards and cards",
+                "System board (motherboard), processor module, 2 memory modules, modem, Mini-Card (Wi-Fi), Bluetooth card, discrete video card (optional)"
+              ],
+              [
+                "Cooling",
+                "Processor thermal-cooling assembly, video-card cooling assembly, system fan"
+              ],
+              [
+                "Display",
+                "Display assembly: LCD panel, CCFL backlight lamp, inverter, LVDS video cable"
+              ],
+              [
+                "Body and input",
+                "Keyboard, palm rest with touchpad, hinge cover, speakers"
+              ],
+              [
+                "Power",
+                "Main battery, CR-2032 coin-cell battery, battery latch assembly"
+              ],
+              [
+                "Chips on the board",
+                "Sigmatel STAC9200 audio, Ricoh R5C832 card reader, 10/100 Ethernet"
+              ]
+            ]
+          }
+        },
+        {
+          "title": "3. Carbon Footprint",
+          "intro": "A **carbon footprint** is the total amount of greenhouse gases (primarily carbon dioxide, methane, and nitrous oxide) generated directly and indirectly by an individual, organization, event, or product.",
+          "table": {
+            "columns": [
+              "Life stage",
+              "Value",
+              "Basis"
+            ],
+            "rows": [
+              [
+                "**Manufacturing**",
+                "**227–270 kg CO₂**",
+                "Hybrid life-cycle study of laptops of this era (Deng, 2010)"
+              ],
+              [
+                "Manufacturing share",
+                "63–71% of total energy for making and using",
+                "Same study"
+              ],
+              [
+                "**Use, per year (India)**",
+                "**~26 kg CO₂ / year** (estimate)",
+                "25 W average × 4 h/day = 36.5 kWh/year × India grid factor 0.716 kg CO₂/kWh (CEA)"
+              ],
+              [
+                "**5-year lifetime total**",
+                "**~360–400 kg CO₂** (estimate)",
+                "Manufacturing plus 5 years of use"
+              ]
+            ]
+          },
+          "note": "**Key insight:** most of this laptop's carbon was emitted in the factory, before it was ever switched on. Every extra year of reuse avoids building a new laptop, which is the strongest argument for Repair and Reuse before Recycle."
+        },
+        {
+          "title": "4. Metals and Materials Inside",
+          "intro": "Average amounts per laptop from published studies of laptop.",
+          "table": {
+            "columns": [
+              "Material",
+              "Amount per laptop",
+              "Where it is"
+            ],
+            "rows": [
+              [
+                "**Copper**",
+                "~386 g (14.5% of weight)",
+                "Circuit boards, wires, cooling"
+              ],
+              [
+                "**Cobalt**",
+                "~50–65 g",
+                "Battery"
+              ],
+              [
+                "**Lithium**",
+                "~6–8 g (estimate)",
+                "Battery (from cobalt content, lithium-cobalt-oxide cells)"
+              ],
+              [
+                "**Tantalum**",
+                "~1.7 g",
+                "Capacitors, 90% on the motherboard"
+              ],
+              [
+                "**Neodymium**",
+                "~2.1 g",
+                "Magnets: hard-drive head motor 725 mg, hard-drive spindle 319 mg, optical drive 464 mg, speakers 646 mg"
+              ],
+              [
+                "**Praseodymium**",
+                "~270 mg",
+                "Hard-drive and speaker magnets"
+              ],
+              [
+                "**Dysprosium**",
+                "~60 mg",
+                "Hard-drive head-motor magnet"
+              ],
+              [
+                "**Silver**",
+                "~350–440 mg",
+                "Circuit boards (motherboard 248 mg)"
+              ],
+              [
+                "**Gold**",
+                "~100–140 mg",
+                "Motherboard 56 mg, display board 18 mg, memory 15 mg, smaller boards about 5 mg each"
+              ],
+              [
+                "**Palladium**",
+                "~40 mg",
+                "Circuit boards (64% on the motherboard)"
+              ],
+              [
+                "**Indium**",
+                "~40 mg",
+                "Transparent conductive (ITO) layer of the LCD"
+              ],
+              [
+                "**Platinum**",
+                "0.4–4 mg",
+                "Hard-drive platters"
+              ],
+              [
+                "**Ruthenium, rhodium**",
+                "< 0.1 mg each",
+                "Hard-drive platters"
+              ],
+              [
+                "**Gallium**",
+                "0 mg",
+                "Only in LED backlights (about 1.6 mg); a CCFL laptop like the 6400 has none"
+              ],
+              [
+                "**Tin**",
+                "~5.8% of circuit-board weight",
+                "Solder"
+              ]
+            ]
+          },
+          "show_live_value": true
+        },
+        {
+          "title": "5. Hazardous Substances and Safe Disposal",
+          "table": {
+            "columns": [
+              "Substance",
+              "Where",
+              "Why it matters",
+              "How to dispose of it safely"
+            ],
+            "rows": [
+              [
+                "**Mercury**",
+                "CCFL backlight lamp in the display",
+                "Toxic vapour; a few milligrams per lamp",
+                "Remove the CCFL lamp whole without breaking it, seal it in a glass jar, and hand it to an authorised e-waste recycler. If broken, ventilate, scoop debris, never vacuum."
+              ],
+              [
+                "**Lead**",
+                "Solder on circuit boards; units built before 1 July 2006 may contain leaded solder",
+                "Damages the nervous system; pollutes soil and water",
+                "Never desolder, burn or acid-wash the circuit boards. Send them whole to an authorised e-waste recycler, who safely recovers the lead along with gold, silver and copper."
+              ],
+              [
+                "**Lithium-ion battery**",
+                "6-cell or 9-cell main battery, plus CR-2032 coin cell",
+                "Fire risk if punctured or short-circuited; cobalt is toxic",
+                "Never put it in the dustbin. Tape the terminals, bag each battery separately, and give it to a battery recycler. Swollen batteries must not be charged, pressed or punctured."
+              ],
+              [
+                "**Brominated flame retardants**",
+                "Plastic casing, circuit boards, cable insulation",
+                "Release toxic fumes when burnt",
+                "Never burn the plastic casing or cables to recover copper, as this releases toxic fumes. Hand all plastics and cables to an authorised e-waste recycler for controlled processing."
+              ]
+            ]
+          }
+        },
+        {
+          "title": "6. Upgrade and Second-Life Potential",
+          "table": {
+            "columns": [
+              "Parameter",
+              "Value"
+            ],
+            "rows": [
+              [
+                "RAM",
+                "2 × DDR2 slots (tested unit: PC5300), up to 2 GB"
+              ],
+              [
+                "Processor",
+                "Removable processor module; Dell supported Celeron M up to Core 2 Duo"
+              ],
+              [
+                "Storage",
+                "2.5\" SATA hard drive (tested unit: Hitachi HTS541060G9SA00), so a SATA SSD upgrade is possible"
+              ],
+              [
+                "Wi-Fi",
+                "Swappable Mini-Card slot"
+              ],
+              [
+                "Original software era",
+                "Carried a \"Windows Vista Capable\" label"
+              ],
+              [
+                "Suggested second-life uses",
+                "Lightweight Linux, offline lab or teaching PC, or donor for spare parts (RAM, optical drive, charger, keyboard)"
+              ]
+            ]
+          }
+        },
+        {
+          "title": "End-of-Life Handling and Data Security",
+          "table": {
+            "columns": [
+              "Parameter",
+              "Value"
+            ],
+            "rows": [
+              [
+                "Data risk",
+                "The hard drive may still hold personal files, photos and passwords"
+              ],
+              [
+                "If the laptop will be **reused**",
+                "**Clear** the drive: overwrite all user data (NIST SP 800-88)"
+              ],
+              [
+                "If it will be **recycled**",
+                "**Purge** or **Destroy** the drive so data cannot be recovered even in a laboratory (NIST SP 800-88)"
+              ],
+              [
+                "Safe dismantling order",
+                "1. Main battery and coin cell → 2. CCFL lamp, removed whole → 3. Circuit boards, for precious-metal recovery → 4. Hard-drive magnets, for rare earths → 5. Plastics and metals"
+              ]
+            ]
+          }
+        },
+        {
+          "title": "7. Regulation and Compliance",
+          "table": {
+            "columns": [
+              "Parameter",
+              "Value"
+            ],
+            "rows": [
+              [
+                "Regulatory model",
+                "PP20L"
+              ],
+              [
+                "India e-waste category",
+                "**ITEW3** – Personal Computing: Laptop Computers (E-Waste (Management) Rules)"
+              ],
+              [
+                "Producer responsibility",
+                "Under Extended Producer Responsibility (EPR), the producer must ensure its e-waste reaches authorised recyclers"
+              ],
+              [
+                "Batteries",
+                "Battery Waste Management Rules, 2022 (India): landfilling and incineration of waste batteries are banned; all must be recycled or refurbished"
+              ],
+              [
+                "EU RoHS",
+                "Limits applied from 1 July 2006: lead, mercury, hexavalent chromium, PBB and PBDE 0.1%; cadmium 0.01%"
+              ]
+            ]
+          }
+        },
+        {
+          "title": "8. Supply Chain and Ethics",
+          "table": {
+            "columns": [
+              "Parameter",
+              "Value"
+            ],
+            "rows": [
+              [
+                "Conflict minerals inside",
+                "Tin (solder), tantalum (about 1.7 g, capacitors) and gold (about 100–140 mg) – three of the four \"3TG\" conflict minerals"
+              ],
+              [
+                "Rule that applies today",
+                "EU Regulation 2017/821 requires importers of 3TG minerals to carry out supply-chain due diligence. No such rule existed when this laptop was made in 2006"
+              ],
+              [
+                "Why recycling helps",
+                "Recovered tin, tantalum and gold reduce the need for newly mined conflict minerals"
+              ]
+            ]
+          }
+        },
+        {
+          "title": "Conclusion",
+          "subtitle": "Conclusion for your project",
+          "table": {
+            "columns": [
+              "Option",
+              "Value",
+              "CO₂ benefit"
+            ],
+            "rows": [
+              [
+                "**Reuse** (whole laptop or parts)",
+                "**₹3,300–8,500**",
+                "Avoids ~227–270 kg CO₂"
+              ],
+              [
+                "**Recycle** (metal content)",
+                "₹2,350–3,000 in theory; **₹300–1,000 paid**",
+                "Recovers metals; doesn't avoid manufacturing a new laptop"
+              ]
+            ]
+          },
+          "note": "Reuse earns roughly 3–10 times more than scrap and saves far more carbon. This supports the Repair → Reuse → Recycle order your website recommends."
+        }
+      ],
+      "sources": [
+        [
+          "Dell Inspiron 6400/E1505 Owner's Manual (PP20L), specifications pp. 155–160.",
+          "https://www.manualsdir.com/manuals/621346/dell-inspiron-6400-inspiron-e1505.html"
+        ],
+        [
+          "Dell Inspiron 6400/E1505 Service Manual (PP20L).",
+          "https://www.manualsdir.com/manuals/620849/dell-inspiron-6400-inspiron-e1505.html"
+        ],
+        [
+          "Notebookcheck – Review: Dell Inspiron 6400 (2006).",
+          "https://www.notebookcheck.net/Review-Dell-Inspiron-6400.1307.0.html"
+        ],
+        [
+          "Disctech – Dell TD347 85 Wh 9-cell battery.",
+          "https://www.disctech.com/Dell-312-0428-TD347-85Whr-9-Cell-Lithium-Ion-Primary-Battery"
+        ],
+        [
+          "Parts-People – Inspiron 6400/E1505 LCD removal guide.",
+          "https://parts-people.com/blog/2012/01/04/dell-inspiron-6400-e1505-lcd-screen-and-cable-removal-and-installation"
+        ],
+        [
+          "Buchert, Manhart, Bleher et al. (2012), Öko-Institut – Recycling critical raw materials from waste electronic equipment.",
+          "https://www.oeko.de/oekodoc/1375/2012-010-en.pdf"
+        ],
+        [
+          "Mir, S. & Dhawan, N. (2021). Characterization and Evaluation of Recycling Potential for Discarded Laptops. Mining, Metallurgy & Exploration, 38(5), 2117–2131.",
+          "https://link.springer.com/article/10.1007/s42461-021-00446-3"
+        ],
+        [
+          "Deng, L. (2010). Hybrid LCA of Personal Computers – Arizona State University.",
+          "https://static.sustainability.asu.edu/a38f67c5925082e77a85d60fe7aa48205cfc73ccef04a9164a5cb2aaaf7033a5.pdf"
+        ],
+        [
+          "Network World – Study on laptop manufacturing energy (Williams & Babbitt).",
+          "https://www.networkworld.com/article/2229029/computer-factories-eat-way-more-energy-than-running-the-devices-they-build.html"
+        ],
+        [
+          "Central Electricity Authority – CO₂ Baseline Database User Guide v19 (grid factor 0.716 tCO₂/MWh, FY 2022-23).",
+          "https://cea.nic.in/wp-content/uploads/baseline/2024/01/User_Guide__Version_19.0.pdf"
+        ]
+      ]
+    }
+  ]
+}

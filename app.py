@@ -1,16 +1,17 @@
 # =====================================================================
-#  DIGITAL PRODUCT PASSPORT  -  Streamlit web app
+#  DIGITAL PRODUCT PASSPORT  -  Streamlit web app  (version 3)
 #  Theme: Sustainable & Circular Engineering (RVCE ECE, Experiential Learning)
+#  Device: Dell Inspiron 6400 (PP20L) - all details are in devices.json
 #
 #  Run on your laptop:   python -m streamlit run app.py
 #  Home page:            http://localhost:8501
-#  One device's page:    http://localhost:8501/?id=DPP-001
+#  Passport page:        http://localhost:8501/?id=DPP-001
 # =====================================================================
 
 import io
+import json
 from datetime import date, datetime, timedelta, timezone
 
-import pandas as pd
 import qrcode
 import requests
 import streamlit as st
@@ -24,19 +25,16 @@ import streamlit as st
 APP_URL = "https://rvce-dpptrial.streamlit.app"
 
 # LIVE prices: fetched from the free Gold-API service (no API key needed).
-# Symbol for each metal on https://gold-api.com
 LIVE_SYMBOLS = {"gold": "XAU", "silver": "XAG", "palladium": "XPD", "copper": "HG"}
 
-# How often to fetch new prices (seconds). Refreshing the page after this
-# time gets fresh prices. Gold-API itself updates about every 30 seconds.
+# How often to fetch new prices (seconds).
 PRICE_REFRESH_SECONDS = 60
 
 # Backup prices in Rupees per gram, used ONLY if the live service cannot be reached.
-FALLBACK_PRICES = {"gold": 12000.0, "silver": 150.0, "palladium": 3500.0, "copper": 1.0}
+FALLBACK_PRICES = {"gold": 14395.0, "silver": 195.0, "palladium": 3076.0, "copper": 1.39}
 
 # REFERENCE prices in Rupees per gram for metals with no free live source.
-# They can be changed in the sidebar during the demo.
-REFERENCE_PRICES = {"cobalt": 3.0, "lithium": 1.0, "aluminium": 0.25}
+REFERENCE_PRICES = {"cobalt": 3.65, "lithium": 1.0}
 
 GRAMS_PER_TROY_OUNCE = 31.1034768   # gold, silver, palladium are quoted per troy ounce
 GRAMS_PER_POUND = 453.59237         # copper (HG) is quoted per pound
@@ -48,24 +46,28 @@ st.set_page_config(page_title="Digital Product Passport", page_icon="♻️", la
 
 
 # ---------------------------------------------------------------------
-# 2. LOAD THE DATA
+# 2. LOAD THE DATA  (everything about the device lives in devices.json)
 # ---------------------------------------------------------------------
 def load_devices():
-    """Read devices.csv into a table. The id column is kept as text."""
-    df = pd.read_csv("devices.csv", dtype={"id": str})
-    df["id"] = df["id"].str.strip()
-    return df
+    with open("devices.json", encoding="utf-8") as f:
+        return json.load(f)["devices"]
+
+
+def find_device(devices, device_id):
+    for d in devices:
+        if d["id"].strip().upper() == device_id.strip().upper():
+            return d
+    return None
 
 
 # ---------------------------------------------------------------------
 # 3. HELPER FUNCTIONS
 # ---------------------------------------------------------------------
-def recommend(row):
+def recommend(d):
     """Repair / Reuse / Recycle decision (same logic as the decision-tree slide)."""
-    age = date.today().year - int(row["year"])
-    condition = str(row["condition"]).strip().lower()
-
-    if row["status"] == "Recycled":
+    age = date.today().year - int(d["year"])
+    condition = d["condition"].strip().lower()
+    if d["status"] == "Recycled":
         return "RECYCLED", "success", "This device has completed its journey. Its materials are back in use."
     if condition == "working":
         if age > 5:
@@ -76,25 +78,35 @@ def recommend(row):
     return "RECYCLE", "error", "It cannot be repaired. Send it to an authorised recycler so its metals can be recovered safely."
 
 
-def material_values(row, prices):
-    """Return a table of each metal: amount in grams and estimated value in Rupees."""
+def metal_value_rows(d, prices, sources):
+    """Rows of (metal, amount text, price text, value in Rs) using the device's value_basis."""
+    v = d["value_basis"]
     grams = {
-        "Gold": row["gold_mg"] / 1000,
-        "Silver": row["silver_g"],
-        "Palladium": row["palladium_mg"] / 1000,
-        "Copper": row["copper_g"],
-        "Cobalt": row["cobalt_g"],
-        "Lithium": row["lithium_g"],
-        "Aluminium": row["aluminium_g"],
+        "Gold": (v["gold_mg"] / 1000, f"{v['gold_mg']} mg"),
+        "Silver": (v["silver_mg"] / 1000, f"{v['silver_mg']} mg"),
+        "Palladium": (v["palladium_mg"] / 1000, f"{v['palladium_mg']} mg"),
+        "Copper": (v["copper_g"], f"{v['copper_g']} g"),
+        "Cobalt": (v["cobalt_g"], f"{v['cobalt_g']} g"),
+        "Lithium": (v["lithium_g"], f"{v['lithium_g']} g"),
     }
-    table = pd.DataFrame({"Material": list(grams.keys()), "Amount (g)": list(grams.values())})
-    table["Price (Rs/g)"] = [prices[m.lower()] for m in table["Material"]]
-    table["Value (Rs)"] = table["Amount (g)"] * table["Price (Rs/g)"]
-    return table
+    rows = []
+    for metal, (g, text) in grams.items():
+        key = metal.lower()
+        rows.append((metal, text, f"{prices[key]:,.2f} ({sources[key]})", g * prices[key]))
+    return rows
+
+
+def md_table(table):
+    """Turn {'columns': [...], 'rows': [[...]]} into a Markdown table (keeps **bold**)."""
+    clean = lambda s: str(s).replace("|", "/").replace("\n", " ")
+    lines = ["| " + " | ".join(clean(c) for c in table["columns"]) + " |",
+             "|" + "---|" * len(table["columns"])]
+    for row in table["rows"]:
+        lines.append("| " + " | ".join(clean(c) for c in row) + " |")
+    return "\n".join(lines)
 
 
 def make_qr_png(url):
-    """Turn a link into a QR code image (PNG bytes)."""
     img = qrcode.make(url, box_size=10, border=2)
     buffer = io.BytesIO()
     img.save(buffer, format="PNG")
@@ -110,7 +122,6 @@ def show_message(kind, text):
 
 
 def go_to(device_id=None):
-    """Switch between the home page and a passport page."""
     st.query_params.clear()
     if device_id:
         st.query_params["id"] = device_id
@@ -121,7 +132,7 @@ def go_to(device_id=None):
 # ---------------------------------------------------------------------
 @st.cache_data(ttl=3 * 60 * 60, show_spinner=False)
 def usd_to_inr_rate():
-    """Backup only: USD -> INR exchange rate (updates once a day)."""
+    """Backup only: USD -> INR exchange rate."""
     data = requests.get("https://open.er-api.com/v6/latest/USD", timeout=8).json()
     return float(data["rates"]["INR"])
 
@@ -130,7 +141,7 @@ def fetch_one_price(symbol):
     """Price of one metal in Rupees per gram, from Gold-API."""
     data = requests.get(f"https://api.gold-api.com/price/{symbol}/INR", timeout=8).json()
     price = float(data["price"])
-    if data.get("currency") != "INR":          # service sent USD instead -> convert
+    if data.get("currency") != "INR":
         price = price * usd_to_inr_rate()
     grams = GRAMS_PER_POUND if symbol == "HG" else GRAMS_PER_TROY_OUNCE
     return price / grams, data.get("updatedAt")
@@ -138,8 +149,6 @@ def fetch_one_price(symbol):
 
 @st.cache_data(ttl=PRICE_REFRESH_SECONDS, show_spinner="Fetching live metal prices...")
 def fetch_live_prices():
-    """Try to get live prices for every metal in LIVE_SYMBOLS.
-    Returns (prices, last_updated_time, list_of_metals_that_failed)."""
     prices, updated, failed = {}, None, []
     for metal, symbol in LIVE_SYMBOLS.items():
         try:
@@ -154,20 +163,16 @@ def fetch_live_prices():
 
 
 def to_ist(iso_time):
-    """'2026-10-25T09:30:00Z' -> '25 Oct 2026, 3:00 PM IST'"""
     try:
         t = datetime.fromisoformat(iso_time.replace("Z", "+00:00"))
-        t = t.astimezone(timezone(timedelta(hours=5, minutes=30)))
-        return t.strftime("%d %b %Y, %I:%M %p IST")
+        return t.astimezone(timezone(timedelta(hours=5, minutes=30))).strftime("%d %b %Y, %I:%M %p IST")
     except Exception:
         return "unknown time"
 
 
 def price_sidebar():
-    """Shows prices in the sidebar. Returns (prices, sources) for all metals."""
     live, updated, failed = fetch_live_prices()
     prices, sources = {}, {}
-
     st.sidebar.header("Metal prices (Rs per gram)")
     st.sidebar.subheader("🟢 Live market prices")
     for metal in LIVE_SYMBOLS:
@@ -184,7 +189,6 @@ def price_sidebar():
     if st.sidebar.button("🔄 Refresh prices now"):
         fetch_live_prices.clear()
         st.rerun()
-
     st.sidebar.subheader("📘 Reference prices")
     st.sidebar.caption("No free live source for these metals. Edit if needed.")
     for metal, value in REFERENCE_PRICES.items():
@@ -196,107 +200,77 @@ def price_sidebar():
 # ---------------------------------------------------------------------
 # 5. HOME PAGE
 # ---------------------------------------------------------------------
-def home_page(df, prices):
+def home_page(devices):
     st.title("♻️ Digital Product Passport")
     st.subheader("Scan it. Know it. Repair, Reuse or Recycle it.")
-    st.write(
-        "Every device below has its own passport page showing what it is made of, "
-        "how to repair it, and how to recycle it safely. Scan the QR sticker on a device, "
-        "or open its passport here."
-    )
-
-    # Totals across all devices
-    total_value = sum(material_values(r, prices)["Value (Rs)"].sum() for _, r in df.iterrows())
-    c1, c2, c3, c4 = st.columns(4)
-    c1.metric("Devices", len(df))
-    c2.metric("Gold inside", f"{df['gold_mg'].sum():.0f} mg")
-    c3.metric("Copper inside", f"{df['copper_g'].sum():.0f} g")
-    c4.metric("Metal value", f"Rs {total_value:,.0f}")
-    st.caption("Metal value uses live market prices for gold, silver, palladium and copper (see sidebar).")
-
-    st.divider()
-    search = st.text_input("🔍 Search devices", placeholder="Type a name, brand or category")
-    if search:
-        text = search.lower()
-        df = df[df.apply(lambda r: text in f"{r['device']} {r['brand']} {r['category']}".lower(), axis=1)]
-
-    for _, row in df.iterrows():
-        label, kind, _ = recommend(row)
+    st.write("Scan the QR sticker on the device, or open its passport below.")
+    for d in devices:
+        label, _, _ = recommend(d)
         with st.container(border=True):
-            left, right = st.columns([3, 1])
-            left.markdown(f"**{row['device']}**  \n{row['category']} · {row['year']} · ID {row['id']}")
-            left.caption(f"Status: {row['status']}  |  Advice: {label}")
-            right.button("Open passport", key=row["id"], on_click=go_to, args=(row["id"],), width="stretch")
-
-    if df.empty:
-        st.info("No devices match your search.")
-
-    st.caption("Material amounts are estimates based on published averages and device specifications.")
+            left, right = st.columns([1, 2])
+            left.image(d["image"], width="stretch")
+            right.markdown(f"**{d['device']}**  \n{d['model']} · {d['year']} · ID {d['id']}")
+            right.caption(f"Status: {d['status']}  |  Advice: {label}")
+            right.button("Open passport", key=d["id"], on_click=go_to, args=(d["id"],), width="stretch")
 
 
 # ---------------------------------------------------------------------
-# 6. PASSPORT PAGE (one device)
+# 6. PASSPORT PAGE
 # ---------------------------------------------------------------------
-def passport_page(row, prices, sources):
-    st.button("← All devices", on_click=go_to)
+def passport_page(d, prices, sources):
+    st.button("← Home", on_click=go_to)
 
-    st.title(f"♻️ {row['device']}")
-    st.caption(f"Passport ID: {row['id']}  ·  {row['brand']}  ·  {row['category']}  ·  Made in {row['year']}")
+    # Header: photo, name, author
+    st.image(d["image"], width=260)
+    st.title("Digital Product Passport")
+    st.subheader(f"{d['device']} ({d['model']})")
+    st.caption(d["author"])
 
-    # Recommendation
-    label, kind, reason = recommend(row)
+    # Recommendation and key numbers
+    label, kind, reason = recommend(d)
     show_message(kind, f"**Recommendation: {label}**  \n{reason}")
-
-    # Key numbers
-    values = material_values(row, prices)
+    rows = metal_value_rows(d, prices, sources)
     c1, c2, c3 = st.columns(3)
-    c1.metric("Weight", f"{row['weight_g']} g")
-    c2.metric("Age", f"{date.today().year - int(row['year'])} years")
-    c3.metric("Metal value", f"Rs {values['Value (Rs)'].sum():,.0f}")
+    c1.metric("Weight", f"{d['weight_g'] / 1000:.1f} kg")
+    c2.metric("Age", f"{date.today().year - int(d['year'])} years")
+    c3.metric("Metal value (live)", f"Rs {sum(r[3] for r in rows):,.0f}")
 
-    # Life-cycle status
-    st.subheader("📍 Life-cycle status")
-    step = STATUS_STEPS.index(row["status"]) if row["status"] in STATUS_STEPS else 0
+    st.markdown("**Life-cycle status**")
+    step = STATUS_STEPS.index(d["status"]) if d["status"] in STATUS_STEPS else 0
     st.progress((step + 1) / len(STATUS_STEPS))
     st.write("  →  ".join(f"**{s}**" if i == step else s for i, s in enumerate(STATUS_STEPS)))
+    st.divider()
 
-    # Materials
-    st.subheader("🧪 What's inside")
-    chart = pd.DataFrame(
-        {"grams": [row["aluminium_g"], row["plastic_g"], row["glass_g"], row["copper_g"], row["cobalt_g"]]},
-        index=["Aluminium", "Plastic", "Glass", "Copper", "Cobalt"],
-    )
-    st.bar_chart(chart, horizontal=True)
-    show = values.copy()
-    show["Amount"] = [
-        f"{row['gold_mg']} mg", f"{row['silver_g']} g", f"{row['palladium_mg']} mg", f"{row['copper_g']} g",
-        f"{row['cobalt_g']} g", f"{row['lithium_g']} g", f"{row['aluminium_g']} g",
-    ]
-    show["Price (Rs/g)"] = [f"{prices[m.lower()]:,.2f} ({sources[m.lower()]})" for m in show["Material"]]
-    show["Value (Rs)"] = show["Value (Rs)"].map(lambda v: f"{v:,.2f}")
-    st.dataframe(show[["Material", "Amount", "Price (Rs/g)", "Value (Rs)"]], hide_index=True, width="stretch")
-    st.caption(f"Also contains about {row['plastic_g']} g of plastic and {row['glass_g']} g of glass. "
-               "Amounts are estimates; values use live market prices where available.")
+    # All sections from the Word document, in the same order
+    for sec in d["sections"]:
+        st.header(sec["title"])
+        if sec.get("subtitle"):
+            st.subheader(sec["subtitle"])
+        if sec.get("intro"):
+            st.markdown(sec["intro"])
+        st.markdown(md_table(sec["table"]))
+        if sec.get("note"):
+            st.markdown(sec["note"])
+        if sec.get("show_live_value"):
+            st.markdown("**Estimated metal value at today's prices** (middle of each range above)")
+            st.markdown(md_table({
+                "columns": ["Metal", "Amount used", "Price (Rs/g)", "Value (Rs)"],
+                "rows": [[m, a, p, f"{v:,.2f}"] for m, a, p, v in rows]
+                        + [["**Total**", "", "", f"**{sum(r[3] for r in rows):,.2f}**"]],
+            }))
+            st.caption("Live prices for gold, silver, palladium and copper; reference prices for cobalt and lithium (see sidebar).")
 
-    # Repair tips and hazards
-    st.subheader("🔧 Repair tips")
-    for tip in str(row["repair_tips"]).split(";"):
-        st.markdown(f"- {tip.strip()}")
+    # Sources
+    st.header("Sources")
+    st.markdown("\n".join(f"{i}. {text} [{url}]({url})" for i, (text, url) in enumerate(d["sources"], 1)))
 
-    st.subheader("⚠️ Hazards - handle with care")
-    for hazard in str(row["hazards"]).split(";"):
-        st.markdown(f"- {hazard.strip()}")
-
-    st.subheader("🚚 How to recycle")
-    st.write(row["recycler"])
-    st.write("Never throw e-waste in the dustbin or burn it.")
-
-    # QR code for this passport
+    # QR code
+    st.divider()
     st.subheader("🔳 QR code for this device")
-    link = passport_link(row["id"])
+    link = passport_link(d["id"])
     st.image(make_qr_png(link), width=220)
     st.code(link, language=None)
-    st.download_button("Download QR code", make_qr_png(link), file_name=f"{row['id']}.png", mime="image/png")
+    st.download_button("Download QR code", make_qr_png(link), file_name=f"{d['id']}.png", mime="image/png")
     if "your-app-name" in APP_URL:
         st.warning("APP_URL in app.py is still the placeholder. Update it after deploying, or this QR code will not open.")
 
@@ -309,11 +283,11 @@ prices, sources = price_sidebar()
 item_id = st.query_params.get("id")
 
 if item_id:
-    match = devices[devices["id"] == item_id.strip()]
-    if match.empty:
+    device = find_device(devices, item_id)
+    if device is None:
         st.error(f"No device found with ID '{item_id}'.")
-        st.button("← All devices", on_click=go_to)
+        st.button("← Home", on_click=go_to)
     else:
-        passport_page(match.iloc[0], prices, sources)
+        passport_page(device, prices, sources)
 else:
-    home_page(devices, prices)
+    home_page(devices)
