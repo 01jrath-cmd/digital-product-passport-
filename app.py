@@ -199,11 +199,44 @@ def price_sidebar():
 
 
 # ---------------------------------------------------------------------
-# 5. HOME PAGE
+# 5. HOME PAGE  (and the green banner shown at the top of every page)
 # ---------------------------------------------------------------------
+BANNER_HTML = """
+<style>
+.dpp-banner { background: linear-gradient(135deg, #3fa34d 0%, #2e8b57 100%);
+              border-radius: 14px; padding: 22px 20px; margin: 0 0 22px 0;
+              display: flex; justify-content: center; }
+.dpp-badge  { background: #ffffff; border-radius: 60px; padding: 14px 30px;
+              display: flex; align-items: center; gap: 16px;
+              box-shadow: 0 4px 14px rgba(0,0,0,0.15); max-width: 100%; }
+.dpp-logo   { font-size: 3rem; line-height: 1; flex-shrink: 0; }
+.dpp-name   { font-size: 1.9rem; font-weight: 800; color: #1f7a3f; line-height: 1.1; }
+.dpp-tag    { font-size: 0.95rem; font-style: italic; color: #333333; margin-top: 4px; }
+@media (max-width: 600px) {
+  .dpp-badge { padding: 10px 18px; gap: 10px; border-radius: 40px; }
+  .dpp-logo  { font-size: 2.2rem; }
+  .dpp-name  { font-size: 1.3rem; }
+  .dpp-tag   { font-size: 0.8rem; }
+}
+</style>
+<div class="dpp-banner">
+  <div class="dpp-badge">
+    <div class="dpp-logo">♻️</div>
+    <div>
+      <div class="dpp-name">Digital Product Passport</div>
+      <div class="dpp-tag">Scan it. Know it. Repair, Reuse or Recycle it.</div>
+    </div>
+  </div>
+</div>
+"""
+
+
+def show_banner():
+    st.markdown(BANNER_HTML, unsafe_allow_html=True)
+
+
 def home_page(devices):
-    st.title("♻️ Digital Product Passport")
-    st.subheader("Scan it. Know it. Repair, Reuse or Recycle it.")
+    show_banner()
     st.write("Scan the QR sticker on the device, or open its passport below.")
     for d in devices:
         label, _, _ = recommend(d)
@@ -286,12 +319,13 @@ TOC_SCRIPT = """
 
 
 def passport_page(d, prices, sources):
+    show_banner()
     st.button("← Home", on_click=go_to)
 
     # Header: photo, name, author
     st.image(d["image"], width=260)
-    st.title("Digital Product Passport")
-    st.subheader(f"{d['device']} ({d['model']})")
+    st.title(d["device"])
+    st.subheader(d["model"])
     st.caption(d["author"])
 
     # Recommendation and key numbers
