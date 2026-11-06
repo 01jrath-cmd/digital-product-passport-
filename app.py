@@ -54,6 +54,45 @@ def load_devices():
         return json.load(f)["devices"]
 
 
+# Website text in English, Hindi and Kannada (translations.json)
+with open("translations.json", encoding="utf-8") as _f:
+    TEXT = json.load(_f)
+LANGS = TEXT["languages"]          # {"en": "English", "hi": "हिंदी", "kn": "ಕನ್ನಡ"}
+
+
+def current_lang():
+    lang = st.query_params.get("lang", "en")
+    return lang if lang in LANGS else "en"
+
+
+def ui(key):
+    """Website text in the chosen language (falls back to English)."""
+    return TEXT[current_lang()].get(key, TEXT["en"][key])
+
+
+def localize(d):
+    """Copy of the device with its text swapped for the chosen language (numbers and scores stay the same)."""
+    import copy
+    lang = current_lang()
+    tr = d.get("translations", {}).get(lang)
+    out = copy.deepcopy(d)
+    for i, sec in enumerate(out["sections"]):
+        sec["anchor"] = slug(d["sections"][i]["title"])      # link targets always from the English title
+    if not tr:
+        return out
+    if tr.get("model"):
+        out["model"] = tr["model"]
+    for sec, t in zip(out["sections"], tr.get("sections", [])):
+        for key in ("title", "subtitle", "intro", "note", "table"):
+            if key in t:
+                sec[key] = t[key]
+        if "hazard_meter" in sec and "hazard_meter" in t:
+            sec["hazard_meter"]["note"] = t["hazard_meter"].get("note", sec["hazard_meter"]["note"])
+            for item, ti in zip(sec["hazard_meter"]["items"], t["hazard_meter"].get("items", [])):
+                item["name"], item["reason"] = ti.get("name", item["name"]), ti.get("reason", item["reason"])
+    return out
+
+
 def find_device(devices, device_id):
     for d in devices:
         if d["id"].strip().upper() == device_id.strip().upper():
@@ -69,14 +108,14 @@ def recommend(d):
     age = date.today().year - int(d["year"])
     condition = d["condition"].strip().lower()
     if d["status"] == "Recycled":
-        return "RECYCLED", "success", "This device has completed its journey. Its materials are back in use."
+        return ui("rec_recycled"), "success", ui("rec_recycled_why")
     if condition == "working":
         if age > 5:
-            return "REUSE - Donate or sell", "info", f"It still works but is {age} years old. Give it a second life with someone who needs it."
-        return "REUSE - Keep using", "success", f"It works and is only {age} years old. The greenest device is the one you already own."
+            return ui("rec_donate"), "info", ui("rec_donate_why").format(age=age)
+        return ui("rec_keep"), "success", ui("rec_keep_why").format(age=age)
     if condition == "repairable":
-        return "REPAIR", "warning", "The fault can be fixed. Repairing it saves the materials and energy needed to make a new one."
-    return "RECYCLE", "error", "It cannot be repaired. Send it to an authorised recycler so its metals can be recovered safely."
+        return ui("rec_repair"), "warning", ui("rec_repair_why")
+    return ui("rec_recycle"), "error", ui("rec_recycle_why")
 
 
 def metal_value_rows(d, prices, sources):
@@ -93,7 +132,8 @@ def metal_value_rows(d, prices, sources):
     rows = []
     for metal, (g, text) in grams.items():
         key = metal.lower()
-        rows.append((metal, text, f"{prices[key]:,.2f} ({sources[key]})", g * prices[key]))
+        src = ui("src_" + sources[key])
+        rows.append((ui("metals")[key], text, f"{prices[key]:,.2f} ({src})", g * prices[key]))
     return rows
 
 
@@ -123,7 +163,9 @@ def show_message(kind, text):
 
 
 def go_to(device_id=None):
+    lang = current_lang()
     st.query_params.clear()
+    st.query_params["lang"] = lang
     if device_id:
         st.query_params["id"] = device_id
 
@@ -174,26 +216,27 @@ def to_ist(iso_time):
 def price_sidebar():
     live, updated, failed = fetch_live_prices()
     prices, sources = {}, {}
-    st.sidebar.header("Metal prices (Rs per gram)")
-    st.sidebar.subheader("🟢 Live market prices")
+    names = ui("metals")
+    st.sidebar.header(ui("prices_header"))
+    st.sidebar.subheader(ui("live_header"))
     for metal in LIVE_SYMBOLS:
         if metal in live:
             prices[metal], sources[metal] = live[metal], "live"
-            st.sidebar.metric(metal.capitalize(), f"Rs {live[metal]:,.2f}")
+            st.sidebar.metric(names[metal], f"Rs {live[metal]:,.2f}")
         else:
             prices[metal], sources[metal] = FALLBACK_PRICES[metal], "backup"
-            st.sidebar.metric(metal.capitalize(), f"Rs {FALLBACK_PRICES[metal]:,.2f}", "backup price", delta_color="off")
+            st.sidebar.metric(names[metal], f"Rs {FALLBACK_PRICES[metal]:,.2f}", ui("backup_price"), delta_color="off")
     if updated:
-        st.sidebar.caption(f"Updated: {to_ist(updated)}. Source: gold-api.com")
+        st.sidebar.caption(ui("updated").format(time=to_ist(updated)))
     if failed:
-        st.sidebar.warning("Live price unavailable for: " + ", ".join(failed) + ". Showing backup prices.")
-    if st.sidebar.button("🔄 Refresh prices now"):
+        st.sidebar.warning(ui("unavailable").format(metals=", ".join(names[m] for m in failed)))
+    if st.sidebar.button(ui("refresh")):
         fetch_live_prices.clear()
         st.rerun()
-    st.sidebar.subheader("📘 Reference prices")
-    st.sidebar.caption("No free live source for these metals. Edit if needed.")
+    st.sidebar.subheader(ui("ref_header"))
+    st.sidebar.caption(ui("ref_caption"))
     for metal, value in REFERENCE_PRICES.items():
-        prices[metal] = st.sidebar.number_input(metal.capitalize(), min_value=0.0, value=value, step=0.25)
+        prices[metal] = st.sidebar.number_input(names[metal], min_value=0.0, value=value, step=0.25, key="ref_" + metal)
         sources[metal] = "reference"
     return prices, sources
 
@@ -223,8 +266,8 @@ BANNER_HTML = """
   <div class="dpp-badge">
     <div class="dpp-logo">♻️</div>
     <div>
-      <div class="dpp-name">Digital Product Passport</div>
-      <div class="dpp-tag">Scan it. Know it. Repair, Reuse or Recycle it.</div>
+      <div class="dpp-name">__NAME__</div>
+      <div class="dpp-tag">__TAG__</div>
     </div>
   </div>
 </div>
@@ -232,20 +275,22 @@ BANNER_HTML = """
 
 
 def show_banner():
-    st.markdown(BANNER_HTML, unsafe_allow_html=True)
+    st.markdown(BANNER_HTML.replace("__NAME__", ui("banner_name")).replace("__TAG__", ui("banner_tag")),
+                unsafe_allow_html=True)
 
 
 def home_page(devices):
     show_banner()
-    st.write("Scan the QR sticker on the device, or open its passport below.")
+    st.write(ui("home_intro"))
     for d in devices:
+        d = localize(d)
         label, _, _ = recommend(d)
         with st.container(border=True):
             left, right = st.columns([1, 2])
             left.image(d["image"], width="stretch")
             right.markdown(f"**{d['device']}**  \n{d['model']} · {d['year']} · ID {d['id']}")
-            right.caption(f"Status: {d['status']}  |  Advice: {label}")
-            right.button("Open passport", key=d["id"], on_click=go_to, args=(d["id"],), width="stretch")
+            right.caption(f"{ui('status')}: {status_label(d['status'])}  |  {ui('advice')}: {label}")
+            right.button(ui("open_passport"), key=d["id"], on_click=go_to, args=(d["id"],), width="stretch")
 
 
 # ---------------------------------------------------------------------
@@ -278,18 +323,18 @@ section.main, [data-testid="stMain"] { scroll-behavior: smooth; }
 def hazard_meter(meter):
     """Speedtest-style Hazard-o-meter (hazardometer.html), filled with this device's scores."""
     with open("hazardometer.html", encoding="utf-8") as f:
-        html = f.read().replace("__DATA__", json.dumps(meter))
+        html = f.read().replace("__DATA__", json.dumps({**meter, "ui": ui("meter")}, ensure_ascii=False))
     components.html(html, height=720)
 
 
 def table_of_contents(d):
     """Collapsible table of contents. Clicking an entry scrolls to it; visited entries go grey."""
-    items = [(sec["title"], slug(sec["title"])) for sec in d["sections"]]
-    items += [("Sources", "sources"), ("QR code for this device", "qr-code")]
+    items = [(sec["title"], sec["anchor"]) for sec in d["sections"]]
+    items += [(ui("sources"), "sources"), (ui("qr_title"), "qr-code")]
     links = "".join(f'<li><a href="#{anchor}" target="_self">{title}</a></li>' for title, anchor in items)
     st.markdown(
         TOC_STYLE
-        + '<details class="dpp-toc" open><summary>Table of Contents<span class="toggle">[Toggle]</span></summary>'
+        + f'<details class="dpp-toc" open><summary>{ui("toc")}<span class="toggle">{ui("toggle")}</span></summary>'
         + f"<ul>{links}</ul></details>",
         unsafe_allow_html=True,
     )
@@ -325,9 +370,15 @@ TOC_SCRIPT = """
 """
 
 
+def status_label(status):
+    """Translated name of a life-cycle stage (the data always stores the English name)."""
+    return ui("status_steps")[STATUS_STEPS.index(status)] if status in STATUS_STEPS else status
+
+
 def passport_page(d, prices, sources):
+    d = localize(d)
     show_banner()
-    st.button("← Home", on_click=go_to)
+    st.button(ui("home"), on_click=go_to)
 
     # Header: photo, name, author
     # Top of the page: photo and name on the left, Hazard-o-meter on the right
@@ -344,17 +395,17 @@ def passport_page(d, prices, sources):
 
     # Recommendation and key numbers
     label, kind, reason = recommend(d)
-    show_message(kind, f"**Recommendation: {label}**  \n{reason}")
+    show_message(kind, f"**{ui('recommendation')}: {label}**  \n{reason}")
     rows = metal_value_rows(d, prices, sources)
     c1, c2, c3 = st.columns(3)
-    c1.metric("Weight", f"{d['weight_g'] / 1000:.1f} kg")
-    c2.metric("Age", f"{date.today().year - int(d['year'])} years")
-    c3.metric("Metal value (live)", f"Rs {sum(r[3] for r in rows):,.0f}")
+    c1.metric(ui("weight"), f"{d['weight_g'] / 1000:.1f} kg")
+    c2.metric(ui("age"), f"{date.today().year - int(d['year'])} {ui('years')}")
+    c3.metric(ui("metal_value"), f"Rs {sum(r[3] for r in rows):,.0f}")
 
-    st.markdown("**Life-cycle status**")
+    st.markdown(f"**{ui('lifecycle')}**")
     step = STATUS_STEPS.index(d["status"]) if d["status"] in STATUS_STEPS else 0
     st.progress((step + 1) / len(STATUS_STEPS))
-    st.write("  →  ".join(f"**{s}**" if i == step else s for i, s in enumerate(STATUS_STEPS)))
+    st.write("  →  ".join(f"**{s}**" if i == step else s for i, s in enumerate(ui("status_steps"))))
     st.divider()
 
     # Table of contents: built from this device's sections, so every device gets one
@@ -362,7 +413,7 @@ def passport_page(d, prices, sources):
 
     # All sections from the Word document, in the same order
     for sec in d["sections"]:
-        st.header(sec["title"], anchor=slug(sec["title"]))
+        st.header(sec["title"], anchor=sec["anchor"])
         if sec.get("subtitle"):
             st.subheader(sec["subtitle"])
         if sec.get("intro"):
@@ -371,41 +422,101 @@ def passport_page(d, prices, sources):
         if sec.get("note"):
             st.markdown(sec["note"])
         if sec.get("show_live_value"):
-            st.markdown("**Estimated metal value at today's prices** (middle of each range above)")
+            st.markdown(ui("live_value_title"))
             st.markdown(md_table({
-                "columns": ["Metal", "Amount used", "Price (Rs/g)", "Value (Rs)"],
+                "columns": [ui("col_metal"), ui("col_amount"), ui("col_price"), ui("col_value")],
                 "rows": [[m, a, p, f"{v:,.2f}"] for m, a, p, v in rows]
-                        + [["**Total**", "", "", f"**{sum(r[3] for r in rows):,.2f}**"]],
+                        + [[f"**{ui('total')}**", "", "", f"**{sum(r[3] for r in rows):,.2f}**"]],
             }))
-            st.caption("Live prices for gold, silver, palladium and copper; reference prices for cobalt and lithium (see sidebar).")
+            st.caption(ui("live_caption"))
 
     # Sources
-    st.header("Sources", anchor="sources")
+    st.header(ui("sources"), anchor="sources")
     st.markdown("\n".join(f"{i}. {text} [{url}]({url})" for i, (text, url) in enumerate(d["sources"], 1)))
 
     # QR code
     st.divider()
-    st.subheader("🔳 QR code for this device", anchor="qr-code")
+    st.subheader("🔳 " + ui("qr_title"), anchor="qr-code")
     link = passport_link(d["id"])
     st.image(make_qr_png(link), width=220)
     st.code(link, language=None)
-    st.download_button("Download QR code", make_qr_png(link), file_name=f"{d['id']}.png", mime="image/png")
+    st.download_button(ui("download_qr"), make_qr_png(link), file_name=f"{d['id']}.png", mime="image/png")
     if "your-app-name" in APP_URL:
         st.warning("APP_URL in app.py is still the placeholder. Update it after deploying, or this QR code will not open.")
 
 
 # ---------------------------------------------------------------------
-# 7. MAIN - decide which page to show
+# 7. LANGUAGE CHOICE  (popup on first visit + switcher in the sidebar)
+# ---------------------------------------------------------------------
+POPUP_HTML = """
+<style>
+.lang-head { text-align:center; padding-bottom:14px; border-bottom:1px solid #e5e7eb; margin-bottom:14px; }
+.lang-head .l1 { font-size:1.05rem; font-weight:700; color:#334155; }
+.lang-head .l2 { font-size:0.95rem; font-weight:700; letter-spacing:2px; color:#334155; margin-top:2px; }
+.lang-title { text-align:center; font-size:1.6rem; font-weight:800; margin:8px 0 18px; color:#111827; }
+.lang-cards { display:grid; grid-template-columns:repeat(3, 1fr); gap:14px; }
+.lang-card { display:flex; flex-direction:column; align-items:center; justify-content:center; gap:4px;
+             min-height:120px; padding:14px; border:2px solid #e2e8f0; border-radius:14px;
+             background:#f8fafc; text-decoration:none !important; transition:.15s; }
+.lang-card:hover { border-color:#0284c7; box-shadow:0 0 0 3px rgba(2,132,199,.15); }
+.lang-card.main { border-color:#0284c7; box-shadow:0 0 0 3px rgba(2,132,199,.15); }
+.lang-card .n { font-size:1.6rem; font-weight:700; color:#111827; }
+.lang-card .w { font-size:1rem; color:#374151; }
+@media (max-width:600px) { .lang-cards { grid-template-columns:1fr; } .lang-card { min-height:84px; } }
+</style>
+<div class="lang-head">
+  <div class="l1">डिजिटल उत्पाद पासपोर्ट &nbsp;·&nbsp; ಡಿಜಿಟಲ್ ಉತ್ಪನ್ನ ಪಾಸ್‌ಪೋರ್ಟ್</div>
+  <div class="l2">DIGITAL PRODUCT PASSPORT</div>
+</div>
+<div class="lang-title">भाषा चुनें / ಭಾಷೆ ಆಯ್ಕೆಮಾಡಿ / Choose Language</div>
+<div class="lang-cards">__CARDS__</div>
+"""
+LANG_CARDS = [("hi", "हिंदी", "स्वागत है"), ("en", "English", "Welcome"), ("kn", "ಕನ್ನಡ", "ಸ್ವಾಗತ")]
+
+
+@st.dialog(" ", width="large")
+def language_popup():
+    """Three language cards. Each is a link that reopens the same page with ?lang=... added."""
+    device_id = st.query_params.get("id")
+    cards = ""
+    for code, name, welcome in LANG_CARDS:
+        href = f"?id={device_id}&lang={code}" if device_id else f"?lang={code}"
+        main = " main" if code == "en" else ""
+        cards += (f'<a class="lang-card{main}" href="{href}" target="_self">'
+                  f'<span class="n">{name}</span><span class="w">{welcome}</span></a>')
+    st.markdown(POPUP_HTML.replace("__CARDS__", cards), unsafe_allow_html=True)
+
+
+def language_switcher():
+    codes = list(LANGS)
+    st.session_state["lang_select"] = current_lang()      # keep the box in step with the link
+    st.sidebar.selectbox(ui("language"), codes, format_func=lambda c: LANGS[c],
+                         key="lang_select", on_change=switch_language)
+
+
+def switch_language():
+    st.query_params["lang"] = st.session_state["lang_select"]
+
+
+# ---------------------------------------------------------------------
+# 8. MAIN - decide which page to show
 # ---------------------------------------------------------------------
 devices = load_devices()
+
+# First visit (no language in the link yet): ask, like the ISRO website does
+if "lang" not in st.query_params and not st.session_state.get("lang_asked"):
+    st.session_state["lang_asked"] = True
+    language_popup()
+
+language_switcher()
 prices, sources = price_sidebar()
 item_id = st.query_params.get("id")
 
 if item_id:
     device = find_device(devices, item_id)
     if device is None:
-        st.error(f"No device found with ID '{item_id}'.")
-        st.button("← Home", on_click=go_to)
+        st.error(ui("not_found").format(id=item_id))
+        st.button(ui("home"), on_click=go_to)
     else:
         passport_page(device, prices, sources)
 else:

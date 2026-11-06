@@ -50,8 +50,8 @@
   @media (max-width:420px){ .hm-labels{ font-size:11px; } .hm-legend{ gap:6px; } .hm-bar{ width:12px; } }
 </style>
 
-<div class="hm-title">HAZARD-O-METER</div>
-<div class="hm-sub">Pick a substance and press GO</div>
+<div class="hm-title" id="hmTitle">HAZARD-O-METER</div>
+<div class="hm-sub" id="hmSub">Pick a substance and press GO</div>
 <div class="hm-chips" id="hmChips"></div>
 
 <div class="hm-body">
@@ -59,20 +59,20 @@
     <svg viewBox="0 0 320 320" id="hmSvg" aria-label="Hazard gauge from 1 to 10"></svg>
     <div class="hm-readout" id="hmReadout" style="opacity:0">
       <div class="hm-num" id="hmNum">0.0</div>
-      <div class="hm-unit">HAZARD SCORE / 10</div>
+      <div class="hm-unit" id="hmUnit">HAZARD SCORE / 10</div>
       <div class="hm-level" id="hmLevel">&nbsp;</div>
     </div>
-    <button class="hm-go" id="hmGo" aria-label="Start"><span>GO</span></button>
+    <button class="hm-go" id="hmGo" aria-label="Start"><span id="hmGoText">GO</span></button>
   </div>
   <div class="hm-legend" aria-label="Colour scale">
     <div class="hm-bar"></div>
     <div class="hm-labels">
-      <div><b>10</b> <span>Severe</span></div>
-      <div><b>8</b> <span>High</span></div>
-      <div><b>6</b> <span>Moderate–high</span></div>
-      <div><b>4</b> <span>Moderate</span></div>
-      <div><b>2</b> <span>Low</span></div>
-      <div><b>1</b> <span>Very low</span></div>
+      <div><b>10</b> <span class="hm-lg">Severe</span></div>
+      <div><b>8</b> <span class="hm-lg">High</span></div>
+      <div><b>6</b> <span class="hm-lg">Moderate–high</span></div>
+      <div><b>4</b> <span class="hm-lg">Moderate</span></div>
+      <div><b>2</b> <span class="hm-lg">Low</span></div>
+      <div><b>1</b> <span class="hm-lg">Very low</span></div>
     </div>
   </div>
 </div>
@@ -83,11 +83,21 @@
 <script>
 (function () {
   const DATA = __DATA__;
+  const T = Object.assign({ title: "HAZARD-O-METER", sub: "Pick a substance and press GO", go: "GO",
+    unit: "HAZARD SCORE / 10", measuring: "Measuring…", again: "↻ Test again",
+    legend: ["Severe", "High", "Moderate–high", "Moderate", "Low", "Very low"],
+    levels: ["SEVERE", "HIGH", "MODERATE–HIGH", "MODERATE", "LOW"],
+    overall: "Overall", overall_why: "Average of all hazardous substances in this device." }, DATA.ui || {});
+  document.getElementById("hmTitle").textContent = T.title;
+  document.getElementById("hmSub").textContent = T.sub;
+  document.getElementById("hmUnit").textContent = T.unit;
+  document.getElementById("hmGoText").textContent = T.go;
+  document.getElementById("hmAgain").textContent = T.again;
+  document.querySelectorAll(".hm-lg").forEach((e, i) => { e.textContent = T.legend[i]; });
   const items = DATA.items.slice();
   if (items.length > 1) {
     const avg = items.reduce((s, i) => s + i.score, 0) / items.length;
-    items.unshift({ name: "Overall", score: Math.round(avg * 10) / 10,
-                    reason: "Average of all hazardous substances in this device." });
+    items.unshift({ name: T.overall, score: Math.round(avg * 10) / 10, reason: T.overall_why });
   }
   const NS = "http://www.w3.org/2000/svg", svg = document.getElementById("hmSvg");
   const C = 160, R = 120, START = 135, SWEEP = 270;            // gauge geometry (degrees)
@@ -127,7 +137,7 @@
   const num = document.getElementById("hmNum"), level = document.getElementById("hmLevel");
   const reason = document.getElementById("hmReason"), again = document.getElementById("hmAgain");
   document.getElementById("hmNote").textContent = DATA.note || "";
-  const levelName = v => v >= 9 ? "SEVERE" : v >= 7 ? "HIGH" : v >= 5 ? "MODERATE–HIGH" : v >= 3 ? "MODERATE" : "LOW";
+  const levelName = v => T.levels[v >= 9 ? 0 : v >= 7 ? 1 : v >= 5 ? 2 : v >= 3 ? 3 : 4];
 
   let current = items[0], running = false;
   const chips = document.getElementById("hmChips");
@@ -152,7 +162,7 @@
   }
   function run() {
     running = true; go.classList.add("hide"); readout.style.opacity = 1; needle.setAttribute("opacity", 1);
-    level.textContent = " "; reason.textContent = "Measuring…";
+    level.textContent = " "; reason.textContent = T.measuring;
     const target = current.score, t0 = performance.now(), dur = 2600;
     function frame(now) {
       const t = Math.min(1, (now - t0) / dur);
