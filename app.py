@@ -459,12 +459,12 @@ div[data-testid="stDialog"] > div {
   border-radius: 22px !important; border: 3px solid transparent;
   box-shadow: 0 20px 60px rgba(0,0,0,.35), 0 0 0 3px rgba(34,197,94,.35); }
 .lang-head { display:flex; align-items:center; justify-content:center; gap:14px; text-align:center;
-             background: linear-gradient(120deg, #16a34a 0%, #0d9488 50%, #0284c7 100%);
-             border-radius: 16px; padding: 16px 18px; margin: -8px 0 16px; color:#fff;
-             box-shadow: 0 8px 22px rgba(13,148,136,.35); }
+             background: linear-gradient(120deg, #ec4899 0%, #be185d 55%, #831843 100%);
+             border-radius: 16px; padding: 16px 18px; margin: -8px 0 16px; color:#ffffff;
+             box-shadow: 0 8px 22px rgba(190,24,93,.40); }
 .lang-head .logo { font-size:2.6rem; line-height:1; filter: drop-shadow(0 2px 4px rgba(0,0,0,.25)); }
 .lang-head .l1 { font-size:1.55rem; font-weight:800; line-height:1.35; text-shadow:0 1px 3px rgba(0,0,0,.25); }
-.lang-head .l2 { font-size:1.2rem; font-weight:800; letter-spacing:4px; margin-top:2px; color:#fef08a; }
+.lang-head .l2 { font-size:1.2rem; font-weight:800; letter-spacing:4px; margin-top:2px; color:#fce7f3; }
 .lang-title { text-align:center; font-size:1.7rem; font-weight:900; margin:6px 0 18px; color:#94a3b8; }
 .lang-title .t { -webkit-background-clip:text; background-clip:text; color:transparent; }
 .lang-title .t.hi { background-image: linear-gradient(135deg, #22c55e 0%, #16a34a 50%, #047857 100%); }
