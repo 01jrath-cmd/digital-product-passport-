@@ -450,32 +450,62 @@ def passport_page(d, prices, sources):
 # ---------------------------------------------------------------------
 POPUP_HTML = """
 <style>
-.lang-head { text-align:center; padding-bottom:14px; border-bottom:1px solid #e5e7eb; margin-bottom:14px; }
-.lang-head .l1 { font-size:1.6rem; font-weight:700; color:#334155; line-height:1.35; }
-.lang-head .l2 { font-size:1.3rem; font-weight:700; letter-spacing:3px; color:#334155; margin-top:4px; }
-.lang-title { text-align:center; font-size:1.6rem; font-weight:800; margin:8px 0 18px; color:#111827; }
-.lang-cards { display:grid; grid-template-columns:repeat(3, 1fr); gap:14px; }
-.lang-card { display:flex; flex-direction:column; align-items:center; justify-content:center; gap:4px;
-             min-height:120px; padding:14px; border:2px solid #e2e8f0; border-radius:14px;
-             background:#f8fafc; text-decoration:none !important; transition:.15s; }
-.lang-card:hover { border-color:#0284c7; box-shadow:0 0 0 3px rgba(2,132,199,.15); }
-.lang-card.main { border-color:#0284c7; box-shadow:0 0 0 3px rgba(2,132,199,.15); }
-.lang-card .n { font-size:1.6rem; font-weight:700; color:#111827; }
-.lang-card .w { font-size:1rem; color:#374151; }
-@media (max-width:600px) { .lang-cards { grid-template-columns:1fr; } .lang-card { min-height:84px; }
-                            .lang-head .l1 { font-size:1.2rem; } .lang-head .l2 { font-size:1.05rem; } }
-/* blur the whole page behind the popup; it clears as soon as a language is chosen */
+/* page behind the popup: blurred and dimmed until a language is chosen */
 div[data-testid="stDialog"] { backdrop-filter: blur(7px); -webkit-backdrop-filter: blur(7px);
-                              background-color: rgba(15, 23, 42, 0.30) !important; }
+                              background-color: rgba(15, 23, 42, 0.45) !important; }
+/* the popup box itself */
+div[data-testid="stDialog"] > div {
+  background: linear-gradient(160deg, #f0fdf4 0%, #ecfeff 45%, #fdf4ff 100%) !important;
+  border-radius: 22px !important; border: 3px solid transparent;
+  box-shadow: 0 20px 60px rgba(0,0,0,.35), 0 0 0 3px rgba(34,197,94,.35); }
+.lang-head { display:flex; align-items:center; justify-content:center; gap:14px; text-align:center;
+             background: linear-gradient(120deg, #16a34a 0%, #0d9488 50%, #0284c7 100%);
+             border-radius: 16px; padding: 16px 18px; margin: -8px 0 16px; color:#fff;
+             box-shadow: 0 8px 22px rgba(13,148,136,.35); }
+.lang-head .logo { font-size:2.6rem; line-height:1; filter: drop-shadow(0 2px 4px rgba(0,0,0,.25)); }
+.lang-head .l1 { font-size:1.55rem; font-weight:800; line-height:1.35; text-shadow:0 1px 3px rgba(0,0,0,.25); }
+.lang-head .l2 { font-size:1.2rem; font-weight:800; letter-spacing:4px; margin-top:2px; color:#fef08a; }
+.lang-title { text-align:center; font-size:1.7rem; font-weight:900; margin:6px 0 18px;
+              background: linear-gradient(90deg, #f97316, #db2777, #7c3aed, #0284c7);
+              -webkit-background-clip:text; background-clip:text; color:transparent; }
+.lang-cards { display:grid; grid-template-columns:repeat(3, 1fr); gap:16px; margin-bottom:10px; }
+.lang-card { position:relative; overflow:hidden; display:flex; flex-direction:column; align-items:center;
+             justify-content:center; gap:4px; min-height:130px; padding:16px; border-radius:18px;
+             text-decoration:none !important; color:#fff !important;
+             box-shadow:0 8px 20px rgba(0,0,0,.18); transition: transform .18s, box-shadow .18s; }
+.lang-card:hover { transform: translateY(-5px) scale(1.03); box-shadow:0 14px 30px rgba(0,0,0,.28); }
+.lang-card .big { position:absolute; right:10px; bottom:-18px; font-size:6rem; font-weight:900;
+                  opacity:.18; line-height:1; pointer-events:none; }
+.lang-card .n { position:relative; font-size:1.9rem; font-weight:800; text-shadow:0 2px 4px rgba(0,0,0,.25); }
+.lang-card .w { position:relative; font-size:1.05rem; font-weight:600; opacity:.95;
+                background: rgba(255,255,255,.22); padding:2px 12px; border-radius:20px; }
+.lang-card.hi { background: linear-gradient(135deg, #ff9933 0%, #ff5e62 100%); }
+.lang-card.en { background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 50%, #06b6d4 100%);
+                box-shadow:0 0 0 4px #fde047, 0 10px 26px rgba(79,70,229,.45); }
+.lang-card.kn { background: linear-gradient(135deg, #facc15 0%, #f97316 45%, #dc2626 100%); }
+.lang-card::after { content:""; position:absolute; top:0; left:-60%; width:40%; height:100%;
+                    background: linear-gradient(100deg, transparent, rgba(255,255,255,.45), transparent);
+                    transform: skewX(-20deg); animation: shine 3.2s ease-in-out infinite; }
+.lang-card.en::after { animation-delay: .4s; } .lang-card.kn::after { animation-delay: .8s; }
+@keyframes shine { 0% { left:-60%; } 55%, 100% { left:130%; } }
+@media (max-width:600px) {
+  .lang-cards { grid-template-columns:1fr; } .lang-card { min-height:88px; }
+  .lang-head { flex-direction:column; gap:4px; } .lang-head .l1 { font-size:1.15rem; }
+  .lang-head .l2 { font-size:1rem; letter-spacing:3px; } .lang-title { font-size:1.35rem; }
+  .lang-card .big { font-size:4.5rem; }
+}
 </style>
 <div class="lang-head">
-  <div class="l1">डिजिटल उत्पाद पासपोर्ट &nbsp;·&nbsp; ಡಿಜಿಟಲ್ ಉತ್ಪನ್ನ ಪಾಸ್‌ಪೋರ್ಟ್</div>
-  <div class="l2">DIGITAL PRODUCT PASSPORT</div>
+  <div class="logo">♻️</div>
+  <div>
+    <div class="l1">डिजिटल उत्पाद पासपोर्ट &nbsp;·&nbsp; ಡಿಜಿಟಲ್ ಉತ್ಪನ್ನ ಪಾಸ್‌ಪೋರ್ಟ್</div>
+    <div class="l2">DIGITAL PRODUCT PASSPORT</div>
+  </div>
 </div>
 <div class="lang-title">भाषा चुनें / ಭಾಷೆ ಆಯ್ಕೆಮಾಡಿ / Choose Language</div>
 <div class="lang-cards">__CARDS__</div>
 """
-LANG_CARDS = [("hi", "हिंदी", "स्वागत है"), ("en", "English", "Welcome"), ("kn", "ಕನ್ನಡ", "ಸ್ವಾಗತ")]
+LANG_CARDS = [("hi", "हिंदी", "स्वागत है", "अ"), ("en", "English", "Welcome", "A"), ("kn", "ಕನ್ನಡ", "ಸ್ವಾಗತ", "ಅ")]
 
 
 @st.dialog(" ", width="large")
@@ -483,10 +513,10 @@ def language_popup():
     """Three language cards. Each is a link that reopens the same page with ?lang=... added."""
     device_id = st.query_params.get("id")
     cards = ""
-    for code, name, welcome in LANG_CARDS:
+    for code, name, welcome, letter in LANG_CARDS:
         href = f"?id={device_id}&lang={code}" if device_id else f"?lang={code}"
-        main = " main" if code == "en" else ""
-        cards += (f'<a class="lang-card{main}" href="{href}" target="_self">'
+        cards += (f'<a class="lang-card {code}" href="{href}" target="_self">'
+                  f'<span class="big">{letter}</span>'
                   f'<span class="n">{name}</span><span class="w">{welcome}</span></a>')
     st.markdown(POPUP_HTML.replace("__CARDS__", cards), unsafe_allow_html=True)
 
