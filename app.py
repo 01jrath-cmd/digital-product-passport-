@@ -502,7 +502,7 @@ div[data-testid="stDialog"] > div {
     <div class="l2">DIGITAL PRODUCT PASSPORT</div>
   </div>
 </div>
-<div class="lang-title">भाषा चुनें / ಭಾಷೆ ಆಯ್ಕೆಮಾಡಿ / Choose Language</div>
+<div class="lang-title">भाषा चुनें / Choose Language / ಭಾಷೆ ಆಯ್ಕೆಮಾಡಿ</div>
 <div class="lang-cards">__CARDS__</div>
 """
 LANG_CARDS = [("hi", "हिंदी", "स्वागत है", "अ"), ("en", "English", "Welcome", "A"), ("kn", "ಕನ್ನಡ", "ಸ್ವಾಗತ", "ಅ")]
