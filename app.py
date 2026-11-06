@@ -203,7 +203,7 @@ def price_sidebar():
 # ---------------------------------------------------------------------
 BANNER_HTML = """
 <style>
-.dpp-banner { background: linear-gradient(135deg, #3fa34d 0%, #2e8b57 100%);
+.dpp-banner { background: linear-gradient(135deg, #1f6b35 0%, #134d24 100%);
               border-radius: 14px; padding: 22px 20px; margin: 0 0 22px 0;
               display: flex; justify-content: center; }
 .dpp-badge  { background: #ffffff; border-radius: 60px; padding: 14px 30px;
@@ -233,6 +233,27 @@ BANNER_HTML = """
 
 def show_banner():
     st.markdown(BANNER_HTML, unsafe_allow_html=True)
+
+
+# Page colours: background green and text black come from .streamlit/config.toml;
+# this makes every heading yellow (with a soft shadow so it stays readable on green).
+PAGE_STYLE = """
+<style>
+h1, h2, h3, h4,
+h1 span, h2 span, h3 span, h4 span,
+[data-testid="stSidebar"] h1, [data-testid="stSidebar"] h2, [data-testid="stSidebar"] h3 {
+    color: #FFE500 !important;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.55);
+}
+/* message boxes (recommendation, warnings): white card with black text so they stay readable */
+[data-testid="stAlertContainer"] { background-color: rgba(255, 255, 255, 0.92) !important; }
+[data-testid="stAlertContainer"] p, [data-testid="stAlertContainer"] strong { color: #000000 !important; }
+</style>
+"""
+
+
+def apply_page_style():
+    st.markdown(PAGE_STYLE, unsafe_allow_html=True)
 
 
 def home_page(devices):
@@ -383,6 +404,7 @@ def passport_page(d, prices, sources):
 # ---------------------------------------------------------------------
 # 7. MAIN - decide which page to show
 # ---------------------------------------------------------------------
+apply_page_style()
 devices = load_devices()
 prices, sources = price_sidebar()
 item_id = st.query_params.get("id")

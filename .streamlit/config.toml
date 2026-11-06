@@ -1,0 +1,7 @@
+# Website colours (Streamlit theme)
+[theme]
+base = "light"
+backgroundColor = "#57B949"            # page background: green
+secondaryBackgroundColor = "#4AA83D"   # sidebar and input boxes: slightly darker green
+textColor = "#000000"                  # normal text: black
+primaryColor = "#1B4D2B"               # buttons, progress bar, links: dark green
