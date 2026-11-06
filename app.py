@@ -275,6 +275,13 @@ section.main, [data-testid="stMain"] { scroll-behavior: smooth; }
 """
 
 
+def hazard_meter(meter):
+    """Speedtest-style Hazard-o-meter (hazardometer.html), filled with this device's scores."""
+    with open("hazardometer.html", encoding="utf-8") as f:
+        html = f.read().replace("__DATA__", json.dumps(meter))
+    components.html(html, height=720)
+
+
 def table_of_contents(d):
     """Collapsible table of contents. Clicking an entry scrolls to it; visited entries go grey."""
     items = [(sec["title"], slug(sec["title"])) for sec in d["sections"]]
@@ -356,6 +363,8 @@ def passport_page(d, prices, sources):
         st.markdown(md_table(sec["table"]))
         if sec.get("note"):
             st.markdown(sec["note"])
+        if sec.get("hazard_meter"):
+            hazard_meter(sec["hazard_meter"])
         if sec.get("show_live_value"):
             st.markdown("**Estimated metal value at today's prices** (middle of each range above)")
             st.markdown(md_table({

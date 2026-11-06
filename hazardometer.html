@@ -1,0 +1,182 @@
+<!-- Hazard-o-meter: speedtest-style gauge. app.py replaces __DATA__ with this device's scores. -->
+<div id="hm">
+<style>
+  #hm { --bg:#141526; --panel:#1c1d33; --ink:#ffffff; --muted:#9a9cb8; --ring:#2a2c4a;
+        font-family: "Segoe UI", Roboto, Arial, sans-serif; color: var(--ink);
+        background: var(--bg); border-radius: 16px; padding: 18px 14px 20px; }
+  #hm * { box-sizing: border-box; }
+  .hm-title { text-align:center; font-size:20px; font-weight:700; letter-spacing:.5px; margin:0 0 4px; }
+  .hm-sub   { text-align:center; font-size:12.5px; color:var(--muted); margin:0 0 14px; }
+  .hm-chips { display:flex; flex-wrap:wrap; gap:8px; justify-content:center; margin-bottom:10px; }
+  .hm-chip  { background:transparent; color:var(--ink); border:1.5px solid #4b4e7a; border-radius:20px;
+              padding:6px 14px; font-size:13px; cursor:pointer; transition:.2s; }
+  .hm-chip:hover { border-color:#26d0ce; }
+  .hm-chip.on { background:#26d0ce; border-color:#26d0ce; color:#0b0c1a; font-weight:700; }
+  .hm-body  { display:flex; align-items:center; justify-content:center; gap:22px; flex-wrap:wrap; }
+  .hm-gauge { position:relative; width:320px; max-width:100%; aspect-ratio:1/1; }
+  .hm-gauge svg { width:100%; height:100%; display:block; }
+  .hm-readout { position:absolute; left:0; right:0; top:63%; text-align:center; transition:opacity .3s; }
+  .hm-num   { font-size:46px; font-weight:300; line-height:1; }
+  .hm-unit  { font-size:13px; color:var(--muted); letter-spacing:1px; }
+  .hm-level { font-size:15px; font-weight:700; margin-top:6px; }
+  /* GO button */
+  .hm-go { position:absolute; left:50%; top:50%; width:150px; height:150px; transform:translate(-50%,-50%);
+           border-radius:50%; border:0; cursor:pointer; background:transparent; color:#fff;
+           font-size:38px; font-weight:600; letter-spacing:2px; transition:opacity .35s, transform .35s; }
+  .hm-go::before { content:""; position:absolute; inset:0; border-radius:50%; padding:4px;
+           background:conic-gradient(#26d0ce,#1a7fd6,#9b5cf6,#26d0ce);
+           -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
+           -webkit-mask-composite:xor; mask-composite:exclude; animation:hmspin 3s linear infinite; }
+  .hm-go::after { content:""; position:absolute; inset:-14px; border-radius:50%;
+           border:2px solid rgba(38,208,206,.35); animation:hmpulse 1.8s ease-out infinite; }
+  .hm-go:hover { transform:translate(-50%,-50%) scale(1.05); }
+  .hm-go span { position:relative; z-index:1; }
+  .hm-go.hide { opacity:0; pointer-events:none; transform:translate(-50%,-50%) scale(.6); }
+  @keyframes hmspin { to { transform:rotate(360deg); } }
+  @keyframes hmpulse { 0%{transform:scale(.92);opacity:.9} 100%{transform:scale(1.15);opacity:0} }
+  /* Colour scale legend */
+  .hm-legend { display:flex; gap:10px; align-items:stretch; height:240px; }
+  .hm-bar { width:16px; border-radius:8px;
+            background:linear-gradient(to top,hsl(120,80%,45%),hsl(60,90%,50%) 50%,hsl(0,85%,50%)); }
+  .hm-labels { display:flex; flex-direction:column; justify-content:space-between; font-size:12.5px; }
+  .hm-labels div { display:flex; gap:6px; align-items:center; }
+  .hm-labels b { display:inline-block; min-width:18px; text-align:right; }
+  .hm-labels span { color:var(--muted); }
+  .hm-reason { max-width:560px; margin:12px auto 0; text-align:center; font-size:13.5px; line-height:1.45;
+               color:#d9dbf0; min-height:40px; }
+  .hm-again { display:none; margin:10px auto 0; background:transparent; color:#26d0ce; border:1.5px solid #26d0ce;
+              border-radius:20px; padding:6px 18px; font-size:13px; cursor:pointer; }
+  .hm-note { text-align:center; font-size:11.5px; color:var(--muted); margin-top:12px; }
+  @media (max-width:520px){ .hm-legend{ height:auto; flex-direction:column; align-items:center; }
+     .hm-bar{ width:100%; height:14px; min-width:240px;
+              background:linear-gradient(to right,hsl(120,80%,45%),hsl(60,90%,50%) 50%,hsl(0,85%,50%)); }
+     .hm-labels{ flex-direction:row; gap:10px; flex-wrap:wrap; justify-content:center; } }
+</style>
+
+<div class="hm-title">HAZARD-O-METER</div>
+<div class="hm-sub">Pick a substance and press GO</div>
+<div class="hm-chips" id="hmChips"></div>
+
+<div class="hm-body">
+  <div class="hm-gauge">
+    <svg viewBox="0 0 320 320" id="hmSvg" aria-label="Hazard gauge from 1 to 10"></svg>
+    <div class="hm-readout" id="hmReadout" style="opacity:0">
+      <div class="hm-num" id="hmNum">0.0</div>
+      <div class="hm-unit">HAZARD SCORE / 10</div>
+      <div class="hm-level" id="hmLevel">&nbsp;</div>
+    </div>
+    <button class="hm-go" id="hmGo" aria-label="Start"><span>GO</span></button>
+  </div>
+  <div class="hm-legend" aria-label="Colour scale">
+    <div class="hm-bar"></div>
+    <div class="hm-labels">
+      <div><b>10</b> <span>Severe</span></div>
+      <div><b>8</b> <span>High</span></div>
+      <div><b>6</b> <span>Moderate–high</span></div>
+      <div><b>4</b> <span>Moderate</span></div>
+      <div><b>2</b> <span>Low</span></div>
+      <div><b>1</b> <span>Very low</span></div>
+    </div>
+  </div>
+</div>
+<div class="hm-reason" id="hmReason"></div>
+<button class="hm-again" id="hmAgain">↻ Test again</button>
+<div class="hm-note" id="hmNote"></div>
+
+<script>
+(function () {
+  const DATA = __DATA__;
+  const items = DATA.items.slice();
+  if (items.length > 1) {
+    const avg = items.reduce((s, i) => s + i.score, 0) / items.length;
+    items.unshift({ name: "Overall", score: Math.round(avg * 10) / 10,
+                    reason: "Average of all hazardous substances in this device." });
+  }
+  const NS = "http://www.w3.org/2000/svg", svg = document.getElementById("hmSvg");
+  const C = 160, R = 120, START = 135, SWEEP = 270;            // gauge geometry (degrees)
+  const angleFor = v => START + (v - 1) / 9 * SWEEP;            // value 1..10 -> angle
+  const colorFor = v => `hsl(${120 * (1 - (v - 1) / 9)}, 85%, 48%)`;   // green -> yellow -> red
+  const pt = (a, r) => [C + r * Math.cos(a * Math.PI / 180), C + r * Math.sin(a * Math.PI / 180)];
+  const el = (tag, attrs) => { const e = document.createElementNS(NS, tag);
+    for (const k in attrs) e.setAttribute(k, attrs[k]); svg.appendChild(e); return e; };
+  const arc = (a1, a2, r) => { const [x1, y1] = pt(a1, r), [x2, y2] = pt(a2, r);
+    return `M${x1} ${y1} A${r} ${r} 0 ${a2 - a1 > 180 ? 1 : 0} 1 ${x2} ${y2}`; };
+
+  // background track + coloured scale (drawn as many small slices so it fades smoothly)
+  el("path", { d: arc(START, START + SWEEP, R), stroke: "#2a2c4a", "stroke-width": 22, fill: "none", "stroke-linecap": "round" });
+  const fill = [];
+  for (let i = 0; i < 90; i++) {
+    const v1 = 1 + i * 9 / 90, v2 = 1 + (i + 1) * 9 / 90;
+    fill.push(el("path", { d: arc(angleFor(v1), angleFor(v2) + 0.6, R), stroke: colorFor((v1 + v2) / 2),
+      "stroke-width": 22, fill: "none", opacity: 0.12 }));
+  }
+  // tick numbers 1..10
+  for (let v = 1; v <= 10; v++) {
+    const [x, y] = pt(angleFor(v), R - 34);
+    const t = el("text", { x, y: y + 4, "text-anchor": "middle", "font-size": 13, fill: "#9a9cb8" });
+    t.textContent = v;
+  }
+  // needle
+  const needle = el("g", { opacity: 0 });
+  const tip = pt(0, R - 46), base1 = pt(90, 6), base2 = pt(-90, 6);
+  const poly = document.createElementNS(NS, "polygon");
+  poly.setAttribute("points", `${tip[0]},${tip[1]} ${base1[0]},${base1[1]} ${base2[0]},${base2[1]}`);
+  poly.setAttribute("fill", "#ffffff"); needle.appendChild(poly);
+  const hub = document.createElementNS(NS, "circle");
+  hub.setAttribute("cx", C); hub.setAttribute("cy", C); hub.setAttribute("r", 9); hub.setAttribute("fill", "#ffffff");
+  needle.appendChild(hub);
+
+  const go = document.getElementById("hmGo"), readout = document.getElementById("hmReadout");
+  const num = document.getElementById("hmNum"), level = document.getElementById("hmLevel");
+  const reason = document.getElementById("hmReason"), again = document.getElementById("hmAgain");
+  document.getElementById("hmNote").textContent = DATA.note || "";
+  const levelName = v => v >= 9 ? "SEVERE" : v >= 7 ? "HIGH" : v >= 5 ? "MODERATE–HIGH" : v >= 3 ? "MODERATE" : "LOW";
+
+  let current = items[0], running = false;
+  const chips = document.getElementById("hmChips");
+  items.forEach((it, i) => {
+    const b = document.createElement("button");
+    b.className = "hm-chip" + (i === 0 ? " on" : ""); b.textContent = it.name;
+    b.onclick = () => { if (running) return;
+      chips.querySelectorAll(".hm-chip").forEach(c => c.classList.remove("on")); b.classList.add("on");
+      current = it; reset(); };
+    chips.appendChild(b);
+  });
+
+  function setValue(v) {
+    needle.setAttribute("transform", `rotate(${angleFor(v)} ${C} ${C})`);
+    num.textContent = v.toFixed(1);
+    num.style.color = colorFor(v);
+    fill.forEach((p, i) => p.setAttribute("opacity", 1 + i * 9 / 90 <= v ? 1 : 0.12));
+  }
+  function reset() {
+    go.classList.remove("hide"); readout.style.opacity = 0; needle.setAttribute("opacity", 0);
+    again.style.display = "none"; reason.textContent = ""; setValue(1); num.style.color = "#fff";
+  }
+  function run() {
+    running = true; go.classList.add("hide"); readout.style.opacity = 1; needle.setAttribute("opacity", 1);
+    level.textContent = " "; reason.textContent = "Measuring…";
+    const target = current.score, t0 = performance.now(), dur = 2600;
+    function frame(now) {
+      const t = Math.min(1, (now - t0) / dur);
+      // rise past the target, wobble like a live reading, then settle (speedtest feel)
+      const ease = 1 - Math.pow(1 - t, 3);
+      const wobble = Math.sin(t * Math.PI * 6) * (1 - t) * 0.6;
+      const v = Math.max(1, Math.min(10, 1 + (target - 1) * ease + wobble));
+      setValue(t < 1 ? v : target);
+      if (t < 1) requestAnimationFrame(frame);
+      else { level.textContent = levelName(target); level.style.color = colorFor(target);
+             reason.textContent = current.reason; again.style.display = "block"; running = false; }
+    }
+    requestAnimationFrame(frame);
+  }
+  go.onclick = run; again.onclick = () => { reset(); setTimeout(run, 250); };
+  setValue(1); num.style.color = "#fff";
+  // fit the frame to the meter's real height (no cut-off on phones, no gap on laptops)
+  function fit() { try { const h = document.getElementById("hm").getBoundingClientRect().height + 16;
+                         if (window.frameElement) window.frameElement.style.height = h + "px"; } catch (e) {} }
+  fit(); window.addEventListener("resize", fit);
+  if (window.ResizeObserver) new ResizeObserver(fit).observe(document.getElementById("hm"));
+})();
+</script>
+</div>

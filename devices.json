@@ -275,6 +275,31 @@
                 "Never burn the plastic casing or cables to recover copper, as this releases toxic fumes. Hand all plastics and cables to an authorised e-waste recycler for controlled processing."
               ]
             ]
+          },
+          "hazard_meter": {
+            "note": "Hazard scores are the project team's assessment (1 = low, 10 = severe), based on toxicity, how easily people are exposed during unsafe handling, and the amount in this laptop.",
+            "items": [
+              {
+                "name": "Mercury",
+                "score": 9,
+                "reason": "Highly toxic vapour even in milligram amounts; builds up in the body and food chain; released the moment the CCFL lamp breaks."
+              },
+              {
+                "name": "Lithium-ion battery",
+                "score": 8,
+                "reason": "Can catch fire or explode if punctured, crushed or short-circuited; contains toxic cobalt."
+              },
+              {
+                "name": "Lead",
+                "score": 7,
+                "reason": "Damages the nervous system; released as fumes and dust when circuit boards are burnt or acid-washed."
+              },
+              {
+                "name": "Brominated flame retardants",
+                "score": 6,
+                "reason": "Give off toxic fumes when plastics and cables are burnt; persist in the environment."
+              }
+            ]
           }
         },
         {
