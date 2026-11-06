@@ -465,9 +465,11 @@ div[data-testid="stDialog"] > div {
 .lang-head .logo { font-size:2.6rem; line-height:1; filter: drop-shadow(0 2px 4px rgba(0,0,0,.25)); }
 .lang-head .l1 { font-size:1.55rem; font-weight:800; line-height:1.35; text-shadow:0 1px 3px rgba(0,0,0,.25); }
 .lang-head .l2 { font-size:1.2rem; font-weight:800; letter-spacing:4px; margin-top:2px; color:#fef08a; }
-.lang-title { text-align:center; font-size:1.7rem; font-weight:900; margin:6px 0 18px;
-              background: linear-gradient(90deg, #f97316, #db2777, #7c3aed, #0284c7);
-              -webkit-background-clip:text; background-clip:text; color:transparent; }
+.lang-title { text-align:center; font-size:1.7rem; font-weight:900; margin:6px 0 18px; color:#94a3b8; }
+.lang-title .t { -webkit-background-clip:text; background-clip:text; color:transparent; }
+.lang-title .t.hi { background-image: linear-gradient(135deg, #22c55e 0%, #16a34a 50%, #047857 100%); }
+.lang-title .t.en { background-image: linear-gradient(135deg, #4f46e5 0%, #7c3aed 50%, #06b6d4 100%); }
+.lang-title .t.kn { background-image: linear-gradient(135deg, #eab308 0%, #f97316 45%, #dc2626 100%); }
 .lang-cards { display:grid; grid-template-columns:repeat(3, 1fr); gap:16px; margin-bottom:10px; }
 .lang-card { position:relative; overflow:hidden; display:flex; flex-direction:column; align-items:center;
              justify-content:center; gap:4px; min-height:130px; padding:16px; border-radius:18px;
@@ -502,7 +504,7 @@ div[data-testid="stDialog"] > div {
     <div class="l2">DIGITAL PRODUCT PASSPORT</div>
   </div>
 </div>
-<div class="lang-title">भाषा चुनें / Choose Language / ಭಾಷೆ ಆಯ್ಕೆಮಾಡಿ</div>
+<div class="lang-title"><span class="t hi">भाषा चुनें</span> / <span class="t en">Choose Language</span> / <span class="t kn">ಭಾಷೆ ಆಯ್ಕೆಮಾಡಿ</span></div>
 <div class="lang-cards">__CARDS__</div>
 """
 LANG_CARDS = [("hi", "हिंदी", "स्वागत है", "अ"), ("en", "English", "Welcome", "A"), ("kn", "ಕನ್ನಡ", "ಸ್ವಾಗತ", "ಅ")]
