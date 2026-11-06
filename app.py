@@ -479,7 +479,7 @@ div[data-testid="stDialog"] > div {
 .lang-card .n { position:relative; font-size:1.9rem; font-weight:800; text-shadow:0 2px 4px rgba(0,0,0,.25); }
 .lang-card .w { position:relative; font-size:1.05rem; font-weight:600; opacity:.95;
                 background: rgba(255,255,255,.22); padding:2px 12px; border-radius:20px; }
-.lang-card.hi { background: linear-gradient(135deg, #ff9933 0%, #ff5e62 100%); }
+.lang-card.hi { background: linear-gradient(135deg, #22c55e 0%, #16a34a 50%, #047857 100%); }
 .lang-card.en { background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 50%, #06b6d4 100%);
                 box-shadow:0 0 0 4px #fde047, 0 10px 26px rgba(79,70,229,.45); }
 .lang-card.kn { background: linear-gradient(135deg, #facc15 0%, #f97316 45%, #dc2626 100%); }
