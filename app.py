@@ -330,10 +330,17 @@ def passport_page(d, prices, sources):
     st.button("← Home", on_click=go_to)
 
     # Header: photo, name, author
-    st.image(d["image"], width=260)
-    st.title(d["device"])
-    st.subheader(d["model"])
-    st.caption(d["author"])
+    # Top of the page: photo and name on the left, Hazard-o-meter on the right
+    meter = next((sec["hazard_meter"] for sec in d["sections"] if sec.get("hazard_meter")), None)
+    left, right = st.columns([1, 1.15], gap="medium") if meter else (st.container(), None)
+    with left:
+        st.image(d["image"], width=260)
+        st.title(d["device"])
+        st.subheader(d["model"])
+        st.caption(d["author"])
+    if meter:
+        with right:
+            hazard_meter(meter)
 
     # Recommendation and key numbers
     label, kind, reason = recommend(d)
@@ -363,8 +370,6 @@ def passport_page(d, prices, sources):
         st.markdown(md_table(sec["table"]))
         if sec.get("note"):
             st.markdown(sec["note"])
-        if sec.get("hazard_meter"):
-            hazard_meter(sec["hazard_meter"])
         if sec.get("show_live_value"):
             st.markdown("**Estimated metal value at today's prices** (middle of each range above)")
             st.markdown(md_table({
