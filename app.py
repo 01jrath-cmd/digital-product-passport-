@@ -451,8 +451,8 @@ def passport_page(d, prices, sources):
 POPUP_HTML = """
 <style>
 .lang-head { text-align:center; padding-bottom:14px; border-bottom:1px solid #e5e7eb; margin-bottom:14px; }
-.lang-head .l1 { font-size:1.05rem; font-weight:700; color:#334155; }
-.lang-head .l2 { font-size:0.95rem; font-weight:700; letter-spacing:2px; color:#334155; margin-top:2px; }
+.lang-head .l1 { font-size:1.6rem; font-weight:700; color:#334155; line-height:1.35; }
+.lang-head .l2 { font-size:1.3rem; font-weight:700; letter-spacing:3px; color:#334155; margin-top:4px; }
 .lang-title { text-align:center; font-size:1.6rem; font-weight:800; margin:8px 0 18px; color:#111827; }
 .lang-cards { display:grid; grid-template-columns:repeat(3, 1fr); gap:14px; }
 .lang-card { display:flex; flex-direction:column; align-items:center; justify-content:center; gap:4px;
@@ -462,7 +462,11 @@ POPUP_HTML = """
 .lang-card.main { border-color:#0284c7; box-shadow:0 0 0 3px rgba(2,132,199,.15); }
 .lang-card .n { font-size:1.6rem; font-weight:700; color:#111827; }
 .lang-card .w { font-size:1rem; color:#374151; }
-@media (max-width:600px) { .lang-cards { grid-template-columns:1fr; } .lang-card { min-height:84px; } }
+@media (max-width:600px) { .lang-cards { grid-template-columns:1fr; } .lang-card { min-height:84px; }
+                            .lang-head .l1 { font-size:1.2rem; } .lang-head .l2 { font-size:1.05rem; } }
+/* blur the whole page behind the popup; it clears as soon as a language is chosen */
+div[data-testid="stDialog"] { backdrop-filter: blur(7px); -webkit-backdrop-filter: blur(7px);
+                              background-color: rgba(15, 23, 42, 0.30) !important; }
 </style>
 <div class="lang-head">
   <div class="l1">डिजिटल उत्पाद पासपोर्ट &nbsp;·&nbsp; ಡಿಜಿಟಲ್ ಉತ್ಪನ್ನ ಪಾಸ್‌ಪೋರ್ಟ್</div>
