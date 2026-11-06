@@ -15,6 +15,7 @@ from datetime import date, datetime, timedelta, timezone
 import qrcode
 import requests
 import streamlit as st
+import streamlit.components.v1 as components
 
 # ---------------------------------------------------------------------
 # 1. SETTINGS  (the only part you normally need to change)
@@ -217,6 +218,73 @@ def home_page(devices):
 # ---------------------------------------------------------------------
 # 6. PASSPORT PAGE
 # ---------------------------------------------------------------------
+def slug(title):
+    """'1. Identity and Specifications' -> 'identity-and-specifications' (used as the link target)."""
+    words = "".join(ch.lower() if ch.isalnum() else " " for ch in title).split()
+    words = [w for w in words if not w.isdigit()]       # drop the section number
+    return "-".join(words) or "section"
+
+
+TOC_STYLE = """
+<style>
+.dpp-toc { border: 1px solid #d0d7de; background: #f6f8fa; border-radius: 8px;
+           padding: 12px 18px; margin: 8px 0 24px 0; }
+.dpp-toc summary { font-weight: 700; font-size: 1.1rem; cursor: pointer; color: #1f2328; }
+.dpp-toc summary .toggle { font-weight: 400; font-size: 0.85rem; color: #1b7f5a; margin-left: 8px; }
+.dpp-toc ul { margin: 10px 0 0 0; padding-left: 20px; }
+.dpp-toc li { margin: 4px 0; }
+.dpp-toc a { color: #1b7f5a; text-decoration: none; }
+.dpp-toc a:hover { text-decoration: underline; }
+.dpp-toc a.clicked, .dpp-toc a:visited { color: #8c8c8c; }   /* clicked headings turn grey */
+h1[id], h2[id], h3[id] { scroll-margin-top: 70px; }  /* stop the top bar hiding the heading */
+section.main, [data-testid="stMain"] { scroll-behavior: smooth; }
+</style>
+"""
+
+
+def table_of_contents(d):
+    """Collapsible table of contents. Clicking an entry scrolls to it; visited entries go grey."""
+    items = [(sec["title"], slug(sec["title"])) for sec in d["sections"]]
+    items += [("Sources", "sources"), ("QR code for this device", "qr-code")]
+    links = "".join(f'<li><a href="#{anchor}" target="_self">{title}</a></li>' for title, anchor in items)
+    st.markdown(
+        TOC_STYLE
+        + '<details class="dpp-toc" open><summary>Table of Contents<span class="toggle">[Toggle]</span></summary>'
+        + f"<ul>{links}</ul></details>",
+        unsafe_allow_html=True,
+    )
+    # Small script: marks a clicked entry grey and remembers it (per device) in this browser
+    components.html(TOC_SCRIPT.replace("DEVICE_ID", d["id"]), height=0)
+
+
+TOC_SCRIPT = """
+<script>
+(function () {
+  const doc = window.parent.document;
+  const key = "dpp-toc-clicked-DEVICE_ID";
+  let saved = [];
+  try { saved = JSON.parse(window.parent.localStorage.getItem(key) || "[]"); } catch (e) {}
+  function mark() {
+    doc.querySelectorAll(".dpp-toc a").forEach(function (a) {
+      const target = a.getAttribute("href");
+      if (saved.includes(target)) a.classList.add("clicked");
+      if (!a.dataset.bound) {
+        a.dataset.bound = "1";
+        a.addEventListener("click", function () {
+          a.classList.add("clicked");
+          if (!saved.includes(target)) saved.push(target);
+          try { window.parent.localStorage.setItem(key, JSON.stringify(saved)); } catch (e) {}
+        });
+      }
+    });
+  }
+  mark();
+  new MutationObserver(mark).observe(doc.body, { childList: true, subtree: true });
+})();
+</script>
+"""
+
+
 def passport_page(d, prices, sources):
     st.button("← Home", on_click=go_to)
 
@@ -241,9 +309,12 @@ def passport_page(d, prices, sources):
     st.write("  →  ".join(f"**{s}**" if i == step else s for i, s in enumerate(STATUS_STEPS)))
     st.divider()
 
+    # Table of contents: built from this device's sections, so every device gets one
+    table_of_contents(d)
+
     # All sections from the Word document, in the same order
     for sec in d["sections"]:
-        st.header(sec["title"])
+        st.header(sec["title"], anchor=slug(sec["title"]))
         if sec.get("subtitle"):
             st.subheader(sec["subtitle"])
         if sec.get("intro"):
@@ -261,12 +332,12 @@ def passport_page(d, prices, sources):
             st.caption("Live prices for gold, silver, palladium and copper; reference prices for cobalt and lithium (see sidebar).")
 
     # Sources
-    st.header("Sources")
+    st.header("Sources", anchor="sources")
     st.markdown("\n".join(f"{i}. {text} [{url}]({url})" for i, (text, url) in enumerate(d["sources"], 1)))
 
     # QR code
     st.divider()
-    st.subheader("🔳 QR code for this device")
+    st.subheader("🔳 QR code for this device", anchor="qr-code")
     link = passport_link(d["id"])
     st.image(make_qr_png(link), width=220)
     st.code(link, language=None)
