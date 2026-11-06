@@ -12,17 +12,17 @@
               padding:6px 14px; font-size:13px; cursor:pointer; transition:.2s; }
   .hm-chip:hover { border-color:#26d0ce; }
   .hm-chip.on { background:#26d0ce; border-color:#26d0ce; color:#0b0c1a; font-weight:700; }
-  .hm-body  { display:flex; align-items:center; justify-content:center; gap:22px; flex-wrap:wrap; }
-  .hm-gauge { position:relative; width:320px; max-width:100%; aspect-ratio:1/1; }
+  .hm-body  { display:flex; align-items:center; justify-content:center; gap:18px; flex-wrap:nowrap; }
+  .hm-gauge { position:relative; width:min(320px, calc(100% - 128px)); min-width:170px; aspect-ratio:1/1; flex-shrink:1; }
   .hm-gauge svg { width:100%; height:100%; display:block; }
   .hm-readout { position:absolute; left:0; right:0; top:63%; text-align:center; transition:opacity .3s; }
-  .hm-num   { font-size:46px; font-weight:300; line-height:1; }
-  .hm-unit  { font-size:13px; color:var(--muted); letter-spacing:1px; }
-  .hm-level { font-size:15px; font-weight:700; margin-top:6px; }
+  .hm-num   { font-size:clamp(28px, 9vw, 46px); font-weight:300; line-height:1; }
+  .hm-unit  { font-size:clamp(9px, 2.6vw, 13px); color:var(--muted); letter-spacing:1px; }
+  .hm-level { font-size:clamp(11px, 3.4vw, 15px); font-weight:700; margin-top:6px; }
   /* GO button */
-  .hm-go { position:absolute; left:50%; top:50%; width:150px; height:150px; transform:translate(-50%,-50%);
+  .hm-go { position:absolute; left:50%; top:50%; width:47%; height:47%; transform:translate(-50%,-50%);
            border-radius:50%; border:0; cursor:pointer; background:transparent; color:#fff;
-           font-size:38px; font-weight:600; letter-spacing:2px; transition:opacity .35s, transform .35s; }
+           font-size:clamp(24px, 8vw, 38px); font-weight:600; letter-spacing:2px; transition:opacity .35s, transform .35s; }
   .hm-go::before { content:""; position:absolute; inset:0; border-radius:50%; padding:4px;
            background:conic-gradient(#26d0ce,#1a7fd6,#9b5cf6,#26d0ce);
            -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
@@ -35,7 +35,7 @@
   @keyframes hmspin { to { transform:rotate(360deg); } }
   @keyframes hmpulse { 0%{transform:scale(.92);opacity:.9} 100%{transform:scale(1.15);opacity:0} }
   /* Colour scale legend */
-  .hm-legend { display:flex; gap:10px; align-items:stretch; height:240px; }
+  .hm-legend { display:flex; gap:10px; align-items:stretch; align-self:stretch; padding:6% 0; max-height:260px; flex-shrink:0; }
   .hm-bar { width:16px; border-radius:8px;
             background:linear-gradient(to top,hsl(120,80%,45%),hsl(60,90%,50%) 50%,hsl(0,85%,50%)); }
   .hm-labels { display:flex; flex-direction:column; justify-content:space-between; font-size:12.5px; }
@@ -47,10 +47,7 @@
   .hm-again { display:none; margin:10px auto 0; background:transparent; color:#26d0ce; border:1.5px solid #26d0ce;
               border-radius:20px; padding:6px 18px; font-size:13px; cursor:pointer; }
   .hm-note { text-align:center; font-size:11.5px; color:var(--muted); margin-top:12px; }
-  @media (max-width:520px){ .hm-legend{ height:auto; flex-direction:column; align-items:center; }
-     .hm-bar{ width:100%; height:14px; min-width:240px;
-              background:linear-gradient(to right,hsl(120,80%,45%),hsl(60,90%,50%) 50%,hsl(0,85%,50%)); }
-     .hm-labels{ flex-direction:row; gap:10px; flex-wrap:wrap; justify-content:center; } }
+  @media (max-width:420px){ .hm-labels{ font-size:11px; } .hm-legend{ gap:6px; } .hm-bar{ width:12px; } }
 </style>
 
 <div class="hm-title">HAZARD-O-METER</div>

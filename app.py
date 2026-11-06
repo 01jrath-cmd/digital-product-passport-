@@ -332,7 +332,7 @@ def passport_page(d, prices, sources):
     # Header: photo, name, author
     # Top of the page: photo and name on the left, Hazard-o-meter on the right
     meter = next((sec["hazard_meter"] for sec in d["sections"] if sec.get("hazard_meter")), None)
-    left, right = st.columns([1, 1.15], gap="medium") if meter else (st.container(), None)
+    left, right = st.columns([1, 2], gap="small") if meter else (st.container(), None)
     with left:
         st.image(d["image"], width=260)
         st.title(d["device"])
