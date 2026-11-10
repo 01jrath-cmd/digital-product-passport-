@@ -1335,6 +1335,7 @@
       "brand": "USHA",
       "category": "Room heater",
       "author": "1000 W / 2000 W | 230 V AC | 50 Hz | Adjustable thermostat",
+      "image": "images/usha-fh812t.jpg",
       "tagline": "A product-life-cycle profile covering identity, components, energy use, materials, safety, repair and end-of-life management.",
       "year": null,
       "condition": "Working",
@@ -1765,7 +1766,6 @@
           "intro": "Manufacturer documentation was prioritised for model identity, ratings, safety features and operating instructions. Where retailer pages conflicted with the manufacturer's page (notably PTC element and tip-over protection), the manufacturer value was used and the discrepancy disclosed. Material descriptions beyond explicitly documented items are marked likely/typical. Carbon calculations are transparent screening estimates, not a certified product carbon footprint."
         }
       ],
-      "icon": "🔥",
       "weight_g": null
     }
   ]
