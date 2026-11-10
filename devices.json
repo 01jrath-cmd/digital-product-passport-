@@ -1327,6 +1327,446 @@
           ]
         }
       }
+    },
+    {
+      "id": "DPP-002",
+      "device": "USHA FH812T",
+      "model": "Heat Convector / Fan Room Heater",
+      "brand": "USHA",
+      "category": "Room heater",
+      "author": "1000 W / 2000 W | 230 V AC | 50 Hz | Adjustable thermostat",
+      "tagline": "A product-life-cycle profile covering identity, components, energy use, materials, safety, repair and end-of-life management.",
+      "year": null,
+      "condition": "Working",
+      "status": "In use",
+      "metrics": [
+        {
+          "key": "weight",
+          "value": "~3.4–3.5 kg"
+        },
+        {
+          "key": "rated_power",
+          "value": "1000 / 2000 W"
+        },
+        {
+          "key": "warranty",
+          "value": "1 year"
+        }
+      ],
+      "sections": [
+        {
+          "title": "Important scope and evidence note",
+          "intro": "This passport uses the USHA instruction manual and the manufacturer's HC 812 T product page as the primary sources. Retail listings are used only where the manufacturer does not publish a value. Exact bill of materials, component weights and a model-specific life-cycle assessment were not found; therefore material descriptions and manufacturing-footprint discussion are identified as typical or indicative, not as verified measurements of this exact heater.\n\nModel naming: USHA's manual calls the product FH 812T, while the manufacturer's current product page lists HC 812 T. This passport treats FH812T / HC 812T as the same 812T heat-convector family, but the model label on the physical unit should be checked."
+        },
+        {
+          "title": "1. Identity and Specifications",
+          "table": {
+            "columns": [
+              "Parameter",
+              "Value / evidence"
+            ],
+            "rows": [
+              [
+                "Product",
+                "USHA heat convector / fan room heater"
+              ],
+              [
+                "Model designation",
+                "FH 812T in the instruction manual; HC 812 T on the manufacturer's product page"
+              ],
+              [
+                "Heating positions",
+                "1000 W and 2000 W"
+              ],
+              [
+                "Power supply",
+                "230 V AC, 50 Hz, single phase"
+              ],
+              [
+                "Thermostat",
+                "Adjustable; automatically cycles the heater to maintain the selected room temperature"
+              ],
+              [
+                "Thermal safety",
+                "Thermal cut-out; manual describes a bimetallic automatic cut-out"
+              ],
+              [
+                "Fan",
+                "Built-in fan; manual states FH812T operates at maximum fan speed"
+              ],
+              [
+                "Airflow / design",
+                "Twin-turbo design; adjustable stand; carry handle"
+              ],
+              [
+                "Indicator",
+                "Night-light indicator"
+              ],
+              [
+                "Dimensions",
+                "35.0 × 21.7 × 16.0 cm (manufacturer listing)"
+              ],
+              [
+                "Warranty",
+                "1 year (manufacturer listing / manual)"
+              ],
+              [
+                "Approx. weight",
+                "About 3.4–3.5 kg in retailer listings; manufacturer page does not state weight"
+              ],
+              [
+                "Origin / company",
+                "USHA International Ltd.; Indian manufacturer/brand. Product-specific factory location not confirmed in sources used."
+              ]
+            ]
+          },
+          "note": "Specification clarification: some online retailers describe the heater as PTC and/or include a tip-over switch. The manufacturer's own HC 812 T page lists PTC heating element as NA and tip-over protection as NA. These features are therefore not claimed as confirmed in this passport. The official manual confirms a thermal cut-out and thermostat. [1][2][3]"
+        },
+        {
+          "title": "2. Internal Components",
+          "intro": "The heater combines an electrical heating assembly with a fan that moves room air across/around the heated section. The following are documented or typical component groups; the manufacturer does not publish a detailed teardown or supplier part list.",
+          "table": {
+            "columns": [
+              "Assembly",
+              "Components / role",
+              "Evidence status"
+            ],
+            "rows": [
+              [
+                "Heating assembly",
+                "Electrical resistance heating element; converts electrical energy into heat",
+                "Heating element and two power levels documented; exact alloy/material not stated"
+              ],
+              [
+                "Air movement",
+                "Fan motor and twin fan blades; circulate warm air",
+                "Fan and twin-turbo design documented; motor/blade material not stated"
+              ],
+              [
+                "Temperature control",
+                "Adjustable thermostat; switches heating operation around the selected temperature",
+                "Documented in manual"
+              ],
+              [
+                "Over-temperature safety",
+                "Bimetallic thermal cut-out; interrupts power under abnormal overheating conditions",
+                "Documented in manual"
+              ],
+              [
+                "Electrical control",
+                "Rotary selector / switch, internal wiring and connections",
+                "Switch operation documented; internal construction inferred"
+              ],
+              [
+                "Power input",
+                "PVC-sheathed cord and 15 A, 3-pin moulded plug",
+                "Documented in manual"
+              ],
+              [
+                "Housing and support",
+                "Metal enclosure / grille, adjustable stand, Bakelite carry handle",
+                "Bakelite handle documented; metal body reported in comparative consumer testing; exact grades unknown"
+              ],
+              [
+                "Indicator",
+                "Night-light / power indicator assembly",
+                "Night-light documented in manual"
+              ]
+            ]
+          }
+        },
+        {
+          "title": "3. Carbon Footprint and Energy Use",
+          "intro": "A product carbon footprint includes raw-material extraction, component manufacture, assembly, transport, electricity consumed during use and end-of-life treatment. No verified FH812T-specific life-cycle assessment or manufacturer-declared carbon footprint was located. It would therefore be misleading to assign an exact total manufacturing or lifetime footprint to this model.\n\nThe use-phase electricity can be estimated from the rated power. For illustration, this calculation uses 0.716 kg CO₂/kWh, the Indian grid weighted-average factor stated in the CEA CO₂ Baseline Database User Guide for FY 2022–23. The factor changes over time and the actual result depends on the electricity mix and thermostat cycling.",
+          "table": {
+            "columns": [
+              "Operating case",
+              "Electricity used",
+              "Indicative grid emissions*"
+            ],
+            "rows": [
+              [
+                "1000 W setting for 1 hour",
+                "1.0 kWh",
+                "0.716 kg CO₂"
+              ],
+              [
+                "2000 W setting for 1 hour",
+                "2.0 kWh",
+                "1.432 kg CO₂"
+              ],
+              [
+                "2000 W for 2 hours/day over 30 days",
+                "120 kWh",
+                "85.9 kg CO₂"
+              ],
+              [
+                "2000 W for 2 hours/day over 90 days",
+                "360 kWh",
+                "257.8 kg CO₂"
+              ]
+            ]
+          },
+          "note": "*Illustrative upper-bound-style calculation assumes the heater draws its full rated heating power for the entire period. The thermostat may switch the heating element off and reduce actual consumption; fan electricity is additional but comparatively small and is not separately included because the FH812T manual gives no fan wattage. The 2000 W rating is power, not energy consumed regardless of time."
+        },
+        {
+          "title": "4. Metals and Materials Inside",
+          "intro": "Exact material quantities and grades for the FH812T have not been publicly established in the sources consulted. The table separates materials supported by the manual or other public product information from likely materials used in appliances of this type.",
+          "table": {
+            "columns": [
+              "Material / group",
+              "Likely location and function",
+              "Recovery / sustainability relevance"
+            ],
+            "rows": [
+              [
+                "Steel / iron (likely)",
+                "Outer body, protective grille, stand and brackets; body material is described as metal in comparative testing",
+                "Ferrous metals can be separated and recycled; coatings and mixed assemblies complicate recovery"
+              ],
+              [
+                "Copper (documented in cord/fan conductors)",
+                "Electrical conductors, motor windings and power cord",
+                "Valuable conductive metal; recycling reduces demand for newly mined copper"
+              ],
+              [
+                "Bakelite / thermoset plastic (documented handle)",
+                "Heat-resistant carry handle",
+                "Thermosets are difficult to remelt; reuse or specialist recovery is preferable to uncontrolled burning"
+              ],
+              [
+                "PVC (documented cord sheath)",
+                "Insulation around power conductors",
+                "Must not be burned; controlled material recovery is needed"
+              ],
+              [
+                "Resistance alloy (likely; exact type unconfirmed)",
+                "Heating element",
+                "High-temperature alloy may contain nickel/chromium, but exact composition must not be assumed without manufacturer data"
+              ],
+              [
+                "Other plastics / insulation (possible)",
+                "Knobs, wire insulation, internal supports and electrical insulation",
+                "Polymer identification and separation are needed for quality recycling"
+              ],
+              [
+                "Electronic / electrical parts",
+                "Thermostat contacts, bimetallic cut-out, switch and indicator",
+                "Small mixed components may contain recoverable metals; dismantling should be done by trained recyclers"
+              ]
+            ]
+          }
+        },
+        {
+          "title": "5. Hazardous Substances and Safe Disposal",
+          "intro": "The FH812T is a mains-powered appliance with a heating element and electrical wiring. Exact chemical composition, flame-retardant additives, solder composition and restricted-substance concentrations are not disclosed in the sources used. The following are general end-of-life risks for this product class, not a chemical test result for this model.",
+          "table": {
+            "columns": [
+              "Part / possible substance",
+              "Potential concern",
+              "Safe end-of-life route"
+            ],
+            "rows": [
+              [
+                "Power cord and PVC insulation",
+                "Burning PVC can release harmful fumes",
+                "Do not burn or strip cables informally; use an authorised e-waste channel"
+              ],
+              [
+                "Electrical contacts / internal connections",
+                "May contain mixed metals and, depending on supplier/age, restricted substances in small amounts",
+                "Do not dismantle or burn; send the whole appliance to an authorised collection/recycling route"
+              ],
+              [
+                "Heating element",
+                "Hot or damaged element may cause burns; alloy composition is not confirmed",
+                "Unplug, allow to cool fully, and leave removal to a qualified technician/recycler"
+              ],
+              [
+                "Metal housing and grille",
+                "Sharp edges may be present if damaged or dismantled",
+                "Do not break apart; recycler should separate metals safely"
+              ],
+              [
+                "Bakelite and other plastics",
+                "Uncontrolled burning or heating can release harmful fumes",
+                "Do not burn; use formal recycling or disposal channels"
+              ]
+            ]
+          },
+          "note": "Consumer safety from the manufacturer's manual: place the heater on a flat, stable surface; keep it away from curtains, furniture and flammable materials; do not cover air inlets or outlets; do not use near liquids; do not use extension cords or multiple outlets; switch off and unplug before cleaning; do not tamper with a faulty unit; contact USHA Care for repair. [1]",
+          "hazard_meter": {
+            "note": "Hazard scores are the project team's assessment (1 = low, 10 = severe), based on how harmful each part can be during unsafe handling or disposal of this heater.",
+            "items": [
+              {
+                "name": "Power cord and PVC insulation",
+                "score": 6,
+                "reason": "Burning PVC can release harmful fumes"
+              },
+              {
+                "name": "Bakelite and other plastics",
+                "score": 5,
+                "reason": "Uncontrolled burning or heating can release harmful fumes"
+              },
+              {
+                "name": "Heating element",
+                "score": 5,
+                "reason": "Hot or damaged element may cause burns; alloy composition is not confirmed"
+              },
+              {
+                "name": "Electrical contacts / internal connections",
+                "score": 4,
+                "reason": "May contain mixed metals and, depending on supplier/age, restricted substances in small amounts"
+              },
+              {
+                "name": "Metal housing and grille",
+                "score": 3,
+                "reason": "Sharp edges may be present if damaged or dismantled"
+              }
+            ]
+          }
+        },
+        {
+          "title": "6. Repair, Maintenance and Second-Life Potential",
+          "table": {
+            "columns": [
+              "Part / feature",
+              "Repair or second-life assessment"
+            ],
+            "rows": [
+              [
+                "Heating element",
+                "May be service-replaceable, but access and spare-part availability must be confirmed with USHA service; not a user repair"
+              ],
+              [
+                "Fan motor / blades",
+                "May be serviceable by a qualified technician; dust build-up and motor wear can affect airflow"
+              ],
+              [
+                "Thermostat / thermal cut-out",
+                "Safety-critical components; replace only with correct manufacturer-approved parts and technician testing"
+              ],
+              [
+                "Cord and plug",
+                "Damaged cord/plug should be handled by authorised service; do not continue using a damaged appliance"
+              ],
+              [
+                "Housing, stand and handle",
+                "Can be inspected for looseness, cracks, corrosion or heat damage; do not operate if stability or insulation is compromised"
+              ],
+              [
+                "Maintenance",
+                "Unplug before cleaning, allow to cool, wipe as directed by manual, and prevent dust entering during storage"
+              ],
+              [
+                "Second life",
+                "If electrically safe and functional, continue use or transfer for reuse after inspection. If unsafe or uneconomical to repair, send to formal e-waste collection."
+              ]
+            ]
+          },
+          "note": "The heater has no user-upgradable software, memory or modular smart features. Its useful life is extended mainly through careful use, cleaning, safe storage and authorised repair. The manual states a one-year warranty and warns that unauthorised opening/tampering can invalidate warranty coverage. [1]"
+        },
+        {
+          "title": "7. Regulation and Compliance in India",
+          "table": {
+            "columns": [
+              "Framework / standard",
+              "Relevance to the FH812T"
+            ],
+            "rows": [
+              [
+                "BIS IS 302-2-30:2007",
+                "Indian safety standard titled 'Safety of household and similar electrical appliances – Room Heaters'. BIS publishes a product manual for certification under this standard. The manufacturer's product page states that the HC 812 T has an ISI mark; the specific licence number and current validity should be checked on the physical product/BIS records."
+              ],
+              [
+                "E-Waste (Management) Rules, 2022",
+                "Rules apply to electrical and electronic equipment listed in Schedule I and came into force on 1 April 2023. Schedule I includes electric heating appliances and other large appliances for heating rooms. The applicable category and producer obligations should be checked against the current schedule and CPCB registration."
+              ],
+              [
+                "Consumer responsibility",
+                "Do not discard the appliance with mixed household waste. Use the brand's take-back/service channel or a registered e-waste collection/recycling route."
+              ],
+              [
+                "Electrical safety in use",
+                "Follow the manufacturer's installation, clearance, plug, cleaning and no-cover instructions. Do not modify the heater or bypass safety devices."
+              ]
+            ]
+          }
+        },
+        {
+          "title": "8. Supply Chain and Ethical Considerations",
+          "table": {
+            "columns": [
+              "Area",
+              "Assessment"
+            ],
+            "rows": [
+              [
+                "Raw materials",
+                "Likely inputs include ferrous metals, copper, plastics, insulation and resistance-alloy materials. Exact bill of materials and sourcing countries are not publicly disclosed."
+              ],
+              [
+                "Manufacturing",
+                "USHA International Ltd. is identified as the manufacturer/brand owner in product listings. A verified FH812T-specific factory address and component supplier list were not established from the sources used."
+              ],
+              [
+                "Worker and community impacts",
+                "Mining, metal refining, polymer production and appliance assembly can involve energy use, emissions, occupational exposure and water impacts. Supplier audits and responsible sourcing help reduce these risks."
+              ],
+              [
+                "Circular-economy opportunity",
+                "Longer product life, repair of electrical parts, metal recovery, and formal e-waste processing preserve material value and reduce uncontrolled disposal."
+              ],
+              [
+                "Design improvement opportunities",
+                "Publish a repair manual and spare-parts list; mark polymer types; provide a replaceable cord and serviceable fan/heating modules; disclose product weight and material composition; improve take-back access."
+              ]
+            ]
+          }
+        },
+        {
+          "title": "Conclusion",
+          "intro": "The USHA FH812T is a portable 1000 W / 2000 W heat convector with a built-in fan, adjustable thermostat, thermal cut-out, twin-turbo airflow design and adjustable stand. The manufacturer's manual is the strongest source for its electrical ratings and safety functions. Public product information does not establish an exact bill of materials, manufacturing carbon footprint or component-level material quantities, so these have been treated as unknown or typical rather than stated as measured facts.\n\nIts largest controllable environmental impact during ownership is likely to be electricity use. At the 2000 W setting, one hour of full-power operation uses about 2 kWh; using the CEA FY 2022–23 grid factor gives an illustrative 1.432 kg CO₂ per hour. Actual emissions depend on operating time, thermostat cycling and the grid factor for the year of use. The most practical circular-economy actions are to use the thermostat sensibly, maintain the appliance, repair it through authorised service where viable, and route an unusable heater through formal e-waste collection."
+        }
+      ],
+      "sources": [
+        [
+          "USHA International Ltd., Instruction Manual: Heat Convectors FH 423 / 812T. Official manual.",
+          "https://www.usha.com/sites/default/files/Product_Manuals/HC%20423N-812T%20Manual.pdf"
+        ],
+        [
+          "USHA Room Heaters, HC 812 T product page (manufacturer product information and specifications).",
+          "https://www.usharoomheaters.com/en/hc-812-t"
+        ],
+        [
+          "Croma, USHA FH812T product listing (secondary retailer specifications; used only for cross-checking, not to override manufacturer data).",
+          "https://www.croma.com/usha-r-heater-fh-812t/p/100092"
+        ],
+        [
+          "Central Electricity Authority, CO₂ Baseline Database for the Indian Power Sector, User Guide Version 19.0 (FY 2022–23 weighted-average grid emission factor).",
+          "https://cea.nic.in/wp-content/uploads/baseline/2024/04/User_Guide__Version_19.0.pdf"
+        ],
+        [
+          "Government of India, E-Waste (Management) Rules, 2022, Schedule I.",
+          "https://eprewaste.cpcb.gov.in/assets/PDF/e-waste_rules_2022.pdf"
+        ],
+        [
+          "Bureau of Indian Standards, Product Manual for IS 302-2-30:2007 – Safety of household and similar electrical appliances: Room Heaters.",
+          "https://www.bis.gov.in/wp-content/uploads/2022/12/302-2-30-PM.pdf"
+        ],
+        [
+          "Department of Consumer Affairs, Comparative Performance Score of Heat Convectors (includes historical test entry for Usha FH 812T; material/body reference is historical and not a present-day product declaration).",
+          "https://consumeraffairs.gov.in/public/upload/admin/cmsfiles/consumer_products/Heat_Convectors_consumer_products.pdf"
+        ]
+      ],
+      "after_sources": [
+        {
+          "title": "Method note",
+          "intro": "Manufacturer documentation was prioritised for model identity, ratings, safety features and operating instructions. Where retailer pages conflicted with the manufacturer's page (notably PTC element and tip-over protection), the manufacturer value was used and the discrepancy disclosed. Material descriptions beyond explicitly documented items are marked likely/typical. Carbon calculations are transparent screening estimates, not a certified product carbon footprint."
+        }
+      ],
+      "icon": "🔥",
+      "weight_g": null
     }
   ]
 }

@@ -76,8 +76,9 @@ def localize(d):
     lang = current_lang()
     tr = d.get("translations", {}).get(lang)
     out = copy.deepcopy(d)
-    for i, sec in enumerate(out["sections"]):
-        sec["anchor"] = slug(d["sections"][i]["title"])      # link targets always from the English title
+    for key in ("sections", "after_sources"):
+        for i, sec in enumerate(out.get(key, [])):
+            sec["anchor"] = slug(d[key][i]["title"])      # link targets always from the English title
     if not tr:
         return out
     if tr.get("model"):
@@ -105,6 +106,8 @@ def find_device(devices, device_id):
 # ---------------------------------------------------------------------
 def recommend(d):
     """Repair / Reuse / Recycle decision (same logic as the decision-tree slide)."""
+    if not d.get("year"):
+        return None, None, None                      # no year in the document -> no advice box
     age = date.today().year - int(d["year"])
     condition = d["condition"].strip().lower()
     if d["status"] == "Recycled":
@@ -287,9 +290,15 @@ def home_page(devices):
         label, _, _ = recommend(d)
         with st.container(border=True):
             left, right = st.columns([1, 2])
-            left.image(d["image"], width="stretch")
-            right.markdown(f"**{d['device']}**  \n{d['model']} · {d['year']} · ID {d['id']}")
-            right.caption(f"{ui('status')}: {status_label(d['status'])}  |  {ui('advice')}: {label}")
+            if d.get("image"):
+                left.image(d["image"], width="stretch")
+            else:
+                left.markdown(f"<div style='font-size:4rem;text-align:center'>{d.get('icon', '📦')}</div>",
+                              unsafe_allow_html=True)
+            year = f" · {d['year']}" if d.get("year") else ""
+            right.markdown(f"**{d['device']}**  \n{d['model']}{year} · ID {d['id']}")
+            advice = f"  |  {ui('advice')}: {label}" if label else ""
+            right.caption(f"{ui('status')}: {status_label(d['status'])}{advice}")
             right.button(ui("open_passport"), key=d["id"], on_click=go_to, args=(d["id"],), width="stretch")
 
 
@@ -330,7 +339,9 @@ def hazard_meter(meter):
 def table_of_contents(d):
     """Collapsible table of contents. Clicking an entry scrolls to it; visited entries go grey."""
     items = [(sec["title"], sec["anchor"]) for sec in d["sections"]]
-    items += [(ui("sources"), "sources"), (ui("qr_title"), "qr-code")]
+    items += [(ui("sources"), "sources")]
+    items += [(sec["title"], sec["anchor"]) for sec in d.get("after_sources", [])]
+    items += [(ui("qr_title"), "qr-code")]
     links = "".join(f'<li><a href="#{anchor}" target="_self">{title}</a></li>' for title, anchor in items)
     st.markdown(
         TOC_STYLE
@@ -385,22 +396,32 @@ def passport_page(d, prices, sources):
     meter = next((sec["hazard_meter"] for sec in d["sections"] if sec.get("hazard_meter")), None)
     left, right = st.columns([1, 2], gap="small") if meter else (st.container(), None)
     with left:
-        st.image(d["image"], width=260)
+        if d.get("image"):
+            st.image(d["image"], width=260)
         st.title(d["device"])
         st.subheader(d["model"])
-        st.caption(d["author"])
+        if d.get("author"):
+            st.caption(d["author"])
+        if d.get("tagline"):
+            st.markdown(f"*{d['tagline']}*")
     if meter:
         with right:
             hazard_meter(meter)
 
     # Recommendation and key numbers
     label, kind, reason = recommend(d)
-    show_message(kind, f"**{ui('recommendation')}: {label}**  \n{reason}")
-    rows = metal_value_rows(d, prices, sources)
-    c1, c2, c3 = st.columns(3)
-    c1.metric(ui("weight"), f"{d['weight_g'] / 1000:.1f} kg")
-    c2.metric(ui("age"), f"{date.today().year - int(d['year'])} {ui('years')}")
-    c3.metric(ui("metal_value"), f"Rs {sum(r[3] for r in rows):,.0f}")
+    if label:
+        show_message(kind, f"**{ui('recommendation')}: {label}**  \n{reason}")
+    rows = metal_value_rows(d, prices, sources) if d.get("value_basis") else []
+    if d.get("metrics"):                                   # numbers given in this device's document
+        cols = st.columns(len(d["metrics"]))
+        for col, m in zip(cols, d["metrics"]):
+            col.metric(ui(m["key"]), m["value"])
+    else:
+        c1, c2, c3 = st.columns(3)
+        c1.metric(ui("weight"), f"{d['weight_g'] / 1000:.1f} kg")
+        c2.metric(ui("age"), f"{date.today().year - int(d['year'])} {ui('years')}")
+        c3.metric(ui("metal_value"), f"Rs {sum(r[3] for r in rows):,.0f}")
 
     st.markdown(f"**{ui('lifecycle')}**")
     step = STATUS_STEPS.index(d["status"]) if d["status"] in STATUS_STEPS else 0
@@ -418,7 +439,8 @@ def passport_page(d, prices, sources):
             st.subheader(sec["subtitle"])
         if sec.get("intro"):
             st.markdown(sec["intro"])
-        st.markdown(md_table(sec["table"]))
+        if sec.get("table"):
+            st.markdown(md_table(sec["table"]))
         if sec.get("note"):
             st.markdown(sec["note"])
         if sec.get("show_live_value"):
@@ -433,6 +455,9 @@ def passport_page(d, prices, sources):
     # Sources
     st.header(ui("sources"), anchor="sources")
     st.markdown("\n".join(f"{i}. {text} [{url}]({url})" for i, (text, url) in enumerate(d["sources"], 1)))
+    for sec in d.get("after_sources", []):              # e.g. "Method note" that comes after References
+        st.header(sec["title"], anchor=sec["anchor"])
+        st.markdown(sec["intro"])
 
     # QR code
     st.divider()
