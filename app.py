@@ -419,7 +419,6 @@ def status_label(status):
 def passport_page(d, prices, sources):
     d = localize(d)
     show_banner()
-    st.button(ui("home"), on_click=go_to)
     if d.get("show_intro", True):           # sliding DPP banner + "Driving Sustainable Growth" on every passport
         show_hero()
         show_growth()
@@ -585,10 +584,12 @@ def language_popup():
     st.markdown(POPUP_HTML.replace("__CARDS__", cards), unsafe_allow_html=True)
 
 
-def language_switcher():
+def language_switcher(show_home=False):
     codes = list(LANGS)
     st.session_state["lang_select"] = current_lang()      # keep the box in step with the link
-    _, right = st.columns([3, 1])                          # small language box, top-right of the page
+    left, right = st.columns([3, 1], vertical_alignment="bottom")   # Home top-left, language top-right
+    if show_home:
+        left.button(ui("home"), on_click=go_to)
     right.selectbox(ui("language"), codes, format_func=lambda c: LANGS[c],
                     key="lang_select", on_change=switch_language)
 
@@ -627,15 +628,14 @@ if "lang" not in st.query_params and not st.session_state.get("lang_asked"):
     st.session_state["lang_asked"] = True
     language_popup()
 
-language_switcher()
-prices, sources = get_prices()
 item_id = st.query_params.get("id")
+language_switcher(show_home=bool(item_id))
+prices, sources = get_prices()
 
 if item_id:
     device = find_device(devices, item_id)
     if device is None:
         st.error(ui("not_found").format(id=item_id))
-        st.button(ui("home"), on_click=go_to)
     else:
         passport_page(device, prices, sources)
 else:
