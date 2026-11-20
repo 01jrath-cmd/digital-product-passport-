@@ -610,6 +610,24 @@ def switch_language():
 # ---------------------------------------------------------------------
 devices = load_devices()
 
+# Page background "Pastel Rainbow": light fluoro blue, orange, blush pink, purple tints, yellow and green
+BACKGROUND_CSS = """<style>
+[data-testid="stApp"] {
+    background:
+        radial-gradient(circle at 8% 10%, rgba(125,222,255,0.74) 0%, transparent 38%),
+        radial-gradient(circle at 92% 8%, rgba(255,183,120,0.61) 0%, transparent 36%),
+        radial-gradient(circle at 55% 30%, rgba(206,170,255,0.41) 0%, transparent 30%),
+        radial-gradient(circle at 12% 72%, rgba(255,192,210,0.68) 0%, transparent 38%),
+        radial-gradient(circle at 88% 70%, rgba(170,236,170,0.61) 0%, transparent 38%),
+        radial-gradient(circle at 50% 98%, rgba(255,236,140,0.68) 0%, transparent 40%),
+        radial-gradient(circle at 35% 50%, rgba(220,190,255,0.3) 0%, transparent 22%),
+        #FFFDF8 !important;
+    background-attachment: fixed !important;
+}
+[data-testid="stMain"], [data-testid="stHeader"] { background: transparent !important; }
+</style>"""
+st.markdown(BACKGROUND_CSS, unsafe_allow_html=True)
+
 # First visit (no language in the link yet): ask, like the ISRO website does
 if "lang" not in st.query_params and not st.session_state.get("lang_asked"):
     st.session_state["lang_asked"] = True
