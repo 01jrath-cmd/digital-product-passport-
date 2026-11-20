@@ -97,7 +97,6 @@
   function fit() {
     try { const h = document.getElementById("hero").offsetHeight + 4 + "px";
           window.frameElement.style.height = h;
-          window.frameElement.parentElement.style.height = h;   // the page box around this frame
     } catch (e) {}
   }
   window.addEventListener("load", fit); window.addEventListener("resize", fit); setTimeout(fit, 300);

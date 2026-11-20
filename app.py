@@ -295,6 +295,13 @@ def image_data_uri(path):
 HERO_PHOTOS = [f"images/hero/slide{i}.jpg" for i in range(1, 6)]
 
 
+# Let page boxes that hold a self-sizing frame (banner, growth section, Hazard-o-meter) follow the
+# frame's own height, instead of a fixed height that could stay behind on the next page.
+AUTO_HEIGHT_CSS = """<style>
+div[data-testid="stElementContainer"]:has(> iframe) { height: auto !important; }
+</style>"""
+
+
 def show_hero():
     """Top of the home page: DPP title + description over sliding photos (hero.html)."""
     slides = "".join(f'<img class="slide" src="{image_data_uri(p)}" alt="">' for p in HERO_PHOTOS)
@@ -313,6 +320,7 @@ def show_growth():
 
 
 def home_page(devices):
+    st.markdown(AUTO_HEIGHT_CSS, unsafe_allow_html=True)
     show_hero()
     show_growth()
     st.markdown('<div id="passports"></div>', unsafe_allow_html=True)
