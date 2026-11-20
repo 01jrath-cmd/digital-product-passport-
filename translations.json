@@ -100,7 +100,9 @@
     "hero_desc": "Every product has a story &mdash; where it came from, what it is made of and where it should go next. A <b>Digital Product Passport</b> tells that story with a single <b>QR scan</b>: the materials and precious metals inside, the <b>hazardous parts</b> to handle with care, its <b>carbon footprint</b>, and clear advice on whether to <b>repair, reuse or recycle</b> it. Our goal is simple: keep devices in use for longer and keep valuable materials out of landfill.",
     "hero_btn": "Explore passports",
     "growth_title": "Driving Sustainable Growth",
-    "growth_text": "The foundation of our Digital Product Passport lies in making the full life cycle of every product visible &mdash; from the raw materials inside it to the way it should be repaired, reused or recycled. By building circular-economy thinking into every scan, we help people extend product life, recover valuable metals safely and reduce e-waste, while supporting India&rsquo;s transition to a cleaner, more sustainable future."
+    "growth_text": "The foundation of our Digital Product Passport lies in making the full life cycle of every product visible &mdash; from the raw materials inside it to the way it should be repaired, reused or recycled. By building circular-economy thinking into every scan, we help people extend product life, recover valuable metals safely and reduce e-waste, while supporting India&rsquo;s transition to a cleaner, more sustainable future.",
+    "active_power": "Active power",
+    "print_speed": "Print speed (black / colour)"
   },
   "hi": {
     "banner_name": "डिजिटल उत्पाद पासपोर्ट",
@@ -197,7 +199,9 @@
     "hero_desc": "हर उत्पाद की एक कहानी होती है &mdash; वह कहाँ से आया, किससे बना है और आगे उसे कहाँ जाना चाहिए। <b>डिजिटल प्रोडक्ट पासपोर्ट</b> एक ही <b>QR स्कैन</b> से यह कहानी बताता है: अंदर की सामग्री और कीमती धातुएँ, सावधानी से संभालने वाले <b>खतरनाक हिस्से</b>, उसका <b>कार्बन फुटप्रिंट</b>, और साफ़ सलाह कि उसे <b>मरम्मत, दोबारा उपयोग या रीसायकल</b> करें। हमारा लक्ष्य सरल है: उपकरणों को लंबे समय तक उपयोग में रखना और कीमती सामग्री को कूड़े के ढेर से बचाना।",
     "hero_btn": "पासपोर्ट देखें",
     "growth_title": "सतत विकास की ओर",
-    "growth_text": "हमारे डिजिटल प्रोडक्ट पासपोर्ट की नींव हर उत्पाद के पूरे जीवन-चक्र को दिखाना है &mdash; उसके अंदर के कच्चे माल से लेकर उसकी मरम्मत, दोबारा उपयोग या रीसायक्लिंग के सही तरीके तक। हर स्कैन में सर्कुलर-इकॉनमी की सोच जोड़कर हम लोगों को उत्पाद की उम्र बढ़ाने, कीमती धातुओं को सुरक्षित रूप से वापस पाने और ई-कचरा घटाने में मदद करते हैं, और भारत के स्वच्छ व टिकाऊ भविष्य की ओर बढ़ने में सहयोग करते हैं।"
+    "growth_text": "हमारे डिजिटल प्रोडक्ट पासपोर्ट की नींव हर उत्पाद के पूरे जीवन-चक्र को दिखाना है &mdash; उसके अंदर के कच्चे माल से लेकर उसकी मरम्मत, दोबारा उपयोग या रीसायक्लिंग के सही तरीके तक। हर स्कैन में सर्कुलर-इकॉनमी की सोच जोड़कर हम लोगों को उत्पाद की उम्र बढ़ाने, कीमती धातुओं को सुरक्षित रूप से वापस पाने और ई-कचरा घटाने में मदद करते हैं, और भारत के स्वच्छ व टिकाऊ भविष्य की ओर बढ़ने में सहयोग करते हैं।",
+    "active_power": "सक्रिय बिजली खपत",
+    "print_speed": "प्रिंट स्पीड (काला / रंगीन)"
   },
   "kn": {
     "banner_name": "ಡಿಜಿಟಲ್ ಉತ್ಪನ್ನ ಪಾಸ್‌ಪೋರ್ಟ್",
@@ -294,6 +298,8 @@
     "hero_desc": "ಪ್ರತಿಯೊಂದು ಉತ್ಪನ್ನಕ್ಕೂ ಒಂದು ಕಥೆ ಇದೆ &mdash; ಅದು ಎಲ್ಲಿಂದ ಬಂತು, ಯಾವುದರಿಂದ ಮಾಡಲ್ಪಟ್ಟಿದೆ ಮತ್ತು ಮುಂದೆ ಎಲ್ಲಿಗೆ ಹೋಗಬೇಕು. <b>ಡಿಜಿಟಲ್ ಪ್ರಾಡಕ್ಟ್ ಪಾಸ್‌ಪೋರ್ಟ್</b> ಒಂದೇ <b>QR ಸ್ಕ್ಯಾನ್</b> ಮೂಲಕ ಆ ಕಥೆಯನ್ನು ಹೇಳುತ್ತದೆ: ಒಳಗಿನ ವಸ್ತುಗಳು ಮತ್ತು ಅಮೂಲ್ಯ ಲೋಹಗಳು, ಎಚ್ಚರಿಕೆಯಿಂದ ನಿರ್ವಹಿಸಬೇಕಾದ <b>ಅಪಾಯಕಾರಿ ಭಾಗಗಳು</b>, ಅದರ <b>ಕಾರ್ಬನ್ ಹೆಜ್ಜೆಗುರುತು</b>, ಮತ್ತು ಅದನ್ನು <b>ದುರಸ್ತಿ, ಮರುಬಳಕೆ ಅಥವಾ ರೀಸೈಕಲ್</b> ಮಾಡಬೇಕೆ ಎಂಬ ಸ್ಪಷ್ಟ ಸಲಹೆ. ನಮ್ಮ ಗುರಿ ಸರಳ: ಸಾಧನಗಳನ್ನು ಹೆಚ್ಚು ಕಾಲ ಬಳಕೆಯಲ್ಲಿ ಇಡುವುದು ಮತ್ತು ಅಮೂಲ್ಯ ವಸ್ತುಗಳನ್ನು ಕಸದ ರಾಶಿಯಿಂದ ದೂರ ಇಡುವುದು.",
     "hero_btn": "ಪಾಸ್‌ಪೋರ್ಟ್‌ಗಳನ್ನು ನೋಡಿ",
     "growth_title": "ಸುಸ್ಥಿರ ಬೆಳವಣಿಗೆಯತ್ತ",
-    "growth_text": "ನಮ್ಮ ಡಿಜಿಟಲ್ ಪ್ರಾಡಕ್ಟ್ ಪಾಸ್‌ಪೋರ್ಟ್‌ನ ಅಡಿಪಾಯ ಪ್ರತಿಯೊಂದು ಉತ್ಪನ್ನದ ಸಂಪೂರ್ಣ ಜೀವನಚಕ್ರವನ್ನು ಕಾಣುವಂತೆ ಮಾಡುವುದು &mdash; ಅದರೊಳಗಿನ ಕಚ್ಚಾ ವಸ್ತುಗಳಿಂದ ಹಿಡಿದು ಅದನ್ನು ದುರಸ್ತಿ, ಮರುಬಳಕೆ ಅಥವಾ ರೀಸೈಕಲ್ ಮಾಡುವ ಸರಿಯಾದ ವಿಧಾನದವರೆಗೆ. ಪ್ರತಿಯೊಂದು ಸ್ಕ್ಯಾನ್‌ನಲ್ಲಿ ವೃತ್ತಾಕಾರದ ಆರ್ಥಿಕತೆಯ ಚಿಂತನೆಯನ್ನು ಸೇರಿಸುವ ಮೂಲಕ, ಉತ್ಪನ್ನದ ಆಯುಷ್ಯ ಹೆಚ್ಚಿಸಲು, ಅಮೂಲ್ಯ ಲೋಹಗಳನ್ನು ಸುರಕ್ಷಿತವಾಗಿ ಮರಳಿ ಪಡೆಯಲು ಮತ್ತು ಇ-ತ್ಯಾಜ್ಯ ಕಡಿಮೆ ಮಾಡಲು ನಾವು ಜನರಿಗೆ ನೆರವಾಗುತ್ತೇವೆ, ಹಾಗೂ ಭಾರತದ ಸ್ವಚ್ಛ ಮತ್ತು ಸುಸ್ಥಿರ ಭವಿಷ್ಯಕ್ಕೆ ಬೆಂಬಲ ನೀಡುತ್ತೇವೆ."
+    "growth_text": "ನಮ್ಮ ಡಿಜಿಟಲ್ ಪ್ರಾಡಕ್ಟ್ ಪಾಸ್‌ಪೋರ್ಟ್‌ನ ಅಡಿಪಾಯ ಪ್ರತಿಯೊಂದು ಉತ್ಪನ್ನದ ಸಂಪೂರ್ಣ ಜೀವನಚಕ್ರವನ್ನು ಕಾಣುವಂತೆ ಮಾಡುವುದು &mdash; ಅದರೊಳಗಿನ ಕಚ್ಚಾ ವಸ್ತುಗಳಿಂದ ಹಿಡಿದು ಅದನ್ನು ದುರಸ್ತಿ, ಮರುಬಳಕೆ ಅಥವಾ ರೀಸೈಕಲ್ ಮಾಡುವ ಸರಿಯಾದ ವಿಧಾನದವರೆಗೆ. ಪ್ರತಿಯೊಂದು ಸ್ಕ್ಯಾನ್‌ನಲ್ಲಿ ವೃತ್ತಾಕಾರದ ಆರ್ಥಿಕತೆಯ ಚಿಂತನೆಯನ್ನು ಸೇರಿಸುವ ಮೂಲಕ, ಉತ್ಪನ್ನದ ಆಯುಷ್ಯ ಹೆಚ್ಚಿಸಲು, ಅಮೂಲ್ಯ ಲೋಹಗಳನ್ನು ಸುರಕ್ಷಿತವಾಗಿ ಮರಳಿ ಪಡೆಯಲು ಮತ್ತು ಇ-ತ್ಯಾಜ್ಯ ಕಡಿಮೆ ಮಾಡಲು ನಾವು ಜನರಿಗೆ ನೆರವಾಗುತ್ತೇವೆ, ಹಾಗೂ ಭಾರತದ ಸ್ವಚ್ಛ ಮತ್ತು ಸುಸ್ಥಿರ ಭವಿಷ್ಯಕ್ಕೆ ಬೆಂಬಲ ನೀಡುತ್ತೇವೆ.",
+    "active_power": "ಸಕ್ರಿಯ ವಿದ್ಯುತ್ ಬಳಕೆ",
+    "print_speed": "ಮುದ್ರಣ ವೇಗ (ಕಪ್ಪು / ಬಣ್ಣ)"
   }
 }

@@ -2612,6 +2612,490 @@
       }
     },
     {
+      "id": "DPP-004",
+      "device": "HP DeskJet Ink Advantage 2520hc",
+      "model": "All-in-One Printer",
+      "brand": "HP",
+      "category": "Printer",
+      "tagline": "Product sustainability, materials, repair and end-of-life profile",
+      "image": "images/hp-deskjet-2520hc.png",
+      "year": null,
+      "weight_g": null,
+      "condition": "Working",
+      "status": "In use",
+      "metrics": [
+        {
+          "key": "weight",
+          "value": "3.9 kg"
+        },
+        {
+          "key": "active_power",
+          "value": "10 W"
+        },
+        {
+          "key": "print_speed",
+          "value": "7 / 4 ppm"
+        }
+      ],
+      "sections": [
+        {
+          "title": "1. Identity and Specifications",
+          "intro": "The HP DeskJet Ink Advantage 2520hc is a compact thermal-inkjet multifunction printer intended for home and small-office document and photo tasks. It combines printing, flatbed scanning and copying in one device.",
+          "table": {
+            "columns": [
+              "Parameter",
+              "Value"
+            ],
+            "rows": [
+              [
+                "**Product name**",
+                "HP DeskJet Ink Advantage 2520hc All-in-One Printer"
+              ],
+              [
+                "**Product type**",
+                "Colour inkjet multifunction printer (print / copy / scan)"
+              ],
+              [
+                "**Manufacturer / brand**",
+                "HP (Hewlett-Packard)"
+              ],
+              [
+                "**Regulatory model**",
+                "VCVRA-1221 (identified in HP declaration for the 2520hc)"
+              ],
+              [
+                "**Print technology**",
+                "HP Thermal Inkjet; HP PCL 3 GUI"
+              ],
+              [
+                "**Print resolution**",
+                "Black: up to 600 dpi; colour: up to 4800 × 1200 optimised dpi (from 1200 dpi input on photo paper)"
+              ],
+              [
+                "**Print speed**",
+                "Up to 7 ppm black and 4 ppm colour (ISO A4)"
+              ],
+              [
+                "**Scanner**",
+                "Flatbed; optical resolution up to 1200 dpi; maximum scan size 216 × 297 mm"
+              ],
+              [
+                "**Copy resolution**",
+                "Up to 600 × 300 dpi (black and colour)"
+              ],
+              [
+                "**Paper handling**",
+                "60-sheet input tray; 25-sheet output tray; A4, B5, A6 and DL envelope"
+              ],
+              [
+                "**Connectivity**",
+                "1 Hi-Speed USB 2.0; no wireless capability; no mobile printing"
+              ],
+              [
+                "**Cartridges**",
+                "2 cartridges: one black and one tri-colour (cyan, magenta, yellow); HP 46 family"
+              ],
+              [
+                "**Recommended monthly volume**",
+                "300–400 pages; maximum duty cycle up to 1,000 pages/month"
+              ],
+              [
+                "**Dimensions (W × D × H)**",
+                "431.4 × 438.9 × 251.6 mm (minimum) | Weight: 3.9 kg"
+              ],
+              [
+                "**Power**",
+                "100–240 V AC, 50/60 Hz; 10 W active, 1.3 W sleep, 2.3 W standby, 0.3 W auto/manual off"
+              ]
+            ]
+          },
+          "note": "Note: Specifications are from HP’s product support page. The 2520hc is a USB-connected model; it does not provide Wi-Fi, ePrint or mobile-print capability."
+        },
+        {
+          "title": "2. Main Components and Materials",
+          "intro": "The table describes the main assemblies and likely material families in a consumer inkjet printer. HP does not publish a complete bill of materials or component-by-component material weights for this model; therefore, no unsupported gram quantities are assigned.",
+          "table": {
+            "columns": [
+              "Assembly / component",
+              "Purpose and typical material family"
+            ],
+            "rows": [
+              [
+                "**Outer housing and panels**",
+                "Moulded engineering plastics (commonly ABS/HIPS-type polymers); protects the mechanism and provides the enclosure."
+              ],
+              [
+                "**Scanner assembly**",
+                "Glass platen, optical sensor/CIS module, LED illumination, mirrors/lens or optical path components, and a moving scan carriage."
+              ],
+              [
+                "**Print mechanism**",
+                "Carriage, guide rail, belt, rollers, gears and service station; a mixture of plastics, steel and elastomer/rubber."
+              ],
+              [
+                "**Printhead / ink cartridges**",
+                "Black and tri-colour ink cartridges with plastic bodies, electronic contacts and ink reservoirs; consumable components."
+              ],
+              [
+                "**Main electronic board**",
+                "Printed circuit board, semiconductor ICs, copper tracks, connectors, solder and passive components."
+              ],
+              [
+                "**Power supply and wiring**",
+                "External/internal power conversion components, copper wiring, insulation and connectors."
+              ],
+              [
+                "**Paper path**",
+                "Feed rollers, separation pad, shafts and guides; polymers, rubber and metal."
+              ],
+              [
+                "**Fasteners and supports**",
+                "Steel screws, brackets, springs and small metal shafts."
+              ]
+            ]
+          }
+        },
+        {
+          "title": "3. Materials and Resource Recovery",
+          "table": {
+            "columns": [
+              "Material / resource",
+              "Likely location",
+              "Recovery / circularity relevance"
+            ],
+            "rows": [
+              [
+                "**Steel / iron**",
+                "Shafts, screws, springs, brackets",
+                "Can be separated and recycled as ferrous metal."
+              ],
+              [
+                "**Aluminium**",
+                "Possible in selected motor or structural parts; exact use not confirmed for this model",
+                "Recoverable metal where present; verify during dismantling."
+              ],
+              [
+                "**Copper**",
+                "PCB tracks, motor windings, cables and connectors",
+                "Valuable conductor; recovered through authorised e-waste processing."
+              ],
+              [
+                "**Gold / silver / palladium**",
+                "Small quantities in electronic contacts and PCB components",
+                "Present in some electronics; quantities for this model are not publicly specified."
+              ],
+              [
+                "**Engineering plastics**",
+                "Housing, gears, trays, cartridge bodies",
+                "Reuse/recycle depends on polymer identification, contamination and sorting."
+              ],
+              [
+                "**Rubber / elastomers**",
+                "Feed rollers and pads",
+                "Can complicate material separation; specialist processing may be required."
+              ],
+              [
+                "**Ink and absorbent materials**",
+                "Cartridges and printer service/maintenance areas",
+                "Avoid release to drains or soil; return cartridges through an appropriate collection route."
+              ]
+            ]
+          },
+          "note": "Important limitation: this is a component-based material map, not a measured material inventory. The precise resin grades, metal masses and hazardous-substance concentrations require manufacturer disclosures or laboratory analysis."
+        },
+        {
+          "title": "4. Carbon Footprint and Energy Use",
+          "intro": "A product carbon footprint includes greenhouse-gas emissions from raw-material extraction, component production, assembly, transport, use and end-of-life treatment. A verified cradle-to-grave carbon footprint for the DeskJet 2520hc was not found in the public product specifications reviewed.",
+          "table": {
+            "columns": [
+              "Life-cycle stage",
+              "What contributes",
+              "Available model-specific evidence"
+            ],
+            "rows": [
+              [
+                "**Raw materials and manufacturing**",
+                "Plastic moulding, PCB fabrication, motors, scanner components, power electronics and cartridge production",
+                "No public model-specific kg CO₂e figure located."
+              ],
+              [
+                "**Transport and distribution**",
+                "Movement of components and finished printer to markets",
+                "No model-specific transport inventory located."
+              ],
+              [
+                "**Use phase**",
+                "Electricity consumed while printing, scanning, copying and in standby",
+                "HP lists 10 W active, 1.3 W sleep, 2.3 W standby and 0.3 W auto/manual off."
+              ],
+              [
+                "**Consumables**",
+                "Ink production, cartridge manufacture, packaging and replacement",
+                "Two-cartridge system; cartridge yield varies with page coverage and usage."
+              ],
+              [
+                "**End of life**",
+                "Collection, dismantling, recycling and residual disposal",
+                "Covered as printer and cartridges under India’s E-Waste Management Rules, 2022."
+              ]
+            ]
+          }
+        },
+        {
+          "title": "Illustrative use-phase electricity estimate",
+          "level": 2,
+          "intro": "Assumption for a simple classroom estimate: 1 hour/day at the HP-rated 10 W active power for 300 days/year. This is a scenario, not measured household consumption.",
+          "table": {
+            "columns": [
+              "Calculation",
+              "Result"
+            ],
+            "rows": [
+              [
+                "**Active energy per year**",
+                "0.010 kW × 1 h/day × 300 days = 3.0 kWh/year"
+              ],
+              [
+                "**Indicative grid emissions**",
+                "3.0 kWh × 0.716 kg CO₂/kWh = 2.15 kg CO₂/year (using the CEA grid factor quoted in the reference DPP)"
+              ],
+              [
+                "**Five-year active-use estimate**",
+                "Approximately 10.7 kg CO₂, excluding standby, manufacturing, transport, paper and cartridges."
+              ]
+            ]
+          },
+          "note": "The estimate changes with actual print volume, active time, standby duration and local electricity mix. It must not be presented as the printer’s total life-cycle carbon footprint."
+        },
+        {
+          "title": "Ways to reduce impact",
+          "level": 2,
+          "intro": "- Print only when needed; use duplex/manual two-sided printing where practical (the device does not have automatic duplex).\n- Use draft/normal quality for routine documents and avoid unnecessary colour/photo printing.\n- Switch the printer off when it will not be used for extended periods, while following HP operating guidance.\n- Reuse paper where appropriate and recycle clean paper separately.\n- Extend service life through cleaning, roller maintenance and replacing only failed parts where repair is practical."
+        },
+        {
+          "title": "5. Hazardous Substances, Consumables and Safe Disposal",
+          "table": {
+            "columns": [
+              "Item / concern",
+              "Where it may occur",
+              "Why it matters",
+              "Safe handling / disposal"
+            ],
+            "rows": [
+              [
+                "**Ink**",
+                "Black and tri-colour cartridges; ink residue and maintenance area",
+                "Can stain and contaminate surfaces; avoid skin/eye contact and release to drains.",
+                "Keep cartridges closed; do not dismantle or burn. Return eligible Original HP cartridges through HP Planet Partners or an authorised collection route."
+              ],
+              [
+                "**Electronic components and solder**",
+                "Main PCB, power electronics and wiring",
+                "Electronic assemblies may contain regulated metals or flame-retardant materials; exact composition is not published for this model.",
+                "Do not burn, crush or acid-wash boards. Send the complete printer to an authorised e-waste recycler."
+              ],
+              [
+                "**Power supply**",
+                "Power adapter / power electronics",
+                "Electrical shock and stored-energy risk if opened or handled while connected.",
+                "Unplug before cleaning; do not open the power supply. Repair should be done by a qualified technician."
+              ],
+              [
+                "**Plastic enclosure and cables**",
+                "Housing, insulation, trays and cable jackets",
+                "Open burning can release hazardous fumes and creates uncontrolled pollution.",
+                "Do not burn or dump. Route through authorised e-waste collection and recycling."
+              ],
+              [
+                "**Used cartridges**",
+                "Black and tri-colour ink cartridges",
+                "Residual ink and mixed plastic/electronic parts complicate ordinary household waste disposal.",
+                "Keep cartridges intact and use HP’s cartridge return programme where available."
+              ]
+            ]
+          },
+          "note": "Do not assume that this model contains a mercury lamp: the HP product specifications reviewed do not identify a mercury-containing backlight. The flatbed scanner uses an optical scanning assembly; exact lamp/sensor construction should be confirmed from service documentation before making a hazardous-substance claim.",
+          "hazard_meter": {
+            "note": "Hazard scores are the project team's assessment (1 = low, 10 = severe), based on how harmful each item can be during unsafe handling or disposal of this printer.",
+            "items": [
+              {
+                "name": "Electronic components and solder",
+                "score": 6,
+                "reason": "Electronic assemblies may contain regulated metals or flame-retardant materials; exact composition is not published for this model."
+              },
+              {
+                "name": "Plastic enclosure and cables",
+                "score": 5,
+                "reason": "Open burning can release hazardous fumes and creates uncontrolled pollution."
+              },
+              {
+                "name": "Power supply",
+                "score": 4,
+                "reason": "Electrical shock and stored-energy risk if opened or handled while connected."
+              },
+              {
+                "name": "Used cartridges",
+                "score": 3,
+                "reason": "Residual ink and mixed plastic/electronic parts complicate ordinary household waste disposal."
+              },
+              {
+                "name": "Ink",
+                "score": 3,
+                "reason": "Can stain and contaminate surfaces; avoid skin/eye contact and release to drains."
+              }
+            ]
+          }
+        },
+        {
+          "title": "6. Repair, Reuse and Second-Life Potential",
+          "table": {
+            "columns": [
+              "Area",
+              "Reuse / repair opportunity",
+              "Practical notes"
+            ],
+            "rows": [
+              [
+                "**Scanner unit**",
+                "Clean platen glass; inspect scan carriage and cable if scanning fails.",
+                "Avoid scratching glass; technician repair may be needed for optical/electronic faults."
+              ],
+              [
+                "**Paper feed**",
+                "Clean feed rollers and remove paper fragments; replace worn rollers/pads if parts are available.",
+                "Paper jams and misfeeds may be maintenance-related rather than end-of-life failure."
+              ],
+              [
+                "**Cartridges**",
+                "Replace only the depleted/failed cartridge; use compatible, genuine supplies where possible.",
+                "Check exact cartridge compatibility and local availability before purchase."
+              ],
+              [
+                "**Power and USB**",
+                "Replace damaged USB cable or approved power adapter.",
+                "Use the correct HP-rated adapter; do not substitute an unverified supply."
+              ],
+              [
+                "**Whole device**",
+                "Continue use for basic home printing/scanning if print quality and safety remain acceptable.",
+                "Older USB-only technology and consumable availability may limit usefulness."
+              ],
+              [
+                "**Parts recovery**",
+                "Recover usable motors, rollers, gears, scanner glass and electronic assemblies through a qualified refurbisher.",
+                "Do not dismantle powered components without training."
+              ]
+            ]
+          },
+          "note": "Suggested second-life uses: occasional home document printing, scanning and copying; a shared printer for low-volume use; or a donor unit for compatible service parts. Reuse is preferable to immediate recycling when the device is safe, functional and economical to maintain."
+        },
+        {
+          "title": "7. Regulation and Compliance (India)",
+          "table": {
+            "columns": [
+              "Topic",
+              "Relevance to this product"
+            ],
+            "rows": [
+              [
+                "**E-Waste (Management) Rules, 2022**",
+                "Schedule I explicitly lists “Printers including cartridges” under code ITEW6. The printer and its covered components/consumables should enter an authorised e-waste management channel at end of life."
+              ],
+              [
+                "**Extended Producer Responsibility (EPR)**",
+                "The Rules establish producer responsibility and an EPR framework for covered electrical and electronic equipment. Consumers should use producer take-back or authorised collection/recycling routes."
+              ],
+              [
+                "**Battery rules**",
+                "This printer is mains-powered and the HP specifications reviewed do not list an internal rechargeable battery. If a separately supplied backup battery is used, manage it under applicable battery-waste rules."
+              ],
+              [
+                "**RoHS / restricted substances**",
+                "Do not claim model-specific RoHS compliance without the relevant declaration for the exact product/market and manufacturing batch."
+              ]
+            ]
+          }
+        },
+        {
+          "title": "8. Supply Chain, Ethics and Circularity",
+          "intro": "- Electronic components depend on global supply chains for copper, aluminium, semiconductor materials and precious-metal contacts.\n- HP’s public product specifications do not disclose the mine/source provenance or quantities of these materials for this specific printer.\n- Recycling circuit boards and metal-bearing components can recover valuable resources and reduce demand for virgin extraction.\n- Cartridge take-back programmes help keep mixed-material consumables out of ordinary waste streams.\n\nEthical sourcing assessment: a model-specific supplier list, smelter list or conflict-minerals report was not located for this product. Therefore, no claim is made that its minerals are conflict-free or traceable."
+        },
+        {
+          "title": "9. End-of-Life Decision",
+          "table": {
+            "columns": [
+              "Priority",
+              "Recommended action",
+              "Reason"
+            ],
+            "rows": [
+              [
+                "**1. Repair**",
+                "Clean, troubleshoot and replace serviceable parts where economical.",
+                "Preserves the value of the printer already manufactured."
+              ],
+              [
+                "**2. Reuse / refurbish**",
+                "Pass to another user or institution if it still prints/scans safely.",
+                "Extends useful life and delays replacement."
+              ],
+              [
+                "**3. Cartridge return**",
+                "Return eligible Original HP cartridges through HP Planet Partners or a local authorised programme.",
+                "Enables controlled handling and material recovery."
+              ],
+              [
+                "**4. E-waste recycling**",
+                "Give the printer to an authorised e-waste recycler / producer collection channel.",
+                "Allows controlled dismantling and recovery of metals and plastics."
+              ]
+            ]
+          },
+          "note": "Conclusion: The HP DeskJet Ink Advantage 2520hc combines three functions in one compact device and has relatively low rated active power (10 W). Its main sustainability opportunities are extending its service life, reducing unnecessary printing, returning cartridges through appropriate programmes and ensuring the complete printer is recycled through an authorised channel. A precise total carbon footprint and numerical material inventory cannot be responsibly stated without model-specific life-cycle and bill-of-materials data."
+        }
+      ],
+      "sources": [
+        [
+          "HP Support – HP DeskJet Ink Advantage 2520hc product specifications (official).",
+          "https://support.hp.com/in-en/product/product-specs/model/5202290"
+        ],
+        [
+          "HP – DeskJet Ink Advantage 2520hc setup and user guides.",
+          "https://support.hp.com/in-en/product/setup-user-guides/hp-deskjet-ink-advantage-2520hc-all-in-one-printer-series/model/5202290"
+        ],
+        [
+          "HP – HP 46 Tri-colour Original Ink Advantage Cartridge (India); yield notes state testing in DeskJet 2520hc.",
+          "https://www.hp.com/in-en/shop/products/supplies/hp-46-tri-color-original-ink-advantage-cartridge-cz638aa"
+        ],
+        [
+          "Ministry of Environment, Forest and Climate Change – E-Waste (Management) Rules, 2022.",
+          "https://moef.gov.in/rules-regulations-3"
+        ],
+        [
+          "CPCB E-Waste Management System – Rules and EPR portal.",
+          "https://www.eprewaste.cpcb.gov.in/"
+        ],
+        [
+          "HP India – Ink and toner cartridge recycling / HP Planet Partners.",
+          "https://www.hp.com/in-en/hp-information/recycling/ink-toner.html"
+        ],
+        [
+          "HP Support – Recycle HP printers and ink/toner cartridges.",
+          "https://support.hp.com/in-en/document/ish_7392257-7392304-16"
+        ],
+        [
+          "Central Electricity Authority – CO₂ Baseline Database User Guide, Version 19 (grid factor used only for illustrative estimate).",
+          "https://cea.nic.in/wp-content/uploads/baseline/2024/01/User_Guide__Version_19.0.pdf"
+        ]
+      ],
+      "after_sources": [
+        {
+          "title": "Method note",
+          "intro": "Product specifications and regulatory category are source-based. Material-family descriptions are typical component-level inferences, not verified quantities for this exact unit. The use-phase carbon calculation is an explicitly stated scenario. No manufacturing or whole-life carbon total is asserted."
+        }
+      ]
+    },
+    {
       "id": "DPP-002",
       "device": "USHA FH812T",
       "model": "Heat Convector / Fan Room Heater",

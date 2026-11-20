@@ -370,7 +370,8 @@ def hazard_meter(meter):
 
 def table_of_contents(d):
     """Collapsible table of contents. Clicking an entry scrolls to it; visited entries go grey."""
-    items = [(sec["title"], sec["anchor"]) for sec in d["sections"]]
+    items = [(("&nbsp;&nbsp;&nbsp;&nbsp;" if sec.get("level") == 2 else "") + sec["title"], sec["anchor"])
+             for sec in d["sections"]]
     items += [(ui("sources"), "sources")]
     items += [(sec["title"], sec["anchor"]) for sec in d.get("after_sources", [])]
     items += [(ui("qr_title"), "qr-code")]
@@ -466,7 +467,10 @@ def passport_page(d, prices, sources):
 
     # All sections from the Word document, in the same order
     for sec in d["sections"]:
-        st.header(sec["title"], anchor=sec["anchor"])
+        if sec.get("level") == 2:                       # sub-heading inside a section
+            st.subheader(sec["title"], anchor=sec["anchor"])
+        else:
+            st.header(sec["title"], anchor=sec["anchor"])
         if sec.get("subtitle"):
             st.subheader(sec["subtitle"])
         if sec.get("intro"):
