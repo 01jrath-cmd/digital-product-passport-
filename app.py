@@ -589,7 +589,7 @@ WELCOME_AUDIO_HTML = """
 <script>
 (function () {
   const P = window.parent, pd = P.document;
-  const TXT = { playing: "Playing welcome message… please listen", tap: "🔊 Tap here to hear the welcome message",
+  const TXT = { playing: "Playing welcome message… please listen", tap: "🔊 Tap anywhere to hear the welcome message",
                 done: "✅ Now choose your language" };
   function box() { return pd.getElementById("lang-wait"); }
   function cards() { return pd.querySelectorAll(".lang-cards"); }
@@ -613,6 +613,12 @@ WELCOME_AUDIO_HTML = """
       const b = box(); if (!b) { finish(); return; }
       b.innerHTML = '<button type="button" id="lang-wait-btn">' + TXT.tap + '</button>';
       pd.getElementById("lang-wait-btn").onclick = function () { audio.play().then(playing).catch(finish); };
+      // Also start on the visitor's first click, tap or key press anywhere on the page
+      function anyTouch() {
+        ["pointerdown", "keydown", "touchstart"].forEach(function (ev) { pd.removeEventListener(ev, anyTouch, true); });
+        if (audio.paused && !P.__dppWelcome.done) audio.play().then(playing).catch(function () {});
+      }
+      ["pointerdown", "keydown", "touchstart"].forEach(function (ev) { pd.addEventListener(ev, anyTouch, true); });
     });
   }
   start();
