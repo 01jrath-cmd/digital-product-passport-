@@ -218,31 +218,18 @@ def to_ist(iso_time):
         return "unknown time"
 
 
-def price_sidebar():
-    live, updated, failed = fetch_live_prices()
+def get_prices():
+    """Metal prices used for the live metal-value tables (live where possible, otherwise backup).
+    Nothing is shown on screen: the price sidebar has been removed."""
+    live, _, _ = fetch_live_prices()
     prices, sources = {}, {}
-    names = ui("metals")
-    st.sidebar.header(ui("prices_header"))
-    st.sidebar.subheader(ui("live_header"))
     for metal in LIVE_SYMBOLS:
         if metal in live:
             prices[metal], sources[metal] = live[metal], "live"
-            st.sidebar.metric(names[metal], f"Rs {live[metal]:,.2f}")
         else:
             prices[metal], sources[metal] = FALLBACK_PRICES[metal], "backup"
-            st.sidebar.metric(names[metal], f"Rs {FALLBACK_PRICES[metal]:,.2f}", ui("backup_price"), delta_color="off")
-    if updated:
-        st.sidebar.caption(ui("updated").format(time=to_ist(updated)))
-    if failed:
-        st.sidebar.warning(ui("unavailable").format(metals=", ".join(names[m] for m in failed)))
-    if st.sidebar.button(ui("refresh")):
-        fetch_live_prices.clear()
-        st.rerun()
-    st.sidebar.subheader(ui("ref_header"))
-    st.sidebar.caption(ui("ref_caption"))
     for metal, value in REFERENCE_PRICES.items():
-        prices[metal] = st.sidebar.number_input(names[metal], min_value=0.0, value=value, step=0.25, key="ref_" + metal)
-        sources[metal] = "reference"
+        prices[metal], sources[metal] = value, "reference"
     return prices, sources
 
 
@@ -298,7 +285,7 @@ HERO_PHOTOS = [f"images/hero/slide{i}.jpg" for i in range(1, 6)]
 # Let page boxes that hold a self-sizing frame (banner, growth section, Hazard-o-meter) follow the
 # frame's own height, instead of a fixed height that could stay behind on the next page.
 AUTO_HEIGHT_CSS = """<style>
-div[data-testid="stElementContainer"]:has(> iframe) { height: auto !important; }
+div[data-testid="stElementContainer"]:has(> iframe) { height: auto !important; flex: 0 0 auto !important; }
 </style>"""
 
 
@@ -398,6 +385,7 @@ def table_of_contents(d):
 TOC_SCRIPT = """
 <script>
 (function () {
+  try { window.frameElement.style.height = "0px"; } catch (e) {}   // this helper frame takes no space
   const doc = window.parent.document;
   const key = "dpp-toc-clicked-DEVICE_ID";
   let saved = [];
@@ -597,8 +585,9 @@ def language_popup():
 def language_switcher():
     codes = list(LANGS)
     st.session_state["lang_select"] = current_lang()      # keep the box in step with the link
-    st.sidebar.selectbox(ui("language"), codes, format_func=lambda c: LANGS[c],
-                         key="lang_select", on_change=switch_language)
+    _, right = st.columns([3, 1])                          # small language box, top-right of the page
+    right.selectbox(ui("language"), codes, format_func=lambda c: LANGS[c],
+                    key="lang_select", on_change=switch_language)
 
 
 def switch_language():
@@ -625,6 +614,8 @@ BACKGROUND_CSS = """<style>
     background-attachment: fixed !important;
 }
 [data-testid="stMain"], [data-testid="stHeader"] { background: transparent !important; }
+/* boxes holding a self-sizing frame (banner, growth section, Hazard-o-meter) follow the frame height */
+div[data-testid="stElementContainer"]:has(> iframe) { height: auto !important; flex: 0 0 auto !important; }
 </style>"""
 st.markdown(BACKGROUND_CSS, unsafe_allow_html=True)
 
@@ -634,7 +625,7 @@ if "lang" not in st.query_params and not st.session_state.get("lang_asked"):
     language_popup()
 
 language_switcher()
-prices, sources = price_sidebar()
+prices, sources = get_prices()
 item_id = st.query_params.get("id")
 
 if item_id:
