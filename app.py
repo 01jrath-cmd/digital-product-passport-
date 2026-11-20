@@ -551,6 +551,19 @@ div[data-testid="stDialog"] > div {
                     transform: skewX(-20deg); animation: shine 3.2s ease-in-out infinite; }
 .lang-card.en::after { animation-delay: .4s; } .lang-card.kn::after { animation-delay: .8s; }
 @keyframes shine { 0% { left:-60%; } 55%, 100% { left:130%; } }
+/* while the welcome message plays, the language cards are locked */
+.lang-cards.lang-locked .lang-card { pointer-events:none; opacity:.45; filter:grayscale(.7); }
+.lang-wait { text-align:center; font-weight:800; font-size:1.05rem; margin:0 0 14px; color:#0f172a;
+             min-height:1.6em; }
+.lang-wait button { font: inherit; font-weight:800; cursor:pointer; border:0; border-radius:30px; padding:10px 22px;
+                    color:#000; background:linear-gradient(120deg,#2dd4bf,#0ea5e9); box-shadow:0 6px 16px rgba(14,165,233,.45);
+                    animation: pulse 1.4s ease-in-out infinite; }
+@keyframes pulse { 0%,100% { transform:scale(1); } 50% { transform:scale(1.06); } }
+.lang-wait .bars { display:inline-block; margin-right:8px; }
+.lang-wait .bars i { display:inline-block; width:4px; height:14px; margin:0 1px; background:#0284c7; border-radius:2px;
+                     animation: eq .8s ease-in-out infinite; }
+.lang-wait .bars i:nth-child(2) { animation-delay:.2s; } .lang-wait .bars i:nth-child(3) { animation-delay:.4s; }
+@keyframes eq { 0%,100% { transform:scaleY(.4); } 50% { transform:scaleY(1.2); } }
 @media (max-width:600px) {
   .lang-cards { grid-template-columns:1fr; } .lang-card { min-height:88px; }
   .lang-head { flex-direction:column; gap:4px; } .lang-head .l1 { font-size:1.15rem; }
@@ -566,12 +579,50 @@ div[data-testid="stDialog"] > div {
   </div>
 </div>
 <div class="lang-title"><span class="t hi">भाषा चुनें</span> / <span class="t en">Choose Language</span> / <span class="t kn">ಭಾಷೆ ಆಯ್ಕೆಮಾಡಿ</span></div>
-<div class="lang-cards">__CARDS__</div>
+<div class="lang-wait" id="lang-wait">🔊 Welcome message…</div>
+<div class="lang-cards lang-locked">__CARDS__</div>
+"""
+
+# Plays the team's welcome message when the language popup opens.
+# The language cards stay locked until the message has finished, then work as usual.
+WELCOME_AUDIO_HTML = """
+<script>
+(function () {
+  const P = window.parent, pd = P.document;
+  const TXT = { playing: "Playing welcome message… please listen", tap: "🔊 Tap here to hear the welcome message",
+                done: "✅ Now choose your language" };
+  function box() { return pd.getElementById("lang-wait"); }
+  function cards() { return pd.querySelectorAll(".lang-cards"); }
+  function unlock() {
+    cards().forEach(function (c) { c.classList.remove("lang-locked"); });
+    const b = box(); if (b) b.innerHTML = TXT.done;
+  }
+  function playing() { const b = box(); if (b) b.innerHTML = '<span class="bars"><i></i><i></i><i></i></span>' + TXT.playing; }
+  if (P.__dppWelcome) {                        // already played (or playing) in this visit
+    if (P.__dppWelcome.done) unlock(); else playing();
+    return;
+  }
+  const audio = new P.Audio("__AUDIO__");
+  P.__dppWelcome = { done: false, audio: audio };
+  function finish() { P.__dppWelcome.done = true; unlock(); }
+  audio.addEventListener("ended", finish);
+  audio.addEventListener("error", finish);        // if the sound cannot play, never leave the cards locked
+  function start() {
+    audio.play().then(playing).catch(function () {
+      // Browsers block sound until the visitor taps once: show a button for that
+      const b = box(); if (!b) { finish(); return; }
+      b.innerHTML = '<button type="button" id="lang-wait-btn">' + TXT.tap + '</button>';
+      pd.getElementById("lang-wait-btn").onclick = function () { audio.play().then(playing).catch(finish); };
+    });
+  }
+  start();
+})();
+</script>
 """
 LANG_CARDS = [("hi", "हिंदी", "स्वागत है", "अ"), ("en", "English", "Welcome", "A"), ("kn", "ಕನ್ನಡ", "ಸ್ವಾಗತ", "ಅ")]
 
 
-@st.dialog(" ", width="large")
+@st.dialog(" ", width="large", dismissible=False)   # closes only by picking a language
 def language_popup():
     """Three language cards. Each is a link that reopens the same page with ?lang=... added."""
     device_id = st.query_params.get("id")
@@ -582,6 +633,7 @@ def language_popup():
                   f'<span class="big">{letter}</span>'
                   f'<span class="n">{name}</span><span class="w">{welcome}</span></a>')
     st.markdown(POPUP_HTML.replace("__CARDS__", cards), unsafe_allow_html=True)
+    components.html(WELCOME_AUDIO_HTML.replace("__AUDIO__", image_data_uri("audio/welcome.mp3")), height=0)
 
 
 def language_switcher(show_home=False):
