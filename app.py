@@ -305,7 +305,8 @@ def show_hero():
 def show_growth():
     """'Driving Sustainable Growth' section with the bulb-in-hand picture (growth.html)."""
     with open("growth.html", encoding="utf-8") as f:
-        html = f.read().replace("__TITLE__", ui("growth_title")).replace("__TEXT__", ui("growth_text"))
+        html = (f.read().replace("__TITLE__", ui("growth_title")).replace("__TEXT__", ui("growth_text"))
+                .replace("__BULB__", image_data_uri("images/bulb-in-hand.jpg")))
     components.html(html, height=440)
 
 
