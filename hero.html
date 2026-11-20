@@ -88,7 +88,8 @@
   // Button scrolls the main page down to the list of passports
   document.getElementById("go").onclick = function () {
     try {
-      const target = window.parent.document.getElementById("passports");
+      const pd = window.parent.document;
+      const target = pd.getElementById("passports") || pd.querySelector(".dpp-toc");   // home: device list; passport: contents
       if (target) target.scrollIntoView({ behavior: "smooth", block: "start" });
     } catch (e) {}
   };

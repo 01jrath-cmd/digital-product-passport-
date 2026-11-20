@@ -420,6 +420,9 @@ def passport_page(d, prices, sources):
     d = localize(d)
     show_banner()
     st.button(ui("home"), on_click=go_to)
+    if d.get("show_intro"):                 # sliding DPP banner + "Driving Sustainable Growth" on this passport too
+        show_hero()
+        show_growth()
 
     # Header: photo, name, author
     # Top of the page: photo and name on the left, Hazard-o-meter on the right
