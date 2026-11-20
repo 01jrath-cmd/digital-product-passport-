@@ -4060,6 +4060,503 @@
         }
       ],
       "sources": []
+    },
+    {
+      "id": "DPP-007",
+      "device": "Vivo Y50 (2020)",
+      "model": "Smartphone",
+      "brand": "Vivo",
+      "category": "Smartphone",
+      "tagline": "8 GB RAM | 128 GB internal storage | microSD expansion",
+      "image": "images/vivo-y50.jpg",
+      "year": null,
+      "weight_g": null,
+      "condition": "Working",
+      "status": "In use",
+      "metrics": [
+        {
+          "key": "weight",
+          "value": "~197 g"
+        },
+        {
+          "key": "battery",
+          "value": "5,000 mAh"
+        },
+        {
+          "key": "ram_storage",
+          "value": "8 GB / 128 GB"
+        }
+      ],
+      "sections": [
+        {
+          "title": "1. Identity and Specifications",
+          "intro": "Important storage clarification: published 2020 Vivo Y50 specifications list 128 GB of built-in storage. Some specification listings state that a microSD card of up to 256 GB can be used for expansion. Therefore, 256 GB is treated here as expandable-card capacity, not verified built-in storage.",
+          "table": {
+            "columns": [
+              "Parameter",
+              "Value"
+            ],
+            "rows": [
+              [
+                "Model",
+                "Vivo Y50 (2020); model family commonly identified as V1965A in China"
+              ],
+              [
+                "Launch period",
+                "April 2020 (China); launched in India in June 2020"
+              ],
+              [
+                "Processor",
+                "Qualcomm Snapdragon 665, octa-core, 11 nm process"
+              ],
+              [
+                "Graphics",
+                "Qualcomm Adreno 610 GPU"
+              ],
+              [
+                "Memory",
+                "8 GB RAM (India launch configuration)"
+              ],
+              [
+                "Storage",
+                "128 GB internal; microSD expansion supported (up to 256 GB reported in specification listings)"
+              ],
+              [
+                "Display",
+                "6.53-inch FHD+ IPS LCD; 1080 × 2340 pixels"
+              ],
+              [
+                "Rear cameras",
+                "13 MP main + 8 MP ultra-wide + 2 MP macro + 2 MP depth"
+              ],
+              [
+                "Front camera",
+                "16 MP"
+              ],
+              [
+                "Battery",
+                "Non-removable lithium-ion battery; 5,000 mAh typical (4,900 mAh minimum)"
+              ],
+              [
+                "Charging",
+                "USB Type-C; 15 W charging reported for the India model"
+              ],
+              [
+                "Connectivity",
+                "4G LTE, Wi-Fi, Bluetooth 5, GPS; dual nano-SIM / hybrid card arrangement"
+              ],
+              [
+                "Dimensions and mass",
+                "162.04 × 76.46 × 9.11 mm; approximately 197 g"
+              ],
+              [
+                "Original software",
+                "Android 10 with Funtouch OS 10"
+              ]
+            ]
+          }
+        },
+        {
+          "title": "2. Internal Components",
+          "intro": "The phone is a compact, highly integrated device. Unlike a laptop, most components are bonded or connected by small flex cables and are not designed for user replacement. The list below describes the main assemblies typically found in this class of smartphone; exact supplier part numbers may vary by production batch.",
+          "table": {
+            "columns": [
+              "Group",
+              "Components"
+            ],
+            "rows": [
+              [
+                "Main electronics",
+                "Main logic board (PCB), Snapdragon 665 system-on-chip, RAM package, flash-storage chip, power-management ICs and RF components"
+              ],
+              [
+                "Display and touch",
+                "6.53-inch LCD panel, touch digitiser, display driver circuitry and protective glass"
+              ],
+              [
+                "Camera system",
+                "Four rear camera modules, front camera module, lenses and camera flex connectors"
+              ],
+              [
+                "Power",
+                "5,000 mAh lithium-ion polymer battery, charging port board, battery protection circuit and power-management circuitry"
+              ],
+              [
+                "Audio and input",
+                "Earpiece, loudspeaker, microphones, vibration motor, side buttons and fingerprint sensor"
+              ],
+              [
+                "Connectivity",
+                "Cellular antennas, Wi-Fi/Bluetooth antenna paths, SIM tray and microSD interface"
+              ],
+              [
+                "Body and thermal parts",
+                "Plastic rear housing/frame elements, internal brackets, shields, screws, adhesives and thermal interface materials"
+              ]
+            ]
+          }
+        },
+        {
+          "title": "3. Carbon Footprint",
+          "intro": "A product carbon footprint estimates greenhouse-gas emissions across raw-material extraction, component manufacture, assembly, transport, use and end-of-life treatment. A verified Vivo Y50-specific life-cycle assessment was not located; the values below are indicative estimates based on published smartphone life-cycle research, not measurements of this exact model.",
+          "table": {
+            "columns": [
+              "Life stage",
+              "Indicative value",
+              "Basis / limitation"
+            ],
+            "rows": [
+              [
+                "Manufacturing",
+                "~50–80 kg CO₂e per smartphone (indicative range)",
+                "Generic smartphone life-cycle estimates; not a Vivo Y50 product declaration"
+              ],
+              [
+                "Manufacturing hotspot",
+                "High contribution",
+                "Printed circuit board, display assembly, integrated circuits and battery are material- and energy-intensive"
+              ],
+              [
+                "Charging, per year (India)",
+                "~4–7 kg CO₂e/year (illustrative)",
+                "Assumes roughly 6–10 kWh/year of wall electricity and CEA grid factor of about 0.716 kg CO₂/kWh; actual charging varies"
+              ],
+              [
+                "5-year use phase",
+                "~20–35 kg CO₂e (illustrative)",
+                "Charging estimate multiplied by five years; excludes network and cloud-service energy"
+              ],
+              [
+                "Indicative 5-year total",
+                "~70–115 kg CO₂e",
+                "Broad screening estimate only; not suitable as a certified product footprint"
+              ]
+            ]
+          },
+          "note": "Key insight: a large share of a smartphone’s footprint is created before the user switches it on, especially during semiconductor, display and battery production. Extending the phone’s useful life through careful maintenance, repair and reuse can avoid some demand for manufacturing a replacement device."
+        },
+        {
+          "title": "4. Metals and Materials Inside",
+          "intro": "Exact material quantities for the Vivo Y50 have not been publicly established in the sources used for this passport. The table therefore identifies materials commonly present in smartphones and their likely functions; amounts are intentionally not presented as model-specific measurements.",
+          "table": {
+            "columns": [
+              "Material",
+              "Typical location / function",
+              "Why recovery matters"
+            ],
+            "rows": [
+              [
+                "Copper",
+                "Printed circuit board tracks, wiring, charging and antenna circuits",
+                "Valuable conductive metal; recovery reduces demand for mined copper"
+              ],
+              [
+                "Lithium",
+                "Rechargeable lithium-ion battery",
+                "Critical battery material; should be recovered through authorised battery recycling"
+              ],
+              [
+                "Cobalt / nickel / manganese",
+                "Battery cathode chemistry may contain these metals; exact Y50 cell chemistry not confirmed",
+                "Supply-chain and environmental impacts can be significant; chemistry must be verified before assigning quantities"
+              ],
+              [
+                "Gold",
+                "Very thin plating on selected connectors and circuit-board contacts",
+                "High-value material present in small quantities"
+              ],
+              [
+                "Silver",
+                "Conductive contacts, solder-related and electronic components",
+                "Can be recovered from suitable electronic scrap"
+              ],
+              [
+                "Tin",
+                "Solder joints on circuit boards",
+                "Recycling reduces demand for newly mined tin"
+              ],
+              [
+                "Tantalum",
+                "Small capacitors on the circuit board, if used in the design",
+                "A critical raw material; exact use and quantity require teardown evidence"
+              ],
+              [
+                "Aluminium / steel",
+                "Internal shields, brackets, connector parts and screws",
+                "Can be separated and recycled as metals"
+              ],
+              [
+                "Silicon and glass",
+                "Semiconductor chips and display glass",
+                "Recovery is technically more difficult than bulk-metal recovery"
+              ],
+              [
+                "Plastics",
+                "Rear housing, internal supports, insulation and cable parts",
+                "Material identification and separation are needed for quality recycling"
+              ]
+            ]
+          }
+        },
+        {
+          "title": "5. Hazardous Substances and Safe Disposal",
+          "intro": "Smartphones contain a mixture of electronic materials, metals, polymers, adhesives and a rechargeable battery. The presence and concentration of restricted substances depend on component suppliers and manufacturing compliance; the table identifies the main end-of-life concerns without claiming a chemical assay of this particular handset.",
+          "table": {
+            "columns": [
+              "Substance / component",
+              "Where it may be found",
+              "Why it matters",
+              "Safe end-of-life route"
+            ],
+            "rows": [
+              [
+                "Lithium-ion battery",
+                "Sealed internal 5,000 mAh battery",
+                "Can overheat or ignite if crushed, punctured or short-circuited",
+                "Do not open or damage the phone. Hand the whole device to an authorised collection point or service centre; do not put it in household waste."
+              ],
+              [
+                "Lead",
+                "May occur in legacy or exempt solder / components; exact Y50 content not verified",
+                "Toxic to people and the environment if released through uncontrolled processing",
+                "Do not burn or dismantle circuit boards. Use authorised e-waste collection and recycling."
+              ],
+              [
+                "Brominated flame retardants",
+                "May be used in some plastics and circuit-board materials",
+                "Uncontrolled burning can release hazardous fumes",
+                "Never burn cables, boards or plastic housings; use authorised e-waste recyclers."
+              ],
+              [
+                "Nickel / cobalt compounds",
+                "Battery materials, depending on cell chemistry",
+                "Can be harmful if released during informal battery breaking or processing",
+                "Keep the battery intact and use authorised battery-waste channels."
+              ],
+              [
+                "Display glass / adhesives",
+                "LCD and bonded display assembly",
+                "Broken glass and mixed bonded materials complicate safe separation",
+                "Avoid breaking the display; let trained recyclers dismantle it using suitable equipment."
+              ]
+            ]
+          },
+          "hazard_meter": {
+            "note": "Hazard scores are the project team's assessment (1 = low, 10 = severe), based on how harmful each item can be during unsafe handling or disposal of this phone.",
+            "items": [
+              {
+                "name": "Lithium-ion battery",
+                "score": 8,
+                "reason": "Can overheat or ignite if crushed, punctured or short-circuited"
+              },
+              {
+                "name": "Lead",
+                "score": 6,
+                "reason": "Toxic to people and the environment if released through uncontrolled processing"
+              },
+              {
+                "name": "Brominated flame retardants",
+                "score": 6,
+                "reason": "Uncontrolled burning can release hazardous fumes"
+              },
+              {
+                "name": "Nickel / cobalt compounds",
+                "score": 6,
+                "reason": "Can be harmful if released during informal battery breaking or processing"
+              },
+              {
+                "name": "Display glass / adhesives",
+                "score": 3,
+                "reason": "Broken glass and mixed bonded materials complicate safe separation"
+              }
+            ]
+          }
+        },
+        {
+          "title": "6. Upgrade and Second-Life Potential",
+          "table": {
+            "columns": [
+              "Parameter",
+              "Value / assessment"
+            ],
+            "rows": [
+              [
+                "RAM",
+                "8 GB RAM is soldered to the main board; it is not a practical user upgrade."
+              ],
+              [
+                "Processor",
+                "Snapdragon 665 is soldered to the motherboard and cannot be upgraded like a desktop CPU."
+              ],
+              [
+                "Internal storage",
+                "128 GB flash storage is integrated on the main board; no normal user upgrade path."
+              ],
+              [
+                "Expandable storage",
+                "microSD expansion is supported; up to 256 GB is reported by specification listings. This is removable storage, not built-in memory."
+              ],
+              [
+                "Battery",
+                "Internal, non-removable design. Battery replacement should be performed by a qualified service technician."
+              ],
+              [
+                "Display / cameras",
+                "Modules may be replaceable by a repair technician, but adhesive bonding and parts availability affect repairability."
+              ],
+              [
+                "Software support",
+                "Launched with Android 10 / Funtouch OS 10. Current security-update availability should be checked with Vivo; avoid assuming ongoing support."
+              ],
+              [
+                "Suggested second life",
+                "If functional and secure, reuse as a basic communication, media, offline learning or backup device. If not repairable, send to an authorised e-waste recycler."
+              ]
+            ]
+          }
+        },
+        {
+          "title": "Data Security Before Reuse or Recycling",
+          "table": {
+            "columns": [
+              "Situation",
+              "Recommended action"
+            ],
+            "rows": [
+              [
+                "Before resale or donation",
+                "Back up needed files, sign out of accounts, remove SIM and microSD cards, then perform a factory reset using the phone’s settings."
+              ],
+              [
+                "Before recycling",
+                "Remove SIM and microSD cards. If the phone cannot be reset, ask an authorised service provider or recycler about secure data handling."
+              ],
+              [
+                "Safe dismantling",
+                "Do not attempt to remove or puncture the sealed battery. Leave disassembly to trained technicians and authorised recyclers."
+              ]
+            ]
+          }
+        },
+        {
+          "title": "7. Regulation and Compliance",
+          "table": {
+            "columns": [
+              "Parameter",
+              "Value / relevance"
+            ],
+            "rows": [
+              [
+                "India e-waste framework",
+                "The E-Waste (Management) Rules, 2022 came into force on 1 April 2023 and cover listed electrical and electronic equipment, including relevant components and parts."
+              ],
+              [
+                "Product category",
+                "A mobile phone is covered as information-technology / telecommunications equipment under the applicable Schedule I product categories. The precise portal category code should be checked against the current CPCB schedule rather than inferred."
+              ],
+              [
+                "Extended Producer Responsibility (EPR)",
+                "Producers covered by the Rules must meet applicable EPR obligations through the prescribed registration, collection and recycling framework."
+              ],
+              [
+                "Battery waste",
+                "The Battery Waste Management Rules, 2022 apply separately to waste batteries, including portable batteries. Producers have EPR responsibilities for collection and environmentally sound management."
+              ],
+              [
+                "Consumer responsibility",
+                "Do not discard the phone or its battery with mixed household waste. Use an authorised collection channel, brand take-back route or registered recycler."
+              ],
+              [
+                "RoHS / restricted substances",
+                "Where applicable, restrictions on hazardous substances in electrical and electronic equipment limit substances such as lead, mercury, cadmium, hexavalent chromium and certain flame retardants. Compliance is supplier- and market-specific."
+              ]
+            ]
+          }
+        },
+        {
+          "title": "8. Supply Chain and Ethics",
+          "table": {
+            "columns": [
+              "Parameter",
+              "Value / relevance"
+            ],
+            "rows": [
+              [
+                "Critical raw materials",
+                "Smartphones may use lithium, cobalt, nickel, tin, tantalum, tungsten, gold, copper and rare-earth elements. The exact bill of materials and sourcing origins for an individual Y50 unit are not publicly disclosed."
+              ],
+              [
+                "Conflict-mineral due diligence",
+                "Tin, tantalum, tungsten and gold (3TG) can be associated with elevated supply-chain risks in some sourcing regions. Responsible sourcing programmes seek traceability and due diligence."
+              ],
+              [
+                "Manufacturing location",
+                "Vivo announced the India Y50 launch as part of its India manufacturing commitment; public launch coverage reported manufacture at Vivo’s Greater Noida facility."
+              ],
+              [
+                "Worker and community impacts",
+                "Mining and refining can involve occupational, water, land-use and community impacts. Responsible sourcing, supplier audits and transparent reporting help reduce risks."
+              ],
+              [
+                "Why recycling helps",
+                "Recovering copper, gold, tin and battery metals can reduce demand for virgin extraction and keep valuable materials in circulation."
+              ],
+              [
+                "Circular-economy opportunity",
+                "Longer use, repair, refurbishment, take-back and formal recycling help reduce waste and preserve the value embedded in the phone."
+              ]
+            ]
+          }
+        },
+        {
+          "title": "Conclusion",
+          "intro": "The Vivo Y50 (2020) is a mid-range smartphone built around a Snapdragon 665 processor, a 6.53-inch Full HD+ display, a multi-camera system and a 5,000 mAh lithium-ion battery. Its compact design integrates most electronic components onto a small number of boards and bonded modules, making upgrades more limited than in larger electronic products.\n\nThe storage specification needs particular care: the commonly documented 2020 configuration has 128 GB of built-in storage, while microSD expansion of up to 256 GB is reported in specification listings. A 256 GB memory card should therefore not be described as 256 GB of internal storage.\n\nThe phone’s environmental impact is concentrated in the extraction and processing of materials and the manufacture of its semiconductor, display and battery components. Because a model-specific life-cycle assessment and detailed teardown bill of materials were not publicly available in the sources consulted, carbon and material figures in this passport are clearly labelled as generic or indicative rather than exact Vivo Y50 measurements.\n\nThe most sustainable end-of-life pathway is to keep a working phone in use for as long as it remains safe and secure, repair it where practical, protect personal data before transfer, and send unusable devices and batteries to authorised collection and recycling systems. This supports resource recovery and reduces the risks associated with informal e-waste processing.\n\nOverall, the Vivo Y50 demonstrates why a Digital Product Passport is useful: it connects product identity and components with environmental impacts, repair options, data security, regulatory responsibilities and responsible material recovery."
+        }
+      ],
+      "sources": [
+        [
+          "vivo China – Official Y50 specifications (model V1965A; launch period, dimensions, processor and storage variants).",
+          "https://m.vivo.com.cn/vivo/param/y50"
+        ],
+        [
+          "FoneArena (9 June 2020) – Vivo Y50 launched in India with 8 GB RAM and 128 GB storage; full specifications and expandable storage details.",
+          "https://www.fonearena.com/blog/314464/vivo-y50-india-price-specifications.html"
+        ],
+        [
+          "Economic Times Telecom (8 June 2020) – Vivo Y50 launched at ₹17,990; India configuration, battery, cameras and manufacturing announcement.",
+          "https://telecom.economictimes.indiatimes.com/news/vivo-y50-smartphone-launched-at-rs-17990/76260083"
+        ],
+        [
+          "TechInsights – Quick Survey Teardown of the Vivo Y50 vivo1935 smartphone (teardown record; detailed bill-of-materials access may require subscription).",
+          "https://www.techinsights.com/products/qst-2008-810"
+        ],
+        [
+          "Cordella, M. et al. (2021). Reducing the carbon footprint of ICT products through material efficiency strategies: A life cycle analysis of smartphones. Journal of Industrial Ecology, 25(2), 448–464.",
+          "https://doi.org/10.1111/jiec.13119"
+        ],
+        [
+          "Government of India, Ministry of Environment, Forest and Climate Change – E-Waste (Management) Rules, 2022.",
+          "https://moef.gov.in/uploads/2022/11/E-Waste-Management-Rules-2022.pdf"
+        ],
+        [
+          "Press Information Bureau (25 August 2022) – Government notifies Battery Waste Management Rules, 2022.",
+          "https://www.pib.gov.in/PressReleasePage.aspx?PRID=1854433"
+        ],
+        [
+          "Central Pollution Control Board – E-Waste Management System and EPR portal.",
+          "https://www.eprewaste.cpcb.gov.in/"
+        ],
+        [
+          "Central Electricity Authority – CO₂ Baseline Database / User Guide (grid emission factor used for the illustrative charging estimate).",
+          "https://cea.nic.in/"
+        ]
+      ],
+      "after_sources": [
+        {
+          "title": "Method note",
+          "intro": "Product specifications are based on manufacturer and launch-period sources. Component descriptions are typical smartphone architecture informed by the teardown record; exact supplier parts and material quantities are not asserted. Carbon and material estimates are screening-level context only, not a certified Vivo Y50 environmental declaration."
+        }
+      ]
     }
   ]
 }

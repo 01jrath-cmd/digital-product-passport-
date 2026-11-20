@@ -105,7 +105,9 @@
     "print_speed": "Print speed (black / colour)",
     "capacity": "Capacity",
     "metal_content": "Metal content (est.)",
-    "soleplate": "Soleplate"
+    "soleplate": "Soleplate",
+    "battery": "Battery",
+    "ram_storage": "RAM / Storage"
   },
   "hi": {
     "banner_name": "डिजिटल उत्पाद पासपोर्ट",
@@ -207,7 +209,9 @@
     "print_speed": "प्रिंट स्पीड (काला / रंगीन)",
     "capacity": "क्षमता",
     "metal_content": "धातु की मात्रा (अनुमान)",
-    "soleplate": "सोलप्लेट"
+    "soleplate": "सोलप्लेट",
+    "battery": "बैटरी",
+    "ram_storage": "RAM / स्टोरेज"
   },
   "kn": {
     "banner_name": "ಡಿಜಿಟಲ್ ಉತ್ಪನ್ನ ಪಾಸ್‌ಪೋರ್ಟ್",
@@ -309,6 +313,8 @@
     "print_speed": "ಮುದ್ರಣ ವೇಗ (ಕಪ್ಪು / ಬಣ್ಣ)",
     "capacity": "ಸಾಮರ್ಥ್ಯ",
     "metal_content": "ಲೋಹದ ಪ್ರಮಾಣ (ಅಂದಾಜು)",
-    "soleplate": "ಸೋಲ್‌ಪ್ಲೇಟ್"
+    "soleplate": "ಸೋಲ್‌ಪ್ಲೇಟ್",
+    "battery": "ಬ್ಯಾಟರಿ",
+    "ram_storage": "RAM / ಸಂಗ್ರಹಣೆ"
   }
 }
