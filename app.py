@@ -282,8 +282,37 @@ def show_banner():
                 unsafe_allow_html=True)
 
 
+def image_data_uri(path):
+    """Picture file -> text that can be put straight into HTML (keeps the site working offline)."""
+    import base64, mimetypes
+    with open(path, "rb") as f:
+        data = base64.b64encode(f.read()).decode()
+    return f"data:{mimetypes.guess_type(path)[0] or 'image/jpeg'};base64,{data}"
+
+
+HERO_PHOTOS = [f"images/hero/slide{i}.jpg" for i in range(1, 6)]
+
+
+def show_hero():
+    """Top of the home page: DPP title + description over sliding photos (hero.html)."""
+    slides = "".join(f'<img class="slide" src="{image_data_uri(p)}" alt="">' for p in HERO_PHOTOS)
+    with open("hero.html", encoding="utf-8") as f:
+        html = (f.read().replace("__SLIDES__", slides).replace("__TITLE__", ui("hero_title"))
+                .replace("__DESC__", ui("hero_desc")).replace("__BTN__", ui("hero_btn")))
+    components.html(html, height=564)
+
+
+def show_growth():
+    """'Driving Sustainable Growth' section with the bulb-in-hand picture (growth.html)."""
+    with open("growth.html", encoding="utf-8") as f:
+        html = f.read().replace("__TITLE__", ui("growth_title")).replace("__TEXT__", ui("growth_text"))
+    components.html(html, height=440)
+
+
 def home_page(devices):
-    show_banner()
+    show_hero()
+    show_growth()
+    st.markdown('<div id="passports"></div>', unsafe_allow_html=True)
     st.write(ui("home_intro"))
     for d in devices:
         d = localize(d)

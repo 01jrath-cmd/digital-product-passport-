@@ -1,0 +1,106 @@
+<!-- Home page hero: title + description over photos that slide in one after another
+     (circle "wipe" reveal from the left edge, like the NTPC home page banner). -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700;900&display=swap" rel="stylesheet">
+<style>
+  html, body { margin: 0; padding: 0; background: transparent; }
+  .hero { position: relative; overflow: hidden; border-radius: 14px; background: #0b1410;
+          min-height: 560px; display: flex; align-items: center; }
+  /* Photos: stacked on top of each other, each one grows from a 0% circle at the left edge */
+  .slide { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;
+           clip-path: circle(0% at 0% 50%); z-index: 1; }
+  .slide.active { clip-path: circle(150% at 0% 50%); z-index: 3; transition: clip-path 2s ease-in-out; }
+  .slide.prev   { clip-path: circle(150% at 0% 50%); z-index: 2; }
+  /* Dark shade on the left so the white text is easy to read */
+  .shade { position: absolute; inset: 0; z-index: 4;
+           background: linear-gradient(90deg, rgba(0,0,0,.78) 0%, rgba(0,0,0,.55) 45%, rgba(0,0,0,.15) 100%); }
+  .content { position: relative; z-index: 5; color: #fff; width: 72%; padding: 48px 6%;
+             animation: rise 1.2s ease-out both; }
+  .kicker { display: inline-block; font-family: "Roboto Condensed", "Arial Narrow", Arial, sans-serif;
+            font-weight: 900; font-size: 20px; letter-spacing: 6px; color: #0b1410; background: #ffd400;
+            padding: 4px 14px 4px 18px; border-radius: 6px; margin-bottom: 18px; }
+  h1 { font-family: "Roboto Condensed", "Arial Narrow", Arial, sans-serif; font-weight: 900;
+       text-transform: uppercase; letter-spacing: 5px; font-size: clamp(30px, 5.2vw, 58px);
+       line-height: 1.12; margin: 0 0 26px 0; }
+  p  { font-family: "Myriad Pro", Myriad, "Source Sans 3", "Segoe UI", Arial, sans-serif;
+       font-size: 17px; line-height: 1.6; margin: 0 0 36px 0; text-align: justify; }
+  p b { color: #ffd400; }
+  .btn { display: inline-block; background: #035577; color: #fff; padding: 11px 24px; border-radius: 15px;
+         font-family: "Myriad Pro", "Segoe UI", Arial, sans-serif; font-size: 18px; font-weight: 500;
+         text-decoration: none; cursor: pointer; transition: background .3s; }
+  .btn:hover { background: #1680ac; }
+  .dots { position: absolute; z-index: 6; bottom: 18px; right: 24px; display: flex; gap: 8px; }
+  .dot { width: 10px; height: 10px; border-radius: 50%; background: rgba(255,255,255,.45); cursor: pointer;
+         transition: all .4s; }
+  .dot.on { background: #ffd400; width: 26px; border-radius: 6px; }
+  @keyframes rise { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: none; } }
+  @media (max-width: 640px) {
+    .hero { min-height: 520px; }
+    .content { width: 100%; padding: 36px 22px 56px; }
+    .kicker { font-size: 16px; }
+    p { font-size: 15.5px; text-align: left; }
+  }
+</style>
+
+<div class="hero" id="hero">
+  __SLIDES__
+  <div class="shade"></div>
+  <div class="content">
+    <div class="kicker">DPP</div>
+    <h1>__TITLE__</h1>
+    <p>__DESC__</p>
+    <a class="btn" id="go">__BTN__</a>
+  </div>
+  <div class="dots" id="dots"></div>
+</div>
+
+<script>
+(function () {
+  const slides = Array.from(document.querySelectorAll(".slide"));
+  const dotsBox = document.getElementById("dots");
+  const SHOW_MS = 6000;                       // each photo stays 6 seconds
+  let current = 0, timer = null;
+
+  slides.forEach(function (_, i) {
+    const d = document.createElement("span");
+    d.className = "dot" + (i === 0 ? " on" : "");
+    d.onclick = function () { show(i); restart(); };
+    dotsBox.appendChild(d);
+  });
+  const dots = Array.from(dotsBox.children);
+
+  function show(next) {
+    if (next === current) return;
+    slides.forEach(function (s) { s.classList.remove("prev"); });
+    slides[current].classList.remove("active");
+    slides[current].classList.add("prev");           // old photo stays underneath
+    slides[next].classList.add("active");            // new photo grows over it
+    dots[current].classList.remove("on"); dots[next].classList.add("on");
+    current = next;
+  }
+  function restart() {
+    clearInterval(timer);
+    timer = setInterval(function () { show((current + 1) % slides.length); }, SHOW_MS);
+  }
+  slides[0].classList.add("active");
+  restart();
+
+  // Button scrolls the main page down to the list of passports
+  document.getElementById("go").onclick = function () {
+    try {
+      const target = window.parent.document.getElementById("passports");
+      if (target) target.scrollIntoView({ behavior: "smooth", block: "start" });
+    } catch (e) {}
+  };
+
+  // Make this frame exactly as tall as its content (works on phones too)
+  function fit() {
+    try { const h = document.getElementById("hero").offsetHeight + 4 + "px";
+          window.frameElement.style.height = h;
+          window.frameElement.parentElement.style.height = h;   // the page box around this frame
+    } catch (e) {}
+  }
+  window.addEventListener("load", fit); window.addEventListener("resize", fit); setTimeout(fit, 300);
+  new ResizeObserver(fit).observe(document.getElementById("hero"));
+})();
+</script>
