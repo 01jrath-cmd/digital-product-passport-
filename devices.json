@@ -1329,6 +1329,1289 @@
       }
     },
     {
+      "id": "DPP-003",
+      "device": "TP-Link TL-WR740N",
+      "model": "150 Mbps Wireless N Router",
+      "brand": "TP-Link",
+      "category": "Wireless router",
+      "author": "BY SAIKRUSHNA RATH - RVCE26BEC252",
+      "image": "images/tp-link-tl-wr740n.jpg",
+      "year": 2010,
+      "weight_g": 500,
+      "condition": "Working",
+      "status": "In use",
+      "value_basis": {
+        "_note": "Amounts used for the live metal-value estimate (middle of each range in section 4)",
+        "gold_mg": 14,
+        "silver_mg": 85,
+        "palladium_mg": 1.4,
+        "copper_g": 30,
+        "cobalt_g": 0,
+        "lithium_g": 0
+      },
+      "sections": [
+        {
+          "title": "1. Identity and Specifications",
+          "table": {
+            "columns": [
+              "Parameter",
+              "Value"
+            ],
+            "rows": [
+              [
+                "Model",
+                "TP-Link **TL-WR740N** 150 Mbps Wireless N Router; first FCC approval November 2009 (FCC ID TE7WR740N), sold from 2010 in several hardware versions (v1 to v6)"
+              ],
+              [
+                "Processor (SoC)",
+                "v1: Atheros AR7240, 400 MHz MIPS 24Kc, with a separate Atheros AR9285 Wi-Fi chip. v6: single-chip Qualcomm Atheros QCA9533, 560 MHz"
+              ],
+              [
+                "Memory",
+                "4 MB flash (stores the firmware and your settings), 32 MB RAM"
+              ],
+              [
+                "Wireless",
+                "IEEE 802.11b/g/n, 2.4–2.4835 GHz only, up to **150 Mbps** (1 × 1 stream)"
+              ],
+              [
+                "Antenna",
+                "1 fixed 5 dBi omnidirectional antenna"
+              ],
+              [
+                "Ports and buttons",
+                "4 × 10/100 Mbps LAN + 1 × 10/100 Mbps WAN; WPS/Reset button (QSS button on older units)"
+              ],
+              [
+                "Security",
+                "64/128/152-bit WEP, WPA/WPA2, WPA-PSK/WPA2-PSK"
+              ],
+              [
+                "Power adapter",
+                "Older versions: **9 V DC, 0.6 A** (0.85 A on v1). Newer versions: **5 V DC, 0.6 A**"
+              ],
+              [
+                "Power use",
+                "About **3–5 W**, switched on 24 hours a day (retailer lists 5 W typical)"
+              ],
+              [
+                "Size and weight",
+                "174 × 118 × 33 mm; about 0.5 kg as listed by a retailer (router with accessories)"
+              ],
+              [
+                "Certifications",
+                "CE, FCC, RoHS"
+              ]
+            ]
+          }
+        },
+        {
+          "title": "2. Internal Components",
+          "intro": "**A router is much simpler than a laptop: almost everything sits on one circuit board.**",
+          "table": {
+            "columns": [
+              "Group",
+              "Components"
+            ],
+            "rows": [
+              [
+                "Main circuit board",
+                "One printed circuit board with the processor (SoC), RAM chip, flash memory chip, Wi-Fi radio and 5-port Ethernet switch"
+              ],
+              [
+                "Radio",
+                "Wi-Fi front end on the board, with a short cable to the fixed 5 dBi antenna"
+              ],
+              [
+                "Network ports",
+                "5 RJ45 sockets (4 LAN + 1 WAN) with small isolation transformers (Ethernet magnetics)"
+              ],
+              [
+                "Power",
+                "DC input socket and voltage-regulator circuit on the board, plus a separate plug-in AC adapter"
+              ],
+              [
+                "Indicators and buttons",
+                "Row of status LEDs, WPS/Reset button, power button on some versions"
+              ],
+              [
+                "Body",
+                "Two-part white plastic housing, screws and rubber feet"
+              ],
+              [
+                "In the box",
+                "Power adapter, Ethernet cable, quick setup guide, resource CD"
+              ]
+            ]
+          }
+        },
+        {
+          "title": "3. Carbon Footprint",
+          "intro": "A **carbon footprint** is the total amount of greenhouse gases (primarily carbon dioxide, methane, and nitrous oxide) generated directly and indirectly by an individual, organization, event, or product.",
+          "table": {
+            "columns": [
+              "Life stage",
+              "Value",
+              "Basis"
+            ],
+            "rows": [
+              [
+                "**Manufacturing**",
+                "**~20 kg CO₂e** (estimate)",
+                "No life-cycle study exists for this model. Proxy: Google Wifi report, where production is 24% of 90 kg CO₂e ≈ 22 kg"
+              ],
+              [
+                "**Use, per year (India)**",
+                "**~22 kg CO₂ / year** (estimate)",
+                "3.5 W × 24 h × 365 days = 30.7 kWh/year × India grid factor 0.716 kg CO₂/kWh (CEA)"
+              ],
+              [
+                "Use share",
+                "About 70–80% of lifetime emissions",
+                "Google Wifi report: customer use is 74% of the total"
+              ],
+              [
+                "**5-year lifetime total**",
+                "**~130 kg CO₂** (estimate)",
+                "Manufacturing plus 5 years of use, on day and night"
+              ]
+            ]
+          },
+          "note": "**Key insight:** unlike the laptop, most of a router's carbon comes from electricity, because it stays on day and night. Switching it off for 8 hours at night saves about 7 kg CO₂ a year, and keeping a working router in use still avoids the ~20 kg spent making a new one."
+        },
+        {
+          "title": "4. Metals and Materials Inside",
+          "intro": "Estimated amounts for one router, using measured metal contents of router and modem circuit boards (Holgersson et al., 2018: gold 199 g/t, silver 1,213 g/t, palladium 19.5 g/t, copper 22%) and an estimated board weight of 60–80 g.",
+          "show_live_value": true,
+          "table": {
+            "columns": [
+              "Material",
+              "Amount per router",
+              "Where it is"
+            ],
+            "rows": [
+              [
+                "**Copper**",
+                "~25–45 g (estimate)",
+                "Board tracks and layers (~13–18 g), Ethernet magnetics, adapter transformer and cables"
+              ],
+              [
+                "**Silver**",
+                "~75–95 mg",
+                "Solder, chip contacts, circuit board"
+              ],
+              [
+                "**Gold**",
+                "~12–16 mg",
+                "Connector pins, chip bonding wires, board contacts"
+              ],
+              [
+                "**Palladium**",
+                "~1.2–1.6 mg",
+                "Multilayer ceramic capacitors and contacts"
+              ],
+              [
+                "**Tin**",
+                "~3–5 g (estimate)",
+                "Solder (about 5–6% of board weight)"
+              ],
+              [
+                "**Lead**",
+                "Up to ~0.25 g",
+                "Solder of older or exempt parts (3,413 ppm measured in router boards); RoHS units should be largely lead-free"
+              ],
+              [
+                "**Iron / steel**",
+                "~10–60 g",
+                "Screws, RJ45 shielding, adapter transformer core (older 9 V adapters are heavier)"
+              ],
+              [
+                "**Plastics (ABS, PC)**",
+                "~100–150 g (estimate)",
+                "White housing, antenna cover, adapter case"
+              ],
+              [
+                "**Fibreglass and epoxy (FR-4)**",
+                "~25–30 g",
+                "Board base (about 34% of router boards is polymer)"
+              ],
+              [
+                "**Ferrite**",
+                "A few grams",
+                "Ethernet transformers and chokes"
+              ],
+              [
+                "**Cobalt, lithium**",
+                "0 g",
+                "No battery inside"
+              ],
+              [
+                "**Rare-earth magnets**",
+                "0 g",
+                "No hard drive, speakers or motors"
+              ]
+            ]
+          }
+        },
+        {
+          "title": "5. Hazardous Substances and Safe Disposal",
+          "table": {
+            "columns": [
+              "Substance",
+              "Where",
+              "Why it matters",
+              "How to dispose of it safely"
+            ],
+            "rows": [
+              [
+                "**Lead**",
+                "Solder on the circuit board (mainly older or exempt parts)",
+                "Damages the nervous system; released when boards are burnt or acid-washed",
+                "Never burn, desolder or acid-wash the board. Hand the whole router to an authorised e-waste recycler, who recovers lead together with gold, silver and copper."
+              ],
+              [
+                "**Brominated flame retardants**",
+                "Circuit-board laminate, plastic housing, cable insulation",
+                "Release toxic fumes and dioxins when burnt",
+                "Never burn the housing or cables to recover copper. Give all plastics and cables to an authorised e-waste recycler."
+              ],
+              [
+                "**PVC cables**",
+                "Ethernet cable and adapter cord",
+                "Burning releases acidic gas and dioxins",
+                "Do not strip or burn cables informally; recycle them together with the router."
+              ],
+              [
+                "**Electrolytic capacitors**",
+                "Circuit board and inside the power adapter",
+                "Electrolyte can leak and corrode; adapter capacitors can hold a charge",
+                "Unplug before handling, do not open the adapter, and recycle the adapter whole."
+              ]
+            ]
+          },
+          "hazard_meter": {
+            "note": "Hazard scores are the project team's assessment (1 = low, 10 = severe), based on toxicity, how easily people are exposed during unsafe handling, and the amount in this router.",
+            "items": [
+              {
+                "name": "Lead",
+                "score": 6,
+                "reason": "Toxic to the nervous system, but only a small amount in this router; released as fumes when boards are burnt."
+              },
+              {
+                "name": "Brominated flame retardants",
+                "score": 6,
+                "reason": "Give off toxic fumes and dioxins when the board, housing or cables are burnt."
+              },
+              {
+                "name": "PVC cables",
+                "score": 5,
+                "reason": "Burning cables to get copper releases acidic gas and dioxins."
+              },
+              {
+                "name": "Electrolytic capacitors",
+                "score": 3,
+                "reason": "Electrolyte can leak; low risk if the router and adapter are recycled whole."
+              }
+            ]
+          }
+        },
+        {
+          "title": "6. Upgrade and Second-Life Potential",
+          "table": {
+            "columns": [
+              "Parameter",
+              "Value"
+            ],
+            "rows": [
+              [
+                "Firmware",
+                "Official TP-Link firmware updates; check the hardware version (V1–V6) on the label first"
+              ],
+              [
+                "Open-source firmware",
+                "Older OpenWrt releases support it, but current OpenWrt no longer supports routers with only 4 MB flash and 32 MB RAM"
+              ],
+              [
+                "Hardware upgrades",
+                "None; RAM, flash and antenna are fixed"
+              ],
+              [
+                "Speed today",
+                "150 Mbps on 2.4 GHz only: fine for browsing and messaging, too slow for fast fibre plans"
+              ],
+              [
+                "Suggested second-life uses",
+                "Wi-Fi range extender or access point (WDS/AP mode), 4-port wired switch, separate guest or smart-device network, practice router for networking labs"
+              ],
+              [
+                "Spare parts",
+                "Power adapter (check volts before reusing), Ethernet cable, antenna"
+              ]
+            ]
+          }
+        },
+        {
+          "title": "End-of-Life Handling and Data Security",
+          "table": {
+            "columns": [
+              "Parameter",
+              "Value"
+            ],
+            "rows": [
+              [
+                "Data risk",
+                "The flash chip stores your Wi-Fi name and password, admin password, internet (PPPoE) login and list of connected devices"
+              ],
+              [
+                "If the router will be **reused**",
+                "Hold the Reset button for about 10 seconds with the power on to restore factory settings, then set a new admin password"
+              ],
+              [
+                "If it will be **recycled**",
+                "Factory-reset it first, so your Wi-Fi and internet login cannot be read from the flash chip"
+              ],
+              [
+                "Safe dismantling order",
+                "1. Unplug the adapter → 2. Remove antenna and screws → 3. Circuit board, whole, for precious-metal recovery → 4. Adapter and cables → 5. Plastic housing"
+              ]
+            ]
+          }
+        },
+        {
+          "title": "7. Regulation and Compliance",
+          "table": {
+            "columns": [
+              "Parameter",
+              "Value"
+            ],
+            "rows": [
+              [
+                "FCC ID",
+                "TE7WR740N (v1); TE7WR741NXV6 (v6)"
+              ],
+              [
+                "India e-waste category",
+                "**IT and telecommunication equipment** (Schedule I, E-Waste (Management) Rules, 2022)"
+              ],
+              [
+                "Producer responsibility",
+                "Under Extended Producer Responsibility (EPR), the producer must ensure its e-waste reaches authorised recyclers"
+              ],
+              [
+                "Radio",
+                "Uses the licence-free 2.4 GHz band; certified CE and FCC"
+              ],
+              [
+                "RoHS",
+                "Listed as RoHS compliant: limits on lead, mercury, hexavalent chromium, PBB and PBDE (0.1%) and cadmium (0.01%)"
+              ]
+            ]
+          }
+        },
+        {
+          "title": "8. Supply Chain and Ethics",
+          "table": {
+            "columns": [
+              "Parameter",
+              "Value"
+            ],
+            "rows": [
+              [
+                "Conflict minerals inside",
+                "Tin (solder), gold (about 12–16 mg) and tantalum if tantalum capacitors are used: part of the \"3TG\" conflict minerals"
+              ],
+              [
+                "Rule that applies today",
+                "EU Regulation 2017/821 requires importers of 3TG minerals to carry out supply-chain due diligence"
+              ],
+              [
+                "Why recycling helps",
+                "Recovered tin and gold reduce the need for newly mined conflict minerals"
+              ]
+            ]
+          }
+        },
+        {
+          "title": "Conclusion",
+          "subtitle": "Conclusion for your project",
+          "table": {
+            "columns": [
+              "Option",
+              "Value",
+              "CO₂ benefit"
+            ],
+            "rows": [
+              [
+                "**Reuse** (as router, extender or switch)",
+                "**₹300–500** (typical used price, estimate)",
+                "Avoids ~20 kg CO₂ of making a new router"
+              ],
+              [
+                "**Recycle** (metal content)",
+                "About ₹250 in theory (live value in section 4); **₹20–50 paid** as scrap (estimate)",
+                "Recovers metals; doesn't avoid manufacturing a new router"
+              ]
+            ]
+          },
+          "note": "Reuse is worth several times more than scrap. For a router, the biggest carbon saving comes from how it is used: switch it off when nobody needs it, and give it a second life as an extender or switch before recycling. This supports the Repair → Reuse → Recycle order your website recommends."
+        }
+      ],
+      "sources": [
+        [
+          "TP-Link India – TL-WR740N specifications.",
+          "https://www.tp-link.com/in/products/details/TL-WR740N.html"
+        ],
+        [
+          "TP-Link – TL-WR740N datasheet (9 V / 0.6 A adapter, QSS button).",
+          "https://cdn.shopify.com/s/files/1/0862/4878/files/TP-Link_TL-WR740N.pdf"
+        ],
+        [
+          "TechInfoDepot – TP-LINK TL-WR740N v1.x (Atheros AR7240, FCC ID TE7WR740N, 2009).",
+          "https://en.techinfodepot.shoutwiki.com/wiki/TP-LINK_TL-WR740N_v1.x"
+        ],
+        [
+          "DeviWiki – TP-LINK TL-WR740N v6.x (Qualcomm Atheros QCA9533, 5 V adapter).",
+          "https://deviwiki.com/wiki/TP-LINK_TL-WR740N_v6.x"
+        ],
+        [
+          "Multitronic – TL-WR740N product listing (weight 500 g, 5 W typical).",
+          "https://www.multitronic.fi/en/products/182643"
+        ],
+        [
+          "Google – Google Wifi 2020 Product Environmental Report (90 kg CO₂e; production 24%, use 74%).",
+          "https://sustainability.google/reports/google-wifi-2020-product-environmental-report/"
+        ],
+        [
+          "Central Electricity Authority – CO₂ Baseline Database User Guide v19 (grid factor 0.716 tCO₂/MWh, FY 2022-23).",
+          "https://cea.nic.in/wp-content/uploads/baseline/2024/01/User_Guide__Version_19.0.pdf"
+        ],
+        [
+          "Holgersson, S., Steenari, B.-M., Björkman, M. & Cullbrand, K. (2018). Analysis of the metal content of small-size WEEE printed circuit boards, part 1: Internet routers, mobile phones and smartphones. Resources, Conservation and Recycling, 133, 300–308.",
+          "https://www.sciencedirect.com/science/article/abs/pii/S0921344917300551"
+        ],
+        [
+          "Government of India – E-Waste (Management) Rules, 2022.",
+          "https://eprewaste.cpcb.gov.in/assets/PDF/e-waste_rules_2022.pdf"
+        ],
+        [
+          "OpenWrt – 4/32 warning (routers with 4 MB flash / 32 MB RAM).",
+          "https://openwrt.org/supported_devices/432_warning"
+        ]
+      ],
+      "translations": {
+        "hi": {
+          "model": "150 Mbps वायरलेस N राउटर",
+          "sections": [
+            {
+              "title": "1. पहचान और विनिर्देश",
+              "table": {
+                "columns": [
+                  "पैरामीटर",
+                  "मान"
+                ],
+                "rows": [
+                  [
+                    "मॉडल",
+                    "TP-Link **TL-WR740N** 150 Mbps वायरलेस N राउटर; पहली FCC मंज़ूरी नवंबर 2009 (FCC ID TE7WR740N), 2010 से कई हार्डवेयर संस्करणों (v1 से v6) में बिका"
+                  ],
+                  [
+                    "प्रोसेसर (SoC)",
+                    "v1: Atheros AR7240, 400 MHz MIPS 24Kc, अलग Atheros AR9285 वाई-फ़ाई चिप के साथ। v6: एक-चिप Qualcomm Atheros QCA9533, 560 MHz"
+                  ],
+                  [
+                    "मेमोरी",
+                    "4 MB फ़्लैश (फ़र्मवेयर और आपकी सेटिंग्स रखती है), 32 MB RAM"
+                  ],
+                  [
+                    "वायरलेस",
+                    "IEEE 802.11b/g/n, केवल 2.4–2.4835 GHz, **150 Mbps** तक (1 × 1 स्ट्रीम)"
+                  ],
+                  [
+                    "एंटीना",
+                    "1 स्थिर 5 dBi सर्वदिशात्मक (omnidirectional) एंटीना"
+                  ],
+                  [
+                    "पोर्ट और बटन",
+                    "4 × 10/100 Mbps LAN + 1 × 10/100 Mbps WAN; WPS/Reset बटन (पुराने यूनिट में QSS बटन)"
+                  ],
+                  [
+                    "सुरक्षा",
+                    "64/128/152-बिट WEP, WPA/WPA2, WPA-PSK/WPA2-PSK"
+                  ],
+                  [
+                    "पावर एडॉप्टर",
+                    "पुराने संस्करण: **9 V DC, 0.6 A** (v1 पर 0.85 A)। नए संस्करण: **5 V DC, 0.6 A**"
+                  ],
+                  [
+                    "बिजली खपत",
+                    "लगभग **3–5 W**, दिन के 24 घंटे चालू (रिटेलर के अनुसार सामान्यतः 5 W)"
+                  ],
+                  [
+                    "आकार और वज़न",
+                    "174 × 118 × 33 mm; एक रिटेलर के अनुसार लगभग 0.5 kg (सहायक सामान सहित राउटर)"
+                  ],
+                  [
+                    "प्रमाणन",
+                    "CE, FCC, RoHS"
+                  ]
+                ]
+              }
+            },
+            {
+              "title": "2. आंतरिक पुर्ज़े",
+              "intro": "**राउटर लैपटॉप से कहीं सरल है: लगभग सब कुछ एक ही सर्किट बोर्ड पर होता है।**",
+              "table": {
+                "columns": [
+                  "समूह",
+                  "पुर्ज़े"
+                ],
+                "rows": [
+                  [
+                    "मुख्य सर्किट बोर्ड",
+                    "एक प्रिंटेड सर्किट बोर्ड जिस पर प्रोसेसर (SoC), RAM चिप, फ़्लैश मेमोरी चिप, वाई-फ़ाई रेडियो और 5-पोर्ट ईथरनेट स्विच हैं"
+                  ],
+                  [
+                    "रेडियो",
+                    "बोर्ड पर वाई-फ़ाई फ़्रंट-एंड, स्थिर 5 dBi एंटीना तक छोटी केबल के साथ"
+                  ],
+                  [
+                    "नेटवर्क पोर्ट",
+                    "5 RJ45 सॉकेट (4 LAN + 1 WAN), छोटे आइसोलेशन ट्रांसफ़ॉर्मर (ईथरनेट मैग्नेटिक्स) के साथ"
+                  ],
+                  [
+                    "पावर",
+                    "बोर्ड पर DC इनपुट सॉकेट और वोल्टेज-रेगुलेटर सर्किट, साथ में अलग प्लग-इन AC एडॉप्टर"
+                  ],
+                  [
+                    "संकेतक और बटन",
+                    "स्टेटस LED की पंक्ति, WPS/Reset बटन, कुछ संस्करणों में पावर बटन"
+                  ],
+                  [
+                    "बॉडी",
+                    "दो हिस्सों वाला सफ़ेद प्लास्टिक कवर, स्क्रू और रबर के पैर"
+                  ],
+                  [
+                    "डिब्बे में",
+                    "पावर एडॉप्टर, ईथरनेट केबल, क्विक सेटअप गाइड, रिसोर्स CD"
+                  ]
+                ]
+              }
+            },
+            {
+              "title": "3. कार्बन फ़ुटप्रिंट",
+              "intro": "**कार्बन फ़ुटप्रिंट** किसी व्यक्ति, संगठन, कार्यक्रम या उत्पाद द्वारा प्रत्यक्ष और अप्रत्यक्ष रूप से पैदा होने वाली ग्रीनहाउस गैसों (मुख्य रूप से कार्बन डाइऑक्साइड, मीथेन और नाइट्रस ऑक्साइड) की कुल मात्रा है।",
+              "table": {
+                "columns": [
+                  "जीवन चरण",
+                  "मान",
+                  "आधार"
+                ],
+                "rows": [
+                  [
+                    "**निर्माण**",
+                    "**~20 kg CO₂e** (अनुमान)",
+                    "इस मॉडल का कोई जीवन-चक्र अध्ययन नहीं है। तुलना: Google Wifi रिपोर्ट, जिसमें उत्पादन 90 kg CO₂e का 24% ≈ 22 kg है"
+                  ],
+                  [
+                    "**उपयोग, प्रति वर्ष (भारत)**",
+                    "**~22 kg CO₂ / वर्ष** (अनुमान)",
+                    "3.5 W × 24 घंटे × 365 दिन = 30.7 kWh/वर्ष × भारत ग्रिड फ़ैक्टर 0.716 kg CO₂/kWh (CEA)"
+                  ],
+                  [
+                    "उपयोग का हिस्सा",
+                    "जीवन-काल के उत्सर्जन का लगभग 70–80%",
+                    "Google Wifi रिपोर्ट: ग्राहक उपयोग कुल का 74%"
+                  ],
+                  [
+                    "**5 साल का कुल जीवन-काल**",
+                    "**~130 kg CO₂** (अनुमान)",
+                    "निर्माण और 5 साल का दिन-रात उपयोग"
+                  ]
+                ]
+              },
+              "note": "**मुख्य बात:** लैपटॉप के उलट, राउटर का ज़्यादातर कार्बन बिजली से आता है, क्योंकि यह दिन-रात चालू रहता है। रात में 8 घंटे बंद करने से साल में लगभग 7 kg CO₂ बचता है, और चालू राउटर को इस्तेमाल में रखने से नया राउटर बनाने में लगने वाला ~20 kg भी बचता है।"
+            },
+            {
+              "title": "4. अंदर की धातुएँ और सामग्री",
+              "intro": "एक राउटर के लिए अनुमानित मात्रा, राउटर और मॉडम के सर्किट बोर्ड में मापी गई धातु मात्रा (Holgersson et al., 2018: सोना 199 g/t, चाँदी 1,213 g/t, पैलेडियम 19.5 g/t, तांबा 22%) और 60–80 g के अनुमानित बोर्ड वज़न के आधार पर।",
+              "table": {
+                "columns": [
+                  "सामग्री",
+                  "प्रति राउटर मात्रा",
+                  "कहाँ है"
+                ],
+                "rows": [
+                  [
+                    "**तांबा**",
+                    "~25–45 g (अनुमान)",
+                    "बोर्ड की ट्रैक और परतें (~13–18 g), ईथरनेट मैग्नेटिक्स, एडॉप्टर ट्रांसफ़ॉर्मर और केबल"
+                  ],
+                  [
+                    "**चाँदी**",
+                    "~75–95 mg",
+                    "सोल्डर, चिप के संपर्क, सर्किट बोर्ड"
+                  ],
+                  [
+                    "**सोना**",
+                    "~12–16 mg",
+                    "कनेक्टर पिन, चिप बॉन्डिंग तार, बोर्ड के संपर्क"
+                  ],
+                  [
+                    "**पैलेडियम**",
+                    "~1.2–1.6 mg",
+                    "मल्टीलेयर सिरेमिक कैपेसिटर और संपर्क"
+                  ],
+                  [
+                    "**टिन**",
+                    "~3–5 g (अनुमान)",
+                    "सोल्डर (बोर्ड के वज़न का लगभग 5–6%)"
+                  ],
+                  [
+                    "**सीसा (लेड)**",
+                    "~0.25 g तक",
+                    "पुराने या छूट वाले पुर्ज़ों का सोल्डर (राउटर बोर्ड में 3,413 ppm मापा गया); RoHS यूनिट काफ़ी हद तक लेड-मुक्त होने चाहिए"
+                  ],
+                  [
+                    "**लोहा / स्टील**",
+                    "~10–60 g",
+                    "स्क्रू, RJ45 शील्डिंग, एडॉप्टर ट्रांसफ़ॉर्मर कोर (पुराने 9 V एडॉप्टर भारी होते हैं)"
+                  ],
+                  [
+                    "**प्लास्टिक (ABS, PC)**",
+                    "~100–150 g (अनुमान)",
+                    "सफ़ेद कवर, एंटीना कवर, एडॉप्टर केस"
+                  ],
+                  [
+                    "**फ़ाइबरग्लास और एपॉक्सी (FR-4)**",
+                    "~25–30 g",
+                    "बोर्ड का आधार (राउटर बोर्ड का लगभग 34% पॉलिमर है)"
+                  ],
+                  [
+                    "**फ़ेराइट**",
+                    "कुछ ग्राम",
+                    "ईथरनेट ट्रांसफ़ॉर्मर और चोक"
+                  ],
+                  [
+                    "**कोबाल्ट, लिथियम**",
+                    "0 g",
+                    "अंदर कोई बैटरी नहीं"
+                  ],
+                  [
+                    "**रेयर-अर्थ चुंबक**",
+                    "0 g",
+                    "कोई हार्ड ड्राइव, स्पीकर या मोटर नहीं"
+                  ]
+                ]
+              }
+            },
+            {
+              "title": "5. खतरनाक पदार्थ और सुरक्षित निपटान",
+              "table": {
+                "columns": [
+                  "पदार्थ",
+                  "कहाँ",
+                  "क्यों ज़रूरी है",
+                  "सुरक्षित निपटान कैसे करें"
+                ],
+                "rows": [
+                  [
+                    "**सीसा (लेड)**",
+                    "सर्किट बोर्ड का सोल्डर (मुख्यतः पुराने या छूट वाले पुर्ज़े)",
+                    "तंत्रिका तंत्र को नुकसान; बोर्ड जलाने या एसिड से धोने पर निकलता है",
+                    "बोर्ड को कभी न जलाएँ, डीसोल्डर करें या एसिड से धोएँ। पूरा राउटर अधिकृत ई-वेस्ट रीसायकलर को दें, जो सोना, चाँदी और तांबे के साथ सीसा भी सुरक्षित निकालता है।"
+                  ],
+                  [
+                    "**ब्रोमीनेटेड फ़्लेम रिटार्डेंट**",
+                    "सर्किट-बोर्ड लैमिनेट, प्लास्टिक कवर, केबल इंसुलेशन",
+                    "जलाने पर ज़हरीला धुआँ और डाइऑक्सिन निकलते हैं",
+                    "तांबा निकालने के लिए कवर या केबल कभी न जलाएँ। सारे प्लास्टिक और केबल अधिकृत ई-वेस्ट रीसायकलर को दें।"
+                  ],
+                  [
+                    "**PVC केबल**",
+                    "ईथरनेट केबल और एडॉप्टर की तार",
+                    "जलाने पर अम्लीय गैस और डाइऑक्सिन निकलते हैं",
+                    "केबल को अनौपचारिक रूप से न छीलें न जलाएँ; राउटर के साथ ही रीसायकल करें।"
+                  ],
+                  [
+                    "**इलेक्ट्रोलाइटिक कैपेसिटर**",
+                    "सर्किट बोर्ड और पावर एडॉप्टर के अंदर",
+                    "इलेक्ट्रोलाइट रिस सकता है और ज़ंग लगा सकता है; एडॉप्टर के कैपेसिटर में चार्ज रह सकता है",
+                    "छूने से पहले प्लग निकालें, एडॉप्टर न खोलें, और एडॉप्टर को पूरा ही रीसायकल करें।"
+                  ]
+                ]
+              },
+              "hazard_meter": {
+                "note": "खतरा स्कोर प्रोजेक्ट टीम का आकलन हैं (1 = कम, 10 = गंभीर), जो विषाक्तता, असुरक्षित संभाल में लोगों के संपर्क में आने की आसानी, और इस राउटर में मौजूद मात्रा पर आधारित हैं।",
+                "items": [
+                  {
+                    "name": "सीसा (लेड)",
+                    "reason": "तंत्रिका तंत्र के लिए ज़हरीला, पर इस राउटर में थोड़ी ही मात्रा; बोर्ड जलाने पर धुएँ के रूप में निकलता है।"
+                  },
+                  {
+                    "name": "ब्रोमीनेटेड फ़्लेम रिटार्डेंट",
+                    "reason": "बोर्ड, कवर या केबल जलाने पर ज़हरीला धुआँ और डाइऑक्सिन देते हैं।"
+                  },
+                  {
+                    "name": "PVC केबल",
+                    "reason": "तांबे के लिए केबल जलाने पर अम्लीय गैस और डाइऑक्सिन निकलते हैं।"
+                  },
+                  {
+                    "name": "इलेक्ट्रोलाइटिक कैपेसिटर",
+                    "reason": "इलेक्ट्रोलाइट रिस सकता है; राउटर और एडॉप्टर को पूरा रीसायकल करने पर जोखिम कम।"
+                  }
+                ]
+              }
+            },
+            {
+              "title": "6. अपग्रेड और दूसरे जीवन की संभावना",
+              "table": {
+                "columns": [
+                  "पैरामीटर",
+                  "मान"
+                ],
+                "rows": [
+                  [
+                    "फ़र्मवेयर",
+                    "TP-Link के आधिकारिक फ़र्मवेयर अपडेट; पहले लेबल पर हार्डवेयर संस्करण (V1–V6) देखें"
+                  ],
+                  [
+                    "ओपन-सोर्स फ़र्मवेयर",
+                    "पुराने OpenWrt संस्करण इसे सपोर्ट करते हैं, पर मौजूदा OpenWrt अब केवल 4 MB फ़्लैश और 32 MB RAM वाले राउटर को सपोर्ट नहीं करता"
+                  ],
+                  [
+                    "हार्डवेयर अपग्रेड",
+                    "कोई नहीं; RAM, फ़्लैश और एंटीना स्थिर हैं"
+                  ],
+                  [
+                    "आज की स्पीड",
+                    "केवल 2.4 GHz पर 150 Mbps: ब्राउज़िंग और मैसेजिंग के लिए ठीक, तेज़ फ़ाइबर प्लान के लिए धीमा"
+                  ],
+                  [
+                    "दूसरे जीवन के सुझाए उपयोग",
+                    "वाई-फ़ाई रेंज एक्सटेंडर या एक्सेस पॉइंट (WDS/AP मोड), 4-पोर्ट वायर्ड स्विच, अलग गेस्ट या स्मार्ट-डिवाइस नेटवर्क, नेटवर्किंग लैब के लिए अभ्यास राउटर"
+                  ],
+                  [
+                    "स्पेयर पार्ट्स",
+                    "पावर एडॉप्टर (दोबारा इस्तेमाल से पहले वोल्ट जाँचें), ईथरनेट केबल, एंटीना"
+                  ]
+                ]
+              }
+            },
+            {
+              "title": "जीवन-अंत संभाल और डेटा सुरक्षा",
+              "table": {
+                "columns": [
+                  "पैरामीटर",
+                  "मान"
+                ],
+                "rows": [
+                  [
+                    "डेटा जोखिम",
+                    "फ़्लैश चिप में आपका वाई-फ़ाई नाम और पासवर्ड, एडमिन पासवर्ड, इंटरनेट (PPPoE) लॉगिन और जुड़े डिवाइस की सूची रहती है"
+                  ],
+                  [
+                    "अगर राउटर **दोबारा इस्तेमाल** होगा",
+                    "पावर चालू रखकर Reset बटन लगभग 10 सेकंड दबाएँ ताकि फ़ैक्टरी सेटिंग्स लौट आएँ, फिर नया एडमिन पासवर्ड रखें"
+                  ],
+                  [
+                    "अगर यह **रीसायकल** होगा",
+                    "पहले फ़ैक्टरी-रीसेट करें, ताकि आपका वाई-फ़ाई और इंटरनेट लॉगिन फ़्लैश चिप से पढ़ा न जा सके"
+                  ],
+                  [
+                    "सुरक्षित खोलने का क्रम",
+                    "1. एडॉप्टर निकालें → 2. एंटीना और स्क्रू खोलें → 3. सर्किट बोर्ड, पूरा, कीमती धातुओं के लिए → 4. एडॉप्टर और केबल → 5. प्लास्टिक कवर"
+                  ]
+                ]
+              }
+            },
+            {
+              "title": "7. नियम और अनुपालन",
+              "table": {
+                "columns": [
+                  "पैरामीटर",
+                  "मान"
+                ],
+                "rows": [
+                  [
+                    "FCC ID",
+                    "TE7WR740N (v1); TE7WR741NXV6 (v6)"
+                  ],
+                  [
+                    "भारत ई-वेस्ट श्रेणी",
+                    "**आईटी और दूरसंचार उपकरण** (अनुसूची I, ई-वेस्ट (प्रबंधन) नियम, 2022)"
+                  ],
+                  [
+                    "निर्माता की ज़िम्मेदारी",
+                    "विस्तारित निर्माता ज़िम्मेदारी (EPR) के तहत, निर्माता को सुनिश्चित करना होगा कि उसका ई-वेस्ट अधिकृत रीसायकलर तक पहुँचे"
+                  ],
+                  [
+                    "रेडियो",
+                    "लाइसेंस-मुक्त 2.4 GHz बैंड का उपयोग; CE और FCC प्रमाणित"
+                  ],
+                  [
+                    "RoHS",
+                    "RoHS अनुपालक के रूप में सूचीबद्ध: सीसा, पारा, हेक्सावैलेंट क्रोमियम, PBB और PBDE (0.1%) तथा कैडमियम (0.01%) की सीमाएँ"
+                  ]
+                ]
+              }
+            },
+            {
+              "title": "8. आपूर्ति श्रृंखला और नैतिकता",
+              "table": {
+                "columns": [
+                  "पैरामीटर",
+                  "मान"
+                ],
+                "rows": [
+                  [
+                    "अंदर के संघर्ष खनिज",
+                    "टिन (सोल्डर), सोना (लगभग 12–16 mg) और टैंटलम (अगर टैंटलम कैपेसिटर हों): \"3TG\" संघर्ष खनिजों का हिस्सा"
+                  ],
+                  [
+                    "आज लागू नियम",
+                    "EU विनियम 2017/821 के तहत 3TG खनिजों के आयातकों को आपूर्ति-श्रृंखला की जाँच करनी होती है"
+                  ],
+                  [
+                    "रीसायक्लिंग क्यों मदद करती है",
+                    "वापस पाया गया टिन और सोना नए खनन किए गए संघर्ष खनिजों की ज़रूरत घटाता है"
+                  ]
+                ]
+              }
+            },
+            {
+              "title": "निष्कर्ष",
+              "subtitle": "आपके प्रोजेक्ट के लिए निष्कर्ष",
+              "table": {
+                "columns": [
+                  "विकल्प",
+                  "मूल्य",
+                  "CO₂ लाभ"
+                ],
+                "rows": [
+                  [
+                    "**दोबारा इस्तेमाल** (राउटर, एक्सटेंडर या स्विच के रूप में)",
+                    "**₹300–500** (सामान्य पुरानी कीमत, अनुमान)",
+                    "नया राउटर बनाने का ~20 kg CO₂ बचता है"
+                  ],
+                  [
+                    "**रीसायकल** (धातु सामग्री)",
+                    "सैद्धांतिक रूप से लगभग ₹250 (भाग 4 में लाइव मूल्य); स्क्रैप के रूप में **₹20–50 मिलते हैं** (अनुमान)",
+                    "धातुएँ वापस मिलती हैं; नया राउटर बनाने से नहीं बचाता"
+                  ]
+                ]
+              },
+              "note": "दोबारा इस्तेमाल की कीमत स्क्रैप से कई गुना ज़्यादा है। राउटर के लिए सबसे बड़ी कार्बन बचत इसके उपयोग के तरीके से आती है: जब किसी को ज़रूरत न हो तो बंद करें, और रीसायकल से पहले इसे एक्सटेंडर या स्विच के रूप में दूसरा जीवन दें। यह आपकी वेबसाइट के मरम्मत → दोबारा इस्तेमाल → रीसायकल क्रम का समर्थन करता है।"
+            }
+          ]
+        },
+        "kn": {
+          "model": "150 Mbps ವೈರ್‌ಲೆಸ್ N ರೂಟರ್",
+          "sections": [
+            {
+              "title": "1. ಗುರುತು ಮತ್ತು ವಿಶೇಷಣಗಳು",
+              "table": {
+                "columns": [
+                  "ಮಾನದಂಡ",
+                  "ಮೌಲ್ಯ"
+                ],
+                "rows": [
+                  [
+                    "ಮಾದರಿ",
+                    "TP-Link **TL-WR740N** 150 Mbps ವೈರ್‌ಲೆಸ್ N ರೂಟರ್; ಮೊದಲ FCC ಅನುಮೋದನೆ ನವೆಂಬರ್ 2009 (FCC ID TE7WR740N), 2010ರಿಂದ ಹಲವು ಹಾರ್ಡ್‌ವೇರ್ ಆವೃತ್ತಿಗಳಲ್ಲಿ (v1 ರಿಂದ v6) ಮಾರಾಟ"
+                  ],
+                  [
+                    "ಪ್ರೊಸೆಸರ್ (SoC)",
+                    "v1: Atheros AR7240, 400 MHz MIPS 24Kc, ಪ್ರತ್ಯೇಕ Atheros AR9285 ವೈ-ಫೈ ಚಿಪ್‌ನೊಂದಿಗೆ. v6: ಏಕ-ಚಿಪ್ Qualcomm Atheros QCA9533, 560 MHz"
+                  ],
+                  [
+                    "ಮೆಮೊರಿ",
+                    "4 MB ಫ್ಲ್ಯಾಶ್ (ಫರ್ಮ್‌ವೇರ್ ಮತ್ತು ನಿಮ್ಮ ಸೆಟ್ಟಿಂಗ್‌ಗಳನ್ನು ಇಡುತ್ತದೆ), 32 MB RAM"
+                  ],
+                  [
+                    "ವೈರ್‌ಲೆಸ್",
+                    "IEEE 802.11b/g/n, ಕೇವಲ 2.4–2.4835 GHz, **150 Mbps** ವರೆಗೆ (1 × 1 ಸ್ಟ್ರೀಮ್)"
+                  ],
+                  [
+                    "ಆಂಟೆನಾ",
+                    "1 ಸ್ಥಿರ 5 dBi ಸರ್ವದಿಕ್ಕಿನ (omnidirectional) ಆಂಟೆನಾ"
+                  ],
+                  [
+                    "ಪೋರ್ಟ್‌ಗಳು ಮತ್ತು ಬಟನ್‌ಗಳು",
+                    "4 × 10/100 Mbps LAN + 1 × 10/100 Mbps WAN; WPS/Reset ಬಟನ್ (ಹಳೆಯ ಘಟಕಗಳಲ್ಲಿ QSS ಬಟನ್)"
+                  ],
+                  [
+                    "ಭದ್ರತೆ",
+                    "64/128/152-ಬಿಟ್ WEP, WPA/WPA2, WPA-PSK/WPA2-PSK"
+                  ],
+                  [
+                    "ಪವರ್ ಅಡಾಪ್ಟರ್",
+                    "ಹಳೆಯ ಆವೃತ್ತಿಗಳು: **9 V DC, 0.6 A** (v1ನಲ್ಲಿ 0.85 A). ಹೊಸ ಆವೃತ್ತಿಗಳು: **5 V DC, 0.6 A**"
+                  ],
+                  [
+                    "ವಿದ್ಯುತ್ ಬಳಕೆ",
+                    "ಸುಮಾರು **3–5 W**, ದಿನದ 24 ಗಂಟೆ ಚಾಲೂ (ಮಾರಾಟಗಾರರ ಪ್ರಕಾರ ಸಾಮಾನ್ಯವಾಗಿ 5 W)"
+                  ],
+                  [
+                    "ಗಾತ್ರ ಮತ್ತು ತೂಕ",
+                    "174 × 118 × 33 mm; ಒಬ್ಬ ಮಾರಾಟಗಾರರ ಪ್ರಕಾರ ಸುಮಾರು 0.5 kg (ಪರಿಕರಗಳೊಂದಿಗೆ ರೂಟರ್)"
+                  ],
+                  [
+                    "ಪ್ರಮಾಣೀಕರಣಗಳು",
+                    "CE, FCC, RoHS"
+                  ]
+                ]
+              }
+            },
+            {
+              "title": "2. ಒಳಗಿನ ಭಾಗಗಳು",
+              "intro": "**ರೂಟರ್ ಲ್ಯಾಪ್‌ಟಾಪ್‌ಗಿಂತ ತುಂಬಾ ಸರಳ: ಬಹುತೇಕ ಎಲ್ಲವೂ ಒಂದೇ ಸರ್ಕ್ಯೂಟ್ ಬೋರ್ಡ್ ಮೇಲೆ ಇರುತ್ತದೆ.**",
+              "table": {
+                "columns": [
+                  "ಗುಂಪು",
+                  "ಭಾಗಗಳು"
+                ],
+                "rows": [
+                  [
+                    "ಮುಖ್ಯ ಸರ್ಕ್ಯೂಟ್ ಬೋರ್ಡ್",
+                    "ಪ್ರೊಸೆಸರ್ (SoC), RAM ಚಿಪ್, ಫ್ಲ್ಯಾಶ್ ಮೆಮೊರಿ ಚಿಪ್, ವೈ-ಫೈ ರೇಡಿಯೋ ಮತ್ತು 5-ಪೋರ್ಟ್ ಈಥರ್‌ನೆಟ್ ಸ್ವಿಚ್ ಇರುವ ಒಂದು ಪ್ರಿಂಟೆಡ್ ಸರ್ಕ್ಯೂಟ್ ಬೋರ್ಡ್"
+                  ],
+                  [
+                    "ರೇಡಿಯೋ",
+                    "ಬೋರ್ಡ್ ಮೇಲಿನ ವೈ-ಫೈ ಫ್ರಂಟ್-ಎಂಡ್, ಸ್ಥಿರ 5 dBi ಆಂಟೆನಾಗೆ ಚಿಕ್ಕ ಕೇಬಲ್‌ನೊಂದಿಗೆ"
+                  ],
+                  [
+                    "ನೆಟ್‌ವರ್ಕ್ ಪೋರ್ಟ್‌ಗಳು",
+                    "5 RJ45 ಸಾಕೆಟ್‌ಗಳು (4 LAN + 1 WAN), ಚಿಕ್ಕ ಐಸೊಲೇಶನ್ ಟ್ರಾನ್ಸ್‌ಫಾರ್ಮರ್‌ಗಳೊಂದಿಗೆ (ಈಥರ್‌ನೆಟ್ ಮ್ಯಾಗ್ನೆಟಿಕ್ಸ್)"
+                  ],
+                  [
+                    "ಪವರ್",
+                    "ಬೋರ್ಡ್ ಮೇಲೆ DC ಇನ್‌ಪುಟ್ ಸಾಕೆಟ್ ಮತ್ತು ವೋಲ್ಟೇಜ್-ರೆಗ್ಯುಲೇಟರ್ ಸರ್ಕ್ಯೂಟ್, ಜೊತೆಗೆ ಪ್ರತ್ಯೇಕ ಪ್ಲಗ್-ಇನ್ AC ಅಡಾಪ್ಟರ್"
+                  ],
+                  [
+                    "ಸೂಚಕಗಳು ಮತ್ತು ಬಟನ್‌ಗಳು",
+                    "ಸ್ಥಿತಿ LEDಗಳ ಸಾಲು, WPS/Reset ಬಟನ್, ಕೆಲವು ಆವೃತ್ತಿಗಳಲ್ಲಿ ಪವರ್ ಬಟನ್"
+                  ],
+                  [
+                    "ದೇಹ",
+                    "ಎರಡು ಭಾಗಗಳ ಬಿಳಿ ಪ್ಲಾಸ್ಟಿಕ್ ಕವಚ, ಸ್ಕ್ರೂಗಳು ಮತ್ತು ರಬ್ಬರ್ ಕಾಲುಗಳು"
+                  ],
+                  [
+                    "ಪೆಟ್ಟಿಗೆಯಲ್ಲಿ",
+                    "ಪವರ್ ಅಡಾಪ್ಟರ್, ಈಥರ್‌ನೆಟ್ ಕೇಬಲ್, ಕ್ವಿಕ್ ಸೆಟಪ್ ಗೈಡ್, ರಿಸೋರ್ಸ್ CD"
+                  ]
+                ]
+              }
+            },
+            {
+              "title": "3. ಕಾರ್ಬನ್ ಹೆಜ್ಜೆಗುರುತು",
+              "intro": "**ಕಾರ್ಬನ್ ಹೆಜ್ಜೆಗುರುತು** ಎಂದರೆ ಒಬ್ಬ ವ್ಯಕ್ತಿ, ಸಂಸ್ಥೆ, ಕಾರ್ಯಕ್ರಮ ಅಥವಾ ಉತ್ಪನ್ನದಿಂದ ನೇರವಾಗಿ ಮತ್ತು ಪರೋಕ್ಷವಾಗಿ ಉತ್ಪತ್ತಿಯಾಗುವ ಹಸಿರುಮನೆ ಅನಿಲಗಳ (ಮುಖ್ಯವಾಗಿ ಕಾರ್ಬನ್ ಡೈಆಕ್ಸೈಡ್, ಮೀಥೇನ್ ಮತ್ತು ನೈಟ್ರಸ್ ಆಕ್ಸೈಡ್) ಒಟ್ಟು ಪ್ರಮಾಣ.",
+              "table": {
+                "columns": [
+                  "ಜೀವನ ಹಂತ",
+                  "ಮೌಲ್ಯ",
+                  "ಆಧಾರ"
+                ],
+                "rows": [
+                  [
+                    "**ತಯಾರಿಕೆ**",
+                    "**~20 kg CO₂e** (ಅಂದಾಜು)",
+                    "ಈ ಮಾದರಿಗೆ ಜೀವನ-ಚಕ್ರ ಅಧ್ಯಯನ ಇಲ್ಲ. ಹೋಲಿಕೆ: Google Wifi ವರದಿ, ಇದರಲ್ಲಿ ಉತ್ಪಾದನೆ 90 kg CO₂eಯ 24% ≈ 22 kg"
+                  ],
+                  [
+                    "**ಬಳಕೆ, ಪ್ರತಿ ವರ್ಷ (ಭಾರತ)**",
+                    "**~22 kg CO₂ / ವರ್ಷ** (ಅಂದಾಜು)",
+                    "3.5 W × 24 ಗಂಟೆ × 365 ದಿನ = 30.7 kWh/ವರ್ಷ × ಭಾರತ ಗ್ರಿಡ್ ಅಂಶ 0.716 kg CO₂/kWh (CEA)"
+                  ],
+                  [
+                    "ಬಳಕೆಯ ಪಾಲು",
+                    "ಜೀವಿತಾವಧಿಯ ಹೊರಸೂಸುವಿಕೆಯ ಸುಮಾರು 70–80%",
+                    "Google Wifi ವರದಿ: ಗ್ರಾಹಕ ಬಳಕೆ ಒಟ್ಟಿನ 74%"
+                  ],
+                  [
+                    "**5 ವರ್ಷದ ಒಟ್ಟು ಜೀವಿತಾವಧಿ**",
+                    "**~130 kg CO₂** (ಅಂದಾಜು)",
+                    "ತಯಾರಿಕೆ ಮತ್ತು 5 ವರ್ಷಗಳ ಹಗಲು-ರಾತ್ರಿ ಬಳಕೆ"
+                  ]
+                ]
+              },
+              "note": "**ಮುಖ್ಯ ಅಂಶ:** ಲ್ಯಾಪ್‌ಟಾಪ್‌ಗಿಂತ ಭಿನ್ನವಾಗಿ, ರೂಟರ್‌ನ ಬಹುತೇಕ ಕಾರ್ಬನ್ ವಿದ್ಯುತ್‌ನಿಂದ ಬರುತ್ತದೆ, ಏಕೆಂದರೆ ಅದು ಹಗಲು-ರಾತ್ರಿ ಚಾಲೂ ಇರುತ್ತದೆ. ರಾತ್ರಿ 8 ಗಂಟೆ ಆಫ್ ಮಾಡಿದರೆ ವರ್ಷಕ್ಕೆ ಸುಮಾರು 7 kg CO₂ ಉಳಿಯುತ್ತದೆ, ಮತ್ತು ಕೆಲಸ ಮಾಡುವ ರೂಟರ್ ಅನ್ನು ಬಳಕೆಯಲ್ಲಿ ಇಡುವುದರಿಂದ ಹೊಸ ರೂಟರ್ ತಯಾರಿಕೆಯ ~20 kg ಸಹ ಉಳಿಯುತ್ತದೆ."
+            },
+            {
+              "title": "4. ಒಳಗಿನ ಲೋಹಗಳು ಮತ್ತು ವಸ್ತುಗಳು",
+              "intro": "ಒಂದು ರೂಟರ್‌ಗೆ ಅಂದಾಜು ಪ್ರಮಾಣಗಳು, ರೂಟರ್ ಮತ್ತು ಮೋಡೆಮ್ ಸರ್ಕ್ಯೂಟ್ ಬೋರ್ಡ್‌ಗಳಲ್ಲಿ ಅಳೆದ ಲೋಹದ ಪ್ರಮಾಣ (Holgersson et al., 2018: ಚಿನ್ನ 199 g/t, ಬೆಳ್ಳಿ 1,213 g/t, ಪಲ್ಲಾಡಿಯಮ್ 19.5 g/t, ತಾಮ್ರ 22%) ಮತ್ತು 60–80 g ಅಂದಾಜು ಬೋರ್ಡ್ ತೂಕದ ಆಧಾರದ ಮೇಲೆ.",
+              "table": {
+                "columns": [
+                  "ವಸ್ತು",
+                  "ಪ್ರತಿ ರೂಟರ್‌ಗೆ ಪ್ರಮಾಣ",
+                  "ಎಲ್ಲಿದೆ"
+                ],
+                "rows": [
+                  [
+                    "**ತಾಮ್ರ**",
+                    "~25–45 g (ಅಂದಾಜು)",
+                    "ಬೋರ್ಡ್‌ನ ಟ್ರ್ಯಾಕ್‌ಗಳು ಮತ್ತು ಪದರಗಳು (~13–18 g), ಈಥರ್‌ನೆಟ್ ಮ್ಯಾಗ್ನೆಟಿಕ್ಸ್, ಅಡಾಪ್ಟರ್ ಟ್ರಾನ್ಸ್‌ಫಾರ್ಮರ್ ಮತ್ತು ಕೇಬಲ್‌ಗಳು"
+                  ],
+                  [
+                    "**ಬೆಳ್ಳಿ**",
+                    "~75–95 mg",
+                    "ಸೋಲ್ಡರ್, ಚಿಪ್ ಸಂಪರ್ಕಗಳು, ಸರ್ಕ್ಯೂಟ್ ಬೋರ್ಡ್"
+                  ],
+                  [
+                    "**ಚಿನ್ನ**",
+                    "~12–16 mg",
+                    "ಕನೆಕ್ಟರ್ ಪಿನ್‌ಗಳು, ಚಿಪ್ ಬಾಂಡಿಂಗ್ ತಂತಿಗಳು, ಬೋರ್ಡ್ ಸಂಪರ್ಕಗಳು"
+                  ],
+                  [
+                    "**ಪಲ್ಲಾಡಿಯಮ್**",
+                    "~1.2–1.6 mg",
+                    "ಮಲ್ಟಿಲೇಯರ್ ಸೆರಾಮಿಕ್ ಕೆಪಾಸಿಟರ್‌ಗಳು ಮತ್ತು ಸಂಪರ್ಕಗಳು"
+                  ],
+                  [
+                    "**ತವರ**",
+                    "~3–5 g (ಅಂದಾಜು)",
+                    "ಸೋಲ್ಡರ್ (ಬೋರ್ಡ್ ತೂಕದ ಸುಮಾರು 5–6%)"
+                  ],
+                  [
+                    "**ಸೀಸ (ಲೆಡ್)**",
+                    "~0.25 g ವರೆಗೆ",
+                    "ಹಳೆಯ ಅಥವಾ ವಿನಾಯಿತಿ ಇರುವ ಭಾಗಗಳ ಸೋಲ್ಡರ್ (ರೂಟರ್ ಬೋರ್ಡ್‌ಗಳಲ್ಲಿ 3,413 ppm ಅಳೆಯಲಾಗಿದೆ); RoHS ಘಟಕಗಳು ಬಹುತೇಕ ಲೆಡ್-ರಹಿತವಾಗಿರಬೇಕು"
+                  ],
+                  [
+                    "**ಕಬ್ಬಿಣ / ಉಕ್ಕು**",
+                    "~10–60 g",
+                    "ಸ್ಕ್ರೂಗಳು, RJ45 ಶೀಲ್ಡಿಂಗ್, ಅಡಾಪ್ಟರ್ ಟ್ರಾನ್ಸ್‌ಫಾರ್ಮರ್ ಕೋರ್ (ಹಳೆಯ 9 V ಅಡಾಪ್ಟರ್‌ಗಳು ಭಾರ)"
+                  ],
+                  [
+                    "**ಪ್ಲಾಸ್ಟಿಕ್ (ABS, PC)**",
+                    "~100–150 g (ಅಂದಾಜು)",
+                    "ಬಿಳಿ ಕವಚ, ಆಂಟೆನಾ ಕವರ್, ಅಡಾಪ್ಟರ್ ಕೇಸ್"
+                  ],
+                  [
+                    "**ಫೈಬರ್‌ಗ್ಲಾಸ್ ಮತ್ತು ಎಪಾಕ್ಸಿ (FR-4)**",
+                    "~25–30 g",
+                    "ಬೋರ್ಡ್‌ನ ತಳ (ರೂಟರ್ ಬೋರ್ಡ್‌ನ ಸುಮಾರು 34% ಪಾಲಿಮರ್)"
+                  ],
+                  [
+                    "**ಫೆರೈಟ್**",
+                    "ಕೆಲವು ಗ್ರಾಂ",
+                    "ಈಥರ್‌ನೆಟ್ ಟ್ರಾನ್ಸ್‌ಫಾರ್ಮರ್‌ಗಳು ಮತ್ತು ಚೋಕ್‌ಗಳು"
+                  ],
+                  [
+                    "**ಕೋಬಾಲ್ಟ್, ಲಿಥಿಯಂ**",
+                    "0 g",
+                    "ಒಳಗೆ ಬ್ಯಾಟರಿ ಇಲ್ಲ"
+                  ],
+                  [
+                    "**ಅಪರೂಪದ-ಭೂ ಆಯಸ್ಕಾಂತಗಳು**",
+                    "0 g",
+                    "ಹಾರ್ಡ್ ಡ್ರೈವ್, ಸ್ಪೀಕರ್ ಅಥವಾ ಮೋಟಾರ್ ಇಲ್ಲ"
+                  ]
+                ]
+              }
+            },
+            {
+              "title": "5. ಅಪಾಯಕಾರಿ ವಸ್ತುಗಳು ಮತ್ತು ಸುರಕ್ಷಿತ ವಿಲೇವಾರಿ",
+              "table": {
+                "columns": [
+                  "ವಸ್ತು",
+                  "ಎಲ್ಲಿ",
+                  "ಏಕೆ ಮುಖ್ಯ",
+                  "ಸುರಕ್ಷಿತವಾಗಿ ವಿಲೇವಾರಿ ಮಾಡುವುದು ಹೇಗೆ"
+                ],
+                "rows": [
+                  [
+                    "**ಸೀಸ (ಲೆಡ್)**",
+                    "ಸರ್ಕ್ಯೂಟ್ ಬೋರ್ಡ್‌ನ ಸೋಲ್ಡರ್ (ಮುಖ್ಯವಾಗಿ ಹಳೆಯ ಅಥವಾ ವಿನಾಯಿತಿ ಭಾಗಗಳು)",
+                    "ನರಮಂಡಲಕ್ಕೆ ಹಾನಿ; ಬೋರ್ಡ್ ಸುಟ್ಟಾಗ ಅಥವಾ ಆಮ್ಲದಿಂದ ತೊಳೆದಾಗ ಬಿಡುಗಡೆ",
+                    "ಬೋರ್ಡ್ ಅನ್ನು ಎಂದಿಗೂ ಸುಡಬೇಡಿ, ಡಿಸೋಲ್ಡರ್ ಮಾಡಬೇಡಿ ಅಥವಾ ಆಮ್ಲದಿಂದ ತೊಳೆಯಬೇಡಿ. ಸಂಪೂರ್ಣ ರೂಟರ್ ಅನ್ನು ಅಧಿಕೃತ ಇ-ತ್ಯಾಜ್ಯ ಮರುಬಳಕೆದಾರರಿಗೆ ಕೊಡಿ; ಅವರು ಚಿನ್ನ, ಬೆಳ್ಳಿ, ತಾಮ್ರದ ಜೊತೆ ಸೀಸವನ್ನೂ ಸುರಕ್ಷಿತವಾಗಿ ಮರಳಿ ಪಡೆಯುತ್ತಾರೆ."
+                  ],
+                  [
+                    "**ಬ್ರೋಮಿನೇಟೆಡ್ ಜ್ವಾಲೆ ನಿರೋಧಕಗಳು**",
+                    "ಸರ್ಕ್ಯೂಟ್-ಬೋರ್ಡ್ ಲ್ಯಾಮಿನೇಟ್, ಪ್ಲಾಸ್ಟಿಕ್ ಕವಚ, ಕೇಬಲ್ ನಿರೋಧನ",
+                    "ಸುಟ್ಟಾಗ ವಿಷಕಾರಿ ಹೊಗೆ ಮತ್ತು ಡಯಾಕ್ಸಿನ್ ಬಿಡುಗಡೆ",
+                    "ತಾಮ್ರಕ್ಕಾಗಿ ಕವಚ ಅಥವಾ ಕೇಬಲ್ ಅನ್ನು ಎಂದಿಗೂ ಸುಡಬೇಡಿ. ಎಲ್ಲಾ ಪ್ಲಾಸ್ಟಿಕ್ ಮತ್ತು ಕೇಬಲ್‌ಗಳನ್ನು ಅಧಿಕೃತ ಇ-ತ್ಯಾಜ್ಯ ಮರುಬಳಕೆದಾರರಿಗೆ ಕೊಡಿ."
+                  ],
+                  [
+                    "**PVC ಕೇಬಲ್‌ಗಳು**",
+                    "ಈಥರ್‌ನೆಟ್ ಕೇಬಲ್ ಮತ್ತು ಅಡಾಪ್ಟರ್ ತಂತಿ",
+                    "ಸುಟ್ಟಾಗ ಆಮ್ಲೀಯ ಅನಿಲ ಮತ್ತು ಡಯಾಕ್ಸಿನ್ ಬಿಡುಗಡೆ",
+                    "ಕೇಬಲ್‌ಗಳನ್ನು ಅನೌಪಚಾರಿಕವಾಗಿ ಸುಲಿಯಬೇಡಿ ಅಥವಾ ಸುಡಬೇಡಿ; ರೂಟರ್ ಜೊತೆಗೇ ಮರುಬಳಕೆ ಮಾಡಿ."
+                  ],
+                  [
+                    "**ಎಲೆಕ್ಟ್ರೋಲೈಟಿಕ್ ಕೆಪಾಸಿಟರ್‌ಗಳು**",
+                    "ಸರ್ಕ್ಯೂಟ್ ಬೋರ್ಡ್ ಮತ್ತು ಪವರ್ ಅಡಾಪ್ಟರ್ ಒಳಗೆ",
+                    "ಎಲೆಕ್ಟ್ರೋಲೈಟ್ ಸೋರಿ ತುಕ್ಕು ಹಿಡಿಸಬಹುದು; ಅಡಾಪ್ಟರ್ ಕೆಪಾಸಿಟರ್‌ಗಳಲ್ಲಿ ಚಾರ್ಜ್ ಉಳಿಯಬಹುದು",
+                    "ಮುಟ್ಟುವ ಮೊದಲು ಪ್ಲಗ್ ತೆಗೆಯಿರಿ, ಅಡಾಪ್ಟರ್ ತೆರೆಯಬೇಡಿ, ಅಡಾಪ್ಟರ್ ಅನ್ನು ಸಂಪೂರ್ಣವಾಗಿ ಮರುಬಳಕೆ ಮಾಡಿ."
+                  ]
+                ]
+              },
+              "hazard_meter": {
+                "note": "ಅಪಾಯ ಅಂಕಗಳು ಪ್ರಾಜೆಕ್ಟ್ ತಂಡದ ಮೌಲ್ಯಮಾಪನ (1 = ಕಡಿಮೆ, 10 = ತೀವ್ರ), ವಿಷತ್ವ, ಅಸುರಕ್ಷಿತ ನಿರ್ವಹಣೆಯಲ್ಲಿ ಜನರು ಎಷ್ಟು ಸುಲಭವಾಗಿ ಒಡ್ಡಿಕೊಳ್ಳುತ್ತಾರೆ, ಮತ್ತು ಈ ರೂಟರ್‌ನಲ್ಲಿರುವ ಪ್ರಮಾಣದ ಆಧಾರದ ಮೇಲೆ.",
+                "items": [
+                  {
+                    "name": "ಸೀಸ (ಲೆಡ್)",
+                    "reason": "ನರಮಂಡಲಕ್ಕೆ ವಿಷಕಾರಿ, ಆದರೆ ಈ ರೂಟರ್‌ನಲ್ಲಿ ಸ್ವಲ್ಪ ಪ್ರಮಾಣ ಮಾತ್ರ; ಬೋರ್ಡ್ ಸುಟ್ಟಾಗ ಹೊಗೆಯಾಗಿ ಬಿಡುಗಡೆ."
+                  },
+                  {
+                    "name": "ಬ್ರೋಮಿನೇಟೆಡ್ ಜ್ವಾಲೆ ನಿರೋಧಕಗಳು",
+                    "reason": "ಬೋರ್ಡ್, ಕವಚ ಅಥವಾ ಕೇಬಲ್ ಸುಟ್ಟಾಗ ವಿಷಕಾರಿ ಹೊಗೆ ಮತ್ತು ಡಯಾಕ್ಸಿನ್ ನೀಡುತ್ತವೆ."
+                  },
+                  {
+                    "name": "PVC ಕೇಬಲ್‌ಗಳು",
+                    "reason": "ತಾಮ್ರಕ್ಕಾಗಿ ಕೇಬಲ್ ಸುಟ್ಟಾಗ ಆಮ್ಲೀಯ ಅನಿಲ ಮತ್ತು ಡಯಾಕ್ಸಿನ್ ಬಿಡುಗಡೆ."
+                  },
+                  {
+                    "name": "ಎಲೆಕ್ಟ್ರೋಲೈಟಿಕ್ ಕೆಪಾಸಿಟರ್‌ಗಳು",
+                    "reason": "ಎಲೆಕ್ಟ್ರೋಲೈಟ್ ಸೋರಬಹುದು; ರೂಟರ್ ಮತ್ತು ಅಡಾಪ್ಟರ್ ಸಂಪೂರ್ಣವಾಗಿ ಮರುಬಳಕೆಯಾದರೆ ಅಪಾಯ ಕಡಿಮೆ."
+                  }
+                ]
+              }
+            },
+            {
+              "title": "6. ಅಪ್‌ಗ್ರೇಡ್ ಮತ್ತು ಎರಡನೇ ಜೀವನದ ಸಾಧ್ಯತೆ",
+              "table": {
+                "columns": [
+                  "ಮಾನದಂಡ",
+                  "ಮೌಲ್ಯ"
+                ],
+                "rows": [
+                  [
+                    "ಫರ್ಮ್‌ವೇರ್",
+                    "TP-Link ಅಧಿಕೃತ ಫರ್ಮ್‌ವೇರ್ ಅಪ್‌ಡೇಟ್‌ಗಳು; ಮೊದಲು ಲೇಬಲ್ ಮೇಲಿನ ಹಾರ್ಡ್‌ವೇರ್ ಆವೃತ್ತಿ (V1–V6) ನೋಡಿ"
+                  ],
+                  [
+                    "ಮುಕ್ತ-ಮೂಲ ಫರ್ಮ್‌ವೇರ್",
+                    "ಹಳೆಯ OpenWrt ಆವೃತ್ತಿಗಳು ಇದನ್ನು ಬೆಂಬಲಿಸುತ್ತವೆ, ಆದರೆ ಪ್ರಸ್ತುತ OpenWrt ಕೇವಲ 4 MB ಫ್ಲ್ಯಾಶ್ ಮತ್ತು 32 MB RAM ಇರುವ ರೂಟರ್‌ಗಳನ್ನು ಇನ್ನು ಬೆಂಬಲಿಸುವುದಿಲ್ಲ"
+                  ],
+                  [
+                    "ಹಾರ್ಡ್‌ವೇರ್ ಅಪ್‌ಗ್ರೇಡ್",
+                    "ಯಾವುದೂ ಇಲ್ಲ; RAM, ಫ್ಲ್ಯಾಶ್ ಮತ್ತು ಆಂಟೆನಾ ಸ್ಥಿರ"
+                  ],
+                  [
+                    "ಇಂದಿನ ವೇಗ",
+                    "ಕೇವಲ 2.4 GHz ನಲ್ಲಿ 150 Mbps: ಬ್ರೌಸಿಂಗ್ ಮತ್ತು ಮೆಸೇಜಿಂಗ್‌ಗೆ ಸಾಕು, ವೇಗದ ಫೈಬರ್ ಪ್ಲಾನ್‌ಗಳಿಗೆ ನಿಧಾನ"
+                  ],
+                  [
+                    "ಸೂಚಿಸಿದ ಎರಡನೇ-ಜೀವನ ಬಳಕೆಗಳು",
+                    "ವೈ-ಫೈ ರೇಂಜ್ ಎಕ್ಸ್‌ಟೆಂಡರ್ ಅಥವಾ ಆಕ್ಸೆಸ್ ಪಾಯಿಂಟ್ (WDS/AP ಮೋಡ್), 4-ಪೋರ್ಟ್ ವೈರ್ಡ್ ಸ್ವಿಚ್, ಪ್ರತ್ಯೇಕ ಅತಿಥಿ ಅಥವಾ ಸ್ಮಾರ್ಟ್-ಸಾಧನ ನೆಟ್‌ವರ್ಕ್, ನೆಟ್‌ವರ್ಕಿಂಗ್ ಲ್ಯಾಬ್‌ಗಾಗಿ ಅಭ್ಯಾಸ ರೂಟರ್"
+                  ],
+                  [
+                    "ಬಿಡಿ ಭಾಗಗಳು",
+                    "ಪವರ್ ಅಡಾಪ್ಟರ್ (ಮರುಬಳಕೆಗೆ ಮೊದಲು ವೋಲ್ಟ್ ಪರಿಶೀಲಿಸಿ), ಈಥರ್‌ನೆಟ್ ಕೇಬಲ್, ಆಂಟೆನಾ"
+                  ]
+                ]
+              }
+            },
+            {
+              "title": "ಜೀವನಾಂತ್ಯ ನಿರ್ವಹಣೆ ಮತ್ತು ದತ್ತಾಂಶ ಭದ್ರತೆ",
+              "table": {
+                "columns": [
+                  "ಮಾನದಂಡ",
+                  "ಮೌಲ್ಯ"
+                ],
+                "rows": [
+                  [
+                    "ದತ್ತಾಂಶ ಅಪಾಯ",
+                    "ಫ್ಲ್ಯಾಶ್ ಚಿಪ್‌ನಲ್ಲಿ ನಿಮ್ಮ ವೈ-ಫೈ ಹೆಸರು ಮತ್ತು ಪಾಸ್‌ವರ್ಡ್, ಅಡ್ಮಿನ್ ಪಾಸ್‌ವರ್ಡ್, ಇಂಟರ್ನೆಟ್ (PPPoE) ಲಾಗಿನ್ ಮತ್ತು ಸಂಪರ್ಕಿತ ಸಾಧನಗಳ ಪಟ್ಟಿ ಇರುತ್ತದೆ"
+                  ],
+                  [
+                    "ರೂಟರ್ **ಮರುಬಳಕೆ** ಆಗುವುದಾದರೆ",
+                    "ಪವರ್ ಆನ್ ಇರುವಾಗ Reset ಬಟನ್ ಅನ್ನು ಸುಮಾರು 10 ಸೆಕೆಂಡ್ ಒತ್ತಿ ಫ್ಯಾಕ್ಟರಿ ಸೆಟ್ಟಿಂಗ್‌ಗಳಿಗೆ ಮರಳಿಸಿ, ನಂತರ ಹೊಸ ಅಡ್ಮಿನ್ ಪಾಸ್‌ವರ್ಡ್ ಇಡಿ"
+                  ],
+                  [
+                    "ಇದು **ರೀಸೈಕಲ್** ಆಗುವುದಾದರೆ",
+                    "ಮೊದಲು ಫ್ಯಾಕ್ಟರಿ-ರೀಸೆಟ್ ಮಾಡಿ, ಆಗ ನಿಮ್ಮ ವೈ-ಫೈ ಮತ್ತು ಇಂಟರ್ನೆಟ್ ಲಾಗಿನ್ ಅನ್ನು ಫ್ಲ್ಯಾಶ್ ಚಿಪ್‌ನಿಂದ ಓದಲಾಗುವುದಿಲ್ಲ"
+                  ],
+                  [
+                    "ಸುರಕ್ಷಿತವಾಗಿ ಬಿಚ್ಚುವ ಕ್ರಮ",
+                    "1. ಅಡಾಪ್ಟರ್ ತೆಗೆಯಿರಿ → 2. ಆಂಟೆನಾ ಮತ್ತು ಸ್ಕ್ರೂಗಳನ್ನು ತೆಗೆಯಿರಿ → 3. ಸರ್ಕ್ಯೂಟ್ ಬೋರ್ಡ್, ಸಂಪೂರ್ಣವಾಗಿ, ಅಮೂಲ್ಯ ಲೋಹಗಳಿಗಾಗಿ → 4. ಅಡಾಪ್ಟರ್ ಮತ್ತು ಕೇಬಲ್‌ಗಳು → 5. ಪ್ಲಾಸ್ಟಿಕ್ ಕವಚ"
+                  ]
+                ]
+              }
+            },
+            {
+              "title": "7. ನಿಯಮಗಳು ಮತ್ತು ಅನುಸರಣೆ",
+              "table": {
+                "columns": [
+                  "ಮಾನದಂಡ",
+                  "ಮೌಲ್ಯ"
+                ],
+                "rows": [
+                  [
+                    "FCC ID",
+                    "TE7WR740N (v1); TE7WR741NXV6 (v6)"
+                  ],
+                  [
+                    "ಭಾರತ ಇ-ತ್ಯಾಜ್ಯ ವರ್ಗ",
+                    "**ಐಟಿ ಮತ್ತು ದೂರಸಂಪರ್ಕ ಉಪಕರಣಗಳು** (ಅನುಸೂಚಿ I, ಇ-ತ್ಯಾಜ್ಯ (ನಿರ್ವಹಣೆ) ನಿಯಮಗಳು, 2022)"
+                  ],
+                  [
+                    "ಉತ್ಪಾದಕರ ಜವಾಬ್ದಾರಿ",
+                    "ವಿಸ್ತೃತ ಉತ್ಪಾದಕ ಜವಾಬ್ದಾರಿ (EPR) ಅಡಿಯಲ್ಲಿ, ಉತ್ಪಾದಕರು ತಮ್ಮ ಇ-ತ್ಯಾಜ್ಯ ಅಧಿಕೃತ ಮರುಬಳಕೆದಾರರನ್ನು ತಲುಪುವಂತೆ ನೋಡಿಕೊಳ್ಳಬೇಕು"
+                  ],
+                  [
+                    "ರೇಡಿಯೋ",
+                    "ಪರವಾನಗಿ-ರಹಿತ 2.4 GHz ಬ್ಯಾಂಡ್ ಬಳಸುತ್ತದೆ; CE ಮತ್ತು FCC ಪ್ರಮಾಣೀಕೃತ"
+                  ],
+                  [
+                    "RoHS",
+                    "RoHS ಅನುಸರಣೆಯದು ಎಂದು ಪಟ್ಟಿ: ಸೀಸ, ಪಾದರಸ, ಹೆಕ್ಸಾವೇಲೆಂಟ್ ಕ್ರೋಮಿಯಂ, PBB ಮತ್ತು PBDE (0.1%) ಹಾಗೂ ಕ್ಯಾಡ್ಮಿಯಂ (0.01%) ಮಿತಿಗಳು"
+                  ]
+                ]
+              }
+            },
+            {
+              "title": "8. ಪೂರೈಕೆ ಸರಪಳಿ ಮತ್ತು ನೈತಿಕತೆ",
+              "table": {
+                "columns": [
+                  "ಮಾನದಂಡ",
+                  "ಮೌಲ್ಯ"
+                ],
+                "rows": [
+                  [
+                    "ಒಳಗಿನ ಸಂಘರ್ಷ ಖನಿಜಗಳು",
+                    "ತವರ (ಸೋಲ್ಡರ್), ಚಿನ್ನ (ಸುಮಾರು 12–16 mg) ಮತ್ತು ಟ್ಯಾಂಟಲಮ್ (ಟ್ಯಾಂಟಲಮ್ ಕೆಪಾಸಿಟರ್ ಇದ್ದರೆ): \"3TG\" ಸಂಘರ್ಷ ಖನಿಜಗಳ ಭಾಗ"
+                  ],
+                  [
+                    "ಇಂದು ಅನ್ವಯಿಸುವ ನಿಯಮ",
+                    "EU ನಿಯಂತ್ರಣ 2017/821 ಪ್ರಕಾರ 3TG ಖನಿಜಗಳ ಆಮದುದಾರರು ಪೂರೈಕೆ-ಸರಪಳಿ ಪರಿಶೀಲನೆ ಮಾಡಬೇಕು"
+                  ],
+                  [
+                    "ಮರುಬಳಕೆ ಏಕೆ ಸಹಾಯ ಮಾಡುತ್ತದೆ",
+                    "ಮರಳಿ ಪಡೆದ ತವರ ಮತ್ತು ಚಿನ್ನ ಹೊಸದಾಗಿ ಗಣಿಗಾರಿಕೆ ಮಾಡಿದ ಸಂಘರ್ಷ ಖನಿಜಗಳ ಅಗತ್ಯವನ್ನು ಕಡಿಮೆ ಮಾಡುತ್ತದೆ"
+                  ]
+                ]
+              }
+            },
+            {
+              "title": "ಉಪಸಂಹಾರ",
+              "subtitle": "ನಿಮ್ಮ ಪ್ರಾಜೆಕ್ಟ್‌ಗಾಗಿ ಉಪಸಂಹಾರ",
+              "table": {
+                "columns": [
+                  "ಆಯ್ಕೆ",
+                  "ಮೌಲ್ಯ",
+                  "CO₂ ಲಾಭ"
+                ],
+                "rows": [
+                  [
+                    "**ಮರುಬಳಕೆ** (ರೂಟರ್, ಎಕ್ಸ್‌ಟೆಂಡರ್ ಅಥವಾ ಸ್ವಿಚ್ ಆಗಿ)",
+                    "**₹300–500** (ಸಾಮಾನ್ಯ ಬಳಸಿದ ಬೆಲೆ, ಅಂದಾಜು)",
+                    "ಹೊಸ ರೂಟರ್ ತಯಾರಿಕೆಯ ~20 kg CO₂ ಉಳಿಯುತ್ತದೆ"
+                  ],
+                  [
+                    "**ರೀಸೈಕಲ್** (ಲೋಹದ ಅಂಶ)",
+                    "ಸೈದ್ಧಾಂತಿಕವಾಗಿ ಸುಮಾರು ₹250 (ವಿಭಾಗ 4ರ ಲೈವ್ ಮೌಲ್ಯ); ಗುಜರಿಯಾಗಿ **₹20–50 ಸಿಗುತ್ತದೆ** (ಅಂದಾಜು)",
+                    "ಲೋಹಗಳು ಮರಳಿ ಸಿಗುತ್ತವೆ; ಹೊಸ ರೂಟರ್ ತಯಾರಿಕೆಯನ್ನು ತಪ್ಪಿಸುವುದಿಲ್ಲ"
+                  ]
+                ]
+              },
+              "note": "ಮರುಬಳಕೆಯ ಮೌಲ್ಯ ಗುಜರಿಗಿಂತ ಹಲವು ಪಟ್ಟು ಹೆಚ್ಚು. ರೂಟರ್‌ಗೆ ಅತಿದೊಡ್ಡ ಕಾರ್ಬನ್ ಉಳಿತಾಯ ಅದನ್ನು ಬಳಸುವ ರೀತಿಯಿಂದ ಬರುತ್ತದೆ: ಯಾರಿಗೂ ಬೇಡವಾದಾಗ ಆಫ್ ಮಾಡಿ, ಮತ್ತು ರೀಸೈಕಲ್ ಮಾಡುವ ಮೊದಲು ಎಕ್ಸ್‌ಟೆಂಡರ್ ಅಥವಾ ಸ್ವಿಚ್ ಆಗಿ ಎರಡನೇ ಜೀವನ ಕೊಡಿ. ಇದು ನಿಮ್ಮ ವೆಬ್‌ಸೈಟ್ ಶಿಫಾರಸು ಮಾಡುವ ದುರಸ್ತಿ → ಮರುಬಳಕೆ → ರೀಸೈಕಲ್ ಕ್ರಮವನ್ನು ಬೆಂಬಲಿಸುತ್ತದೆ."
+            }
+          ]
+        }
+      }
+    },
+    {
       "id": "DPP-002",
       "device": "USHA FH812T",
       "model": "Heat Convector / Fan Room Heater",

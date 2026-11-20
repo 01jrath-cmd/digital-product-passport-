@@ -125,15 +125,17 @@ def metal_value_rows(d, prices, sources):
     """Rows of (metal, amount text, price text, value in Rs) using the device's value_basis."""
     v = d["value_basis"]
     grams = {
-        "Gold": (v["gold_mg"] / 1000, f"{v['gold_mg']} mg"),
-        "Silver": (v["silver_mg"] / 1000, f"{v['silver_mg']} mg"),
-        "Palladium": (v["palladium_mg"] / 1000, f"{v['palladium_mg']} mg"),
-        "Copper": (v["copper_g"], f"{v['copper_g']} g"),
-        "Cobalt": (v["cobalt_g"], f"{v['cobalt_g']} g"),
-        "Lithium": (v["lithium_g"], f"{v['lithium_g']} g"),
+        "Gold": (v.get("gold_mg", 0) / 1000, f"{v.get('gold_mg', 0)} mg"),
+        "Silver": (v.get("silver_mg", 0) / 1000, f"{v.get('silver_mg', 0)} mg"),
+        "Palladium": (v.get("palladium_mg", 0) / 1000, f"{v.get('palladium_mg', 0)} mg"),
+        "Copper": (v.get("copper_g", 0), f"{v.get('copper_g', 0)} g"),
+        "Cobalt": (v.get("cobalt_g", 0), f"{v.get('cobalt_g', 0)} g"),
+        "Lithium": (v.get("lithium_g", 0), f"{v.get('lithium_g', 0)} g"),
     }
     rows = []
     for metal, (g, text) in grams.items():
+        if not g:                       # metal not present in this device (e.g. no battery)
+            continue
         key = metal.lower()
         src = ui("src_" + sources[key])
         rows.append((ui("metals")[key], text, f"{prices[key]:,.2f} ({src})", g * prices[key]))
