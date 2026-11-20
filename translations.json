@@ -102,7 +102,10 @@
     "growth_title": "Driving Sustainable Growth",
     "growth_text": "The foundation of our Digital Product Passport lies in making the full life cycle of every product visible &mdash; from the raw materials inside it to the way it should be repaired, reused or recycled. By building circular-economy thinking into every scan, we help people extend product life, recover valuable metals safely and reduce e-waste, while supporting India&rsquo;s transition to a cleaner, more sustainable future.",
     "active_power": "Active power",
-    "print_speed": "Print speed (black / colour)"
+    "print_speed": "Print speed (black / colour)",
+    "capacity": "Capacity",
+    "metal_content": "Metal content (est.)",
+    "soleplate": "Soleplate"
   },
   "hi": {
     "banner_name": "डिजिटल उत्पाद पासपोर्ट",
@@ -201,7 +204,10 @@
     "growth_title": "सतत विकास की ओर",
     "growth_text": "हमारे डिजिटल प्रोडक्ट पासपोर्ट की नींव हर उत्पाद के पूरे जीवन-चक्र को दिखाना है &mdash; उसके अंदर के कच्चे माल से लेकर उसकी मरम्मत, दोबारा उपयोग या रीसायक्लिंग के सही तरीके तक। हर स्कैन में सर्कुलर-इकॉनमी की सोच जोड़कर हम लोगों को उत्पाद की उम्र बढ़ाने, कीमती धातुओं को सुरक्षित रूप से वापस पाने और ई-कचरा घटाने में मदद करते हैं, और भारत के स्वच्छ व टिकाऊ भविष्य की ओर बढ़ने में सहयोग करते हैं।",
     "active_power": "सक्रिय बिजली खपत",
-    "print_speed": "प्रिंट स्पीड (काला / रंगीन)"
+    "print_speed": "प्रिंट स्पीड (काला / रंगीन)",
+    "capacity": "क्षमता",
+    "metal_content": "धातु की मात्रा (अनुमान)",
+    "soleplate": "सोलप्लेट"
   },
   "kn": {
     "banner_name": "ಡಿಜಿಟಲ್ ಉತ್ಪನ್ನ ಪಾಸ್‌ಪೋರ್ಟ್",
@@ -300,6 +306,9 @@
     "growth_title": "ಸುಸ್ಥಿರ ಬೆಳವಣಿಗೆಯತ್ತ",
     "growth_text": "ನಮ್ಮ ಡಿಜಿಟಲ್ ಪ್ರಾಡಕ್ಟ್ ಪಾಸ್‌ಪೋರ್ಟ್‌ನ ಅಡಿಪಾಯ ಪ್ರತಿಯೊಂದು ಉತ್ಪನ್ನದ ಸಂಪೂರ್ಣ ಜೀವನಚಕ್ರವನ್ನು ಕಾಣುವಂತೆ ಮಾಡುವುದು &mdash; ಅದರೊಳಗಿನ ಕಚ್ಚಾ ವಸ್ತುಗಳಿಂದ ಹಿಡಿದು ಅದನ್ನು ದುರಸ್ತಿ, ಮರುಬಳಕೆ ಅಥವಾ ರೀಸೈಕಲ್ ಮಾಡುವ ಸರಿಯಾದ ವಿಧಾನದವರೆಗೆ. ಪ್ರತಿಯೊಂದು ಸ್ಕ್ಯಾನ್‌ನಲ್ಲಿ ವೃತ್ತಾಕಾರದ ಆರ್ಥಿಕತೆಯ ಚಿಂತನೆಯನ್ನು ಸೇರಿಸುವ ಮೂಲಕ, ಉತ್ಪನ್ನದ ಆಯುಷ್ಯ ಹೆಚ್ಚಿಸಲು, ಅಮೂಲ್ಯ ಲೋಹಗಳನ್ನು ಸುರಕ್ಷಿತವಾಗಿ ಮರಳಿ ಪಡೆಯಲು ಮತ್ತು ಇ-ತ್ಯಾಜ್ಯ ಕಡಿಮೆ ಮಾಡಲು ನಾವು ಜನರಿಗೆ ನೆರವಾಗುತ್ತೇವೆ, ಹಾಗೂ ಭಾರತದ ಸ್ವಚ್ಛ ಮತ್ತು ಸುಸ್ಥಿರ ಭವಿಷ್ಯಕ್ಕೆ ಬೆಂಬಲ ನೀಡುತ್ತೇವೆ.",
     "active_power": "ಸಕ್ರಿಯ ವಿದ್ಯುತ್ ಬಳಕೆ",
-    "print_speed": "ಮುದ್ರಣ ವೇಗ (ಕಪ್ಪು / ಬಣ್ಣ)"
+    "print_speed": "ಮುದ್ರಣ ವೇಗ (ಕಪ್ಪು / ಬಣ್ಣ)",
+    "capacity": "ಸಾಮರ್ಥ್ಯ",
+    "metal_content": "ಲೋಹದ ಪ್ರಮಾಣ (ಅಂದಾಜು)",
+    "soleplate": "ಸೋಲ್‌ಪ್ಲೇಟ್"
   }
 }

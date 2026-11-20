@@ -372,7 +372,8 @@ def table_of_contents(d):
     """Collapsible table of contents. Clicking an entry scrolls to it; visited entries go grey."""
     items = [(("&nbsp;&nbsp;&nbsp;&nbsp;" if sec.get("level") == 2 else "") + sec["title"], sec["anchor"])
              for sec in d["sections"]]
-    items += [(ui("sources"), "sources")]
+    if d.get("sources"):
+        items += [(ui("sources"), "sources")]
     items += [(sec["title"], sec["anchor"]) for sec in d.get("after_sources", [])]
     items += [(ui("qr_title"), "qr-code")]
     links = "".join(f'<li><a href="#{anchor}" target="_self">{title}</a></li>' for title, anchor in items)
@@ -489,8 +490,9 @@ def passport_page(d, prices, sources):
             st.caption(ui("live_caption"))
 
     # Sources
-    st.header(ui("sources"), anchor="sources")
-    st.markdown("\n".join(f"{i}. {text} [{url}]({url})" for i, (text, url) in enumerate(d["sources"], 1)))
+    if d.get("sources"):                               # some documents have no reference list
+        st.header(ui("sources"), anchor="sources")
+        st.markdown("\n".join(f"{i}. {text} [{url}]({url})" for i, (text, url) in enumerate(d["sources"], 1)))
     for sec in d.get("after_sources", []):              # e.g. "Method note" that comes after References
         st.header(sec["title"], anchor=sec["anchor"])
         st.markdown(sec["intro"])

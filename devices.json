@@ -3534,6 +3534,532 @@
         }
       ],
       "weight_g": null
+    },
+    {
+      "id": "DPP-005",
+      "device": "Wonderchef Acura Electric Kettle",
+      "model": "1.5 L Household Electric Kettle (WCKTL03WAC1521)",
+      "brand": "Wonderchef",
+      "category": "Electric kettle",
+      "tagline": "Product identification • Estimated metal inventory • Circularity assessment",
+      "image": "images/wonderchef-acura-kettle.jpg",
+      "year": null,
+      "weight_g": null,
+      "condition": "Working",
+      "status": "In use",
+      "metrics": [
+        {
+          "key": "rated_power",
+          "value": "1350 W"
+        },
+        {
+          "key": "capacity",
+          "value": "1.5 L"
+        },
+        {
+          "key": "metal_content",
+          "value": "~389 g"
+        }
+      ],
+      "sections": [
+        {
+          "title": "1. Product identification",
+          "table": {
+            "columns": [
+              "Parameter",
+              "Details from the product label / image"
+            ],
+            "rows": [
+              [
+                "Brand",
+                "Wonderchef"
+              ],
+              [
+                "Product name",
+                "Acura Electric Kettle"
+              ],
+              [
+                "Model code",
+                "WCKTL03WAC1521"
+              ],
+              [
+                "Capacity",
+                "1.5 litres"
+              ],
+              [
+                "Rated voltage",
+                "230 V AC"
+              ],
+              [
+                "Frequency",
+                "50 Hz"
+              ],
+              [
+                "Rated power",
+                "1350 W"
+              ],
+              [
+                "Product category",
+                "Household electric kettle"
+              ],
+              [
+                "Safety / compliance marking",
+                "RoHS marking visible; ISI mark and standard number appear on label (partly unclear in photograph)"
+              ],
+              [
+                "Warning on label",
+                "Household use only; do not immerse in water"
+              ]
+            ]
+          }
+        },
+        {
+          "title": "2. Function and working principle",
+          "intro": "The kettle converts electrical energy into heat to warm water. When the kettle is switched on, electric current flows through a resistance heating element located beneath or integrated with the water container. Heat is transferred to the water. A thermostat or automatic cut-off mechanism switches the kettle off when the water reaches boiling temperature or when the kettle is operated without sufficient water, depending on the design."
+        },
+        {
+          "title": "3. Material inventory – estimated metal quantities",
+          "intro": "**Important accuracy note:** The rating label identifies the model and electrical ratings but does not state the material grades or weights of internal parts. The table below is an illustrative engineering estimate for a 1.5 L, 1350 W household kettle. The photograph does not confirm the exact vessel material or internal construction. These quantities are not manufacturer-certified values; verify them by weighing components during a supervised, safe teardown.",
+          "table": {
+            "columns": [
+              "Metal / alloy",
+              "Likely location / use",
+              "Estimated mass",
+              "Share of metal mass",
+              "Data status"
+            ],
+            "rows": [
+              [
+                "Stainless steel",
+                "Water container / body and heating-base plate (assumed)",
+                "300 g",
+                "77.1%",
+                "Typical kettle construction; verify material"
+              ],
+              [
+                "Nichrome (nickel-chromium alloy)",
+                "Resistance heating element",
+                "15 g",
+                "3.9%",
+                "Estimated; alloy grade not confirmed"
+              ],
+              [
+                "Copper",
+                "Power cord conductors and internal wiring",
+                "18 g",
+                "4.6%",
+                "Estimated"
+              ],
+              [
+                "Brass / copper alloy",
+                "Electrical terminals and contact pieces",
+                "10 g",
+                "2.6%",
+                "Estimated"
+              ],
+              [
+                "Carbon steel",
+                "Screws, fasteners and structural pieces",
+                "25 g",
+                "6.4%",
+                "Estimated"
+              ],
+              [
+                "Stainless / plated steel",
+                "Small clips, springs and supports",
+                "12 g",
+                "3.1%",
+                "Estimated"
+              ],
+              [
+                "Other metal parts",
+                "Small switch / connector components",
+                "9 g",
+                "2.3%",
+                "Estimated"
+              ]
+            ]
+          },
+          "note": "| **Material summary**                                            | **Estimated quantity** |\n|-----------------------------------------------------------------|------------------------|\n| Total estimated metal content                                   | 389 g (0.389 kg)       |\n| Stainless steel (assumed main metal)                            | 300 g                  |\n| Other metals and alloys combined                                | 89 g                   |\n| Indicative non-metal content (plastic, insulation, seals, etc.) | Approximately 461 g\\*  |\n| Indicative total kettle mass assumed for this DPP               | Approximately 850 g\\*  |\n\n\\*An approximate total product mass of 850 g is assumed only to provide an illustrative material breakdown. The actual mass of this particular kettle was not supplied. The metal percentages are calculated from the estimated 389 g metal subtotal, not from the entire kettle mass."
+        },
+        {
+          "title": "4. Non-metal materials (indicative)",
+          "table": {
+            "columns": [
+              "Material",
+              "Likely component / function",
+              "Data note"
+            ],
+            "rows": [
+              [
+                "Heat-resistant plastic",
+                "Outer housing, handle, lid and base cover",
+                "Polymer grade not identified"
+              ],
+              [
+                "Silicone / rubber",
+                "Seals, gasket and cord-entry protection",
+                "Exact type and mass unknown"
+              ],
+              [
+                "Electrical insulation",
+                "Wire insulation and internal insulating supports",
+                "Exact material not identified"
+              ],
+              [
+                "Indicator / switch plastics",
+                "Power indicator and control parts",
+                "Construction may vary by production batch"
+              ]
+            ]
+          }
+        },
+        {
+          "title": "5. Metal quantity calculations",
+          "intro": "Total estimated metal mass:\n\n300 + 15 + 18 + 10 + 25 + 12 + 9 = 389 g\n\nEstimated stainless-steel share of total metal mass:\n\n(300 ÷ 389) × 100 = 77.1%\n\nEstimated other-metal share:\n\n(89 ÷ 389) × 100 = 22.9%"
+        },
+        {
+          "title": "6. Environmental impact and circularity",
+          "table": {
+            "columns": [
+              "Aspect",
+              "Assessment"
+            ],
+            "rows": [
+              [
+                "Material recovery",
+                "Stainless steel, copper, brass and steel can be recovered through authorised recycling channels."
+              ],
+              [
+                "Energy use",
+                "The rated power is 1350 W. Actual electricity consumed depends on the amount and starting temperature of water and heating time."
+              ],
+              [
+                "Repairability",
+                "The cord, switch, thermostat or heating assembly may be serviceable by a qualified technician if compatible spare parts are available."
+              ],
+              [
+                "Design challenge",
+                "Mixed plastics, seals, wiring and metal parts require separation before recycling."
+              ],
+              [
+                "End-of-life handling",
+                "Do not dispose of the kettle with ordinary household waste; use an authorised e-waste collection facility."
+              ],
+              [
+                "Circular design improvement",
+                "Use replaceable heating and switch modules, labelled material grades, fewer mixed-material joints and easily removable fasteners."
+              ]
+            ]
+          }
+        },
+        {
+          "title": "7. Safe use and end-of-life recommendations",
+          "intro": "- Do not immerse the kettle, electrical base, plug or power cord in water.\n- Unplug the kettle and allow it to cool before cleaning or moving it.\n- Do not open or dismantle the kettle while it is connected to the mains supply.\n- Internal inspection and component separation should be performed only by a qualified technician or under supervised laboratory conditions.\n- At end of life, hand over the appliance to an authorised e-waste collection or recycling centre.",
+          "hazard_meter": {
+            "note": "Hazard scores are the project team's assessment (1 = low, 10 = severe), based on how harmful each part can be during unsafe handling or disposal of this kettle.",
+            "items": [
+              {
+                "name": "Heating element (nichrome)",
+                "score": 4,
+                "reason": "Nickel-chromium alloy element; gets very hot and should only be separated by a qualified technician."
+              },
+              {
+                "name": "Power cord and wiring",
+                "score": 4,
+                "reason": "Shock risk if damaged; insulation gives off harmful fumes if burnt."
+              },
+              {
+                "name": "Plastic housing, seals and insulation",
+                "score": 4,
+                "reason": "Mixed plastics and rubber release harmful fumes if burnt and must be separated before recycling."
+              },
+              {
+                "name": "Stainless-steel body",
+                "score": 2,
+                "reason": "Low hazard and fully recyclable; take care of sharp edges if dismantled."
+              }
+            ]
+          }
+        },
+        {
+          "title": "8. Conclusion",
+          "intro": "The Wonderchef Acura is a 1.5 L household electric kettle rated at 1350 W, 230 V AC and 50 Hz. For this academic DPP, the estimated metal inventory is 389 g, with an assumed 300 g of stainless steel and smaller quantities of nichrome, copper, brass and steel parts. The exact material grades and masses cannot be read from the rating label and must be confirmed by weighing and material identification. Recovering the metals through authorised e-waste recycling can support resource conservation and circular use of materials."
+        },
+        {
+          "title": "9. Source and verification record",
+          "intro": "Primary source: user-supplied photograph of the Wonderchef Acura kettle rating label and base. Brand, model code, capacity, voltage, frequency, wattage and visible warnings were transcribed from the image. Metal quantities, material distribution and assumed total mass are academic estimates, not published manufacturer data."
+        }
+      ],
+      "sources": []
+    },
+    {
+      "id": "DPP-006",
+      "device": "Havells Glace Plus",
+      "model": "Electric Dry Iron",
+      "brand": "Havells",
+      "category": "Dry iron",
+      "author": "BY MANYA.D - RVCE26BEC170",
+      "tagline": "Product material profile, metal quantities and circularity assessment",
+      "image": "images/havells-glace-plus-iron.jpg",
+      "year": null,
+      "weight_g": null,
+      "condition": "Working",
+      "status": "In use",
+      "metrics": [
+        {
+          "key": "rated_power",
+          "value": "1000 W"
+        },
+        {
+          "key": "soleplate",
+          "value": "Aluminium, PTFE-coated"
+        },
+        {
+          "key": "metal_content",
+          "value": "~411 g"
+        }
+      ],
+      "sections": [
+        {
+          "title": "1. Product identification",
+          "table": {
+            "columns": [
+              "Parameter",
+              "Information read from the product label"
+            ],
+            "rows": [
+              [
+                "Brand / manufacturer",
+                "Havells – Havells India Ltd."
+              ],
+              [
+                "Product / model name",
+                "Glace Plus – Electric Dry Iron"
+              ],
+              [
+                "Product type",
+                "Thermostatic electric dry iron"
+              ],
+              [
+                "Rated power",
+                "1000 W"
+              ],
+              [
+                "Rated voltage",
+                "230 V AC"
+              ],
+              [
+                "Supply",
+                "1-phase AC, 50 Hz"
+              ],
+              [
+                "Soleplate",
+                "Aluminium alloy, PTFE-coated"
+              ],
+              [
+                "Ingress protection marking",
+                "IPX0 (ordinary protection; no water-ingress protection stated)"
+              ],
+              [
+                "Standards printed",
+                "IS 366:1991; IS 302-2-3 (as visible on label)"
+              ],
+              [
+                "Manufacturing marking",
+                "Mfd: 25/06 (as printed; year not confirmed from the label)"
+              ],
+              [
+                "Country of manufacture",
+                "Made in India"
+              ]
+            ]
+          }
+        },
+        {
+          "title": "2. Product function and working principle",
+          "intro": "The iron converts electrical energy into heat. Current passes through a resistive heating element, which heats the aluminium-alloy soleplate. The soleplate transfers heat to the fabric. A thermostat switches the heater on and off to regulate the selected temperature."
+        },
+        {
+          "title": "3. Material composition and estimated metal quantities",
+          "intro": "**Important data note:** The label confirms the aluminium-alloy soleplate but does not publish a bill of materials or component weights. The values below are reasonable academic teardown/design estimates for a 1000 W dry iron of this type. They are not measured values or manufacturer-certified composition. Use a weighing scale and component disassembly (performed by a qualified adult/technician with the appliance unplugged) to verify them.",
+          "table": {
+            "columns": [
+              "Metal / alloy",
+              "Location / use",
+              "Estimated mass",
+              "Share of metal mass",
+              "Data status"
+            ],
+            "rows": [
+              [
+                "Aluminium alloy",
+                "Soleplate / heated base",
+                "350 g",
+                "85.2%",
+                "Confirmed material; mass estimated"
+              ],
+              [
+                "Nichrome (Ni-Cr alloy)",
+                "Resistance heating element",
+                "18 g",
+                "4.4%",
+                "Typical heater alloy; mass estimated"
+              ],
+              [
+                "Copper",
+                "Internal electrical conductors",
+                "12 g",
+                "2.9%",
+                "Estimated"
+              ],
+              [
+                "Brass / copper alloy",
+                "Electrical terminals and thermostat contacts",
+                "8 g",
+                "1.9%",
+                "Estimated"
+              ],
+              [
+                "Low-carbon steel",
+                "Fasteners, pins and small support parts",
+                "15 g",
+                "3.6%",
+                "Estimated"
+              ],
+              [
+                "Stainless / plated steel",
+                "Small springs and clips",
+                "5 g",
+                "1.2%",
+                "Estimated"
+              ],
+              [
+                "Other metal parts",
+                "Small connector/contact pieces",
+                "3 g",
+                "0.7%",
+                "Estimated"
+              ]
+            ]
+          },
+          "note": "| **Material summary**                                                             | **Estimated mass**    |\n|----------------------------------------------------------------------------------|-----------------------|\n| Total estimated metal content                                                    | 411 g (0.411 kg)      |\n| Of which aluminium alloy                                                         | 350 g                 |\n| Other metals and alloys combined                                                 | 61 g                  |\n| Estimated non-metal parts (plastic body, handle, insulation, PTFE coating, etc.) | Approximately 489 g\\* |\n| Indicative total product mass used for this passport                             | Approximately 900 g\\* |\n\n\\*For this academic passport, an indicative whole-product mass of 900 g is assumed to make the material profile calculable. The actual iron may weigh more or less. The metal percentages above are calculated within the estimated 411 g metal content, not the entire product."
+        },
+        {
+          "title": "4. Non-metal materials (indicative)",
+          "table": {
+            "columns": [
+              "Material",
+              "Likely component / purpose",
+              "Indicative note"
+            ],
+            "rows": [
+              [
+                "Heat-resistant engineering plastic",
+                "Outer body, handle and control knob",
+                "Exact polymer grade not identified from label"
+              ],
+              [
+                "PTFE coating",
+                "Soleplate surface coating",
+                "Non-stick / low-friction surface; quantity not stated"
+              ],
+              [
+                "Electrical insulation",
+                "Sleeving, internal barriers and cable insulation",
+                "Polymer type and mass not stated"
+              ],
+              [
+                "Rubber / elastomer",
+                "Cord entry or small grip parts, if fitted",
+                "Exact type not identified"
+              ]
+            ]
+          }
+        },
+        {
+          "title": "5. Metal quantity calculations",
+          "intro": "Total estimated metal mass:\n\n350 + 18 + 12 + 8 + 15 + 5 + 3 = 411 g\n\nAluminium share of total metal mass:\n\n(350 ÷ 411) × 100 = 85.2%\n\nOther-metal share:\n\n(61 ÷ 411) × 100 = 14.8%"
+        },
+        {
+          "title": "6. Environmental and circularity assessment",
+          "table": {
+            "columns": [
+              "Aspect",
+              "Assessment"
+            ],
+            "rows": [
+              [
+                "Positive feature",
+                "The main soleplate is aluminium alloy, a metal that can be recycled when separated and collected properly."
+              ],
+              [
+                "Recycling opportunity",
+                "Aluminium, copper, brass and steel can be recovered through authorised e-waste/recycling channels."
+              ],
+              [
+                "Design challenge",
+                "Plastic housing, coating, wiring and mixed fasteners make separation more difficult."
+              ],
+              [
+                "Repair potential",
+                "A damaged cord, thermostat or heating element may be serviceable by an authorised technician, depending on spare-part availability."
+              ],
+              [
+                "End-of-life route",
+                "Do not place the iron in ordinary household waste. Send it to an authorised e-waste collection/recycling facility."
+              ],
+              [
+                "Improvement idea",
+                "Use clearly identified screws, modular replaceable electrical parts and easier separation of the aluminium soleplate."
+              ]
+            ]
+          }
+        },
+        {
+          "title": "7. Safe handling and end-of-life recommendations",
+          "intro": "- Always unplug the iron and allow it to cool completely before handling or inspection.\n- Do not open, cut or dismantle the appliance while it is connected to the mains.\n- Internal electrical parts should be inspected only by a qualified technician or under supervised laboratory conditions.\n- Keep the product dry; the label shows IPX0.\n- At end of life, hand over the complete appliance to an authorised e-waste collection point.",
+          "hazard_meter": {
+            "note": "Hazard scores are the project team's assessment (1 = low, 10 = severe), based on how harmful each part can be during unsafe handling or disposal of this iron.",
+            "items": [
+              {
+                "name": "PTFE soleplate coating",
+                "score": 5,
+                "reason": "Overheated or burnt PTFE coating gives off harmful fumes."
+              },
+              {
+                "name": "Heating element (nichrome)",
+                "score": 4,
+                "reason": "Nickel-chromium alloy element; gets very hot and should only be separated by a qualified technician."
+              },
+              {
+                "name": "Power cord and insulation",
+                "score": 4,
+                "reason": "Shock risk if damaged; insulation gives off harmful fumes if burnt."
+              },
+              {
+                "name": "Plastic body and handle",
+                "score": 4,
+                "reason": "Plastics release harmful fumes if burnt and must be separated before recycling."
+              },
+              {
+                "name": "Aluminium soleplate",
+                "score": 2,
+                "reason": "Low hazard and fully recyclable once the coating and plastics are separated."
+              }
+            ]
+          }
+        },
+        {
+          "title": "8. Conclusion",
+          "intro": "The Havells Glace Plus is a 1000 W thermostatic electric dry iron with an aluminium-alloy, PTFE-coated soleplate. Based on an illustrative academic material estimate, it contains about 411 g of metal, of which approximately 350 g is aluminium alloy. The remaining estimated metals include nichrome, copper, brass/copper alloy and steel. Actual quantities must be verified by weighing the parts; the product label alone does not provide exact metal weights."
+        },
+        {
+          "title": "9. Source and verification record",
+          "intro": "Primary source: photograph of the rating plate supplied with this assignment. Product identity, rating, soleplate material, IPX0 marking, standards and manufacturing text were transcribed from the photograph. All component masses and the assumed total product mass are estimates prepared for educational DPP work."
+        }
+      ],
+      "sources": []
     }
   ]
 }
