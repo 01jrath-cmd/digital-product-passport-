@@ -107,7 +107,8 @@
     "metal_content": "Metal content (est.)",
     "soleplate": "Soleplate",
     "battery": "Battery",
-    "ram_storage": "RAM / Storage"
+    "ram_storage": "RAM / Storage",
+    "display": "Display"
   },
   "hi": {
     "banner_name": "डिजिटल उत्पाद पासपोर्ट",
@@ -211,7 +212,8 @@
     "metal_content": "धातु की मात्रा (अनुमान)",
     "soleplate": "सोलप्लेट",
     "battery": "बैटरी",
-    "ram_storage": "RAM / स्टोरेज"
+    "ram_storage": "RAM / स्टोरेज",
+    "display": "डिस्प्ले"
   },
   "kn": {
     "banner_name": "ಡಿಜಿಟಲ್ ಉತ್ಪನ್ನ ಪಾಸ್‌ಪೋರ್ಟ್",
@@ -315,6 +317,7 @@
     "metal_content": "ಲೋಹದ ಪ್ರಮಾಣ (ಅಂದಾಜು)",
     "soleplate": "ಸೋಲ್‌ಪ್ಲೇಟ್",
     "battery": "ಬ್ಯಾಟರಿ",
-    "ram_storage": "RAM / ಸಂಗ್ರಹಣೆ"
+    "ram_storage": "RAM / ಸಂಗ್ರಹಣೆ",
+    "display": "ಡಿಸ್‌ಪ್ಲೇ"
   }
 }

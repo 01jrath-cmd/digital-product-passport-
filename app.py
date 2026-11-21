@@ -490,7 +490,9 @@ def passport_page(d, prices, sources):
     # Sources
     if d.get("sources"):                               # some documents have no reference list
         st.header(ui("sources"), anchor="sources")
-        st.markdown("\n".join(f"{i}. {text} [{url}]({url})" for i, (text, url) in enumerate(d["sources"], 1)))
+        esc = lambda s: s.replace("$", "\\$")                   # "$" would otherwise start a maths formula
+        st.markdown("\n".join(f"{i}. {esc(text)}" + (f" [{esc(url)}]({url.replace('$', '%24')})" if url else "")
+                              for i, (text, url) in enumerate(d["sources"], 1)))
     for sec in d.get("after_sources", []):              # e.g. "Method note" that comes after References
         st.header(sec["title"], anchor=sec["anchor"])
         st.markdown(sec["intro"])

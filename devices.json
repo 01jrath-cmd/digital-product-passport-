@@ -4557,6 +4557,449 @@
           "intro": "Product specifications are based on manufacturer and launch-period sources. Component descriptions are typical smartphone architecture informed by the teardown record; exact supplier parts and material quantities are not asserted. Carbon and material estimates are screening-level context only, not a certified Vivo Y50 environmental declaration."
         }
       ]
+    },
+    {
+      "id": "DPP-008",
+      "device": "Sony PlayStation Portable PSP-3000",
+      "model": "Series PSP-300x, 2008 Model",
+      "brand": "Sony",
+      "category": "Handheld game console",
+      "author": "BY DHRUV MAHALE - RVCE26BBT053",
+      "image": "images/sony-psp-3000.png",
+      "year": 2008,
+      "weight_g": 189,
+      "condition": "Working",
+      "status": "In use",
+      "metrics": [
+        {
+          "key": "weight",
+          "value": "~189 g"
+        },
+        {
+          "key": "battery",
+          "value": "1200 mAh"
+        },
+        {
+          "key": "display",
+          "value": "4.3\" LCD"
+        }
+      ],
+      "sections": [
+        {
+          "title": "1. Identity and Specifications",
+          "table": {
+            "columns": [
+              "Parameter",
+              "Value"
+            ],
+            "rows": [
+              [
+                "Model",
+                "PlayStation Portable PSP-3000 (regional variants PSP-3001 to PSP-3010; India/PAL region: PSP-3004), released October 2008"
+              ],
+              [
+                "Processor",
+                "Sony CXD2962GG (MIPS R4000 32-bit core, dynamic clock 1–333 MHz) with Media Engine"
+              ],
+              [
+                "Memory & Storage",
+                "64 MB embedded DRAM + 64 MB system flash; expandable via Memory Stick PRO Duo slot"
+              ],
+              [
+                "Graphics",
+                "Embedded GPU (1–166 MHz) with 2 MB embedded VRAM"
+              ],
+              [
+                "Display",
+                "4.3\" anti-reflective TFT LCD, 480 × 272 resolution, 16.77 million colors, LED backlight"
+              ],
+              [
+                "Optical Drive",
+                "Read-only Universal Media Disc (UMD) drive (Class 1 Laser, 660 nm)"
+              ],
+              [
+                "Connectivity",
+                "IEEE 802.11b Wi-Fi, Hi-Speed USB 2.0 (Mini-B), Analog Video Out, built-in microphone, stereo speakers"
+              ],
+              [
+                "Main Battery",
+                "Sony PSP-S110 Lithium-Ion pack, 3.6 V, 1200 mAh (4.32 Wh), ~26–30 g; rated ~300–500 charge cycles"
+              ],
+              [
+                "Backup Power",
+                "On-board surface-mount supercapacitor (maintains clock/ date briefly during battery swaps)"
+              ],
+              [
+                "AC Adapter",
+                "5 V DC, 1500 mA (7.5 W) output; 100–240 V AC input"
+              ],
+              [
+                "Size and Weight",
+                "169.4 × 18.6 × 71.4 mm; ~189 g including battery pack"
+              ],
+              [
+                "Power Use (Measured)",
+                "~3 W to 4 W active gaming (up to ~5 W while charging)"
+              ]
+            ]
+          }
+        },
+        {
+          "title": "2. Internal Components",
+          "intro": "Each sub-assembly is modular and screwed/clipped into place without heavy structural glue, making it well-suited for repair and parts harvesting:",
+          "table": {
+            "columns": [
+              "Group",
+              "Components"
+            ],
+            "rows": [
+              [
+                "Main Board",
+                "TA-090v2 / TA-092 / TA-093 / TA-095 system motherboard (depending on 03G–09G hardware revision)"
+              ],
+              [
+                "Display Assembly",
+                "4.3\" TFT LCD panel, LED backlight strip, flex ribbon cables"
+              ],
+              [
+                "Optical Drive",
+                "UMD drive assembly (spindle motor, sled worm-gear motor, optical laser pickup, metal door frame)"
+              ],
+              [
+                "Input & Controls",
+                "Analog thumbstick module, D-pad & action button rubber membranes, L/R shoulder switches, bottom Home/PS flex bar"
+              ],
+              [
+                "Audio & Comms",
+                "Left/right micro-speakers, electret condenser microphone, internal Wi-Fi antenna"
+              ],
+              [
+                "Power & Ports",
+                "Removable PSP-S110 battery pack, barrel DC-in jack, Mini-USB port, power/hold switch daughterboard"
+              ],
+              [
+                "Enclosure",
+                "ABS/polycarbonate front faceplate, rear shell, UMD door, stainless/chrome trim rings"
+              ]
+            ]
+          }
+        },
+        {
+          "title": "3. Carbon Footprint",
+          "intro": "A carbon footprint is the total amount of greenhouse gases (primarily carbon dioxide, methane, and nitrous oxide) generated directly and indirectly by an individual, organization, event, or product.",
+          "table": {
+            "columns": [
+              "Life Stage",
+              "Value",
+              "Basis"
+            ],
+            "rows": [
+              [
+                "Manufacturing",
+                "~15–22 kg CO₂e (estimate)",
+                "Scaled from handheld console & smartphone LCA benchmarks (~189 g electronics/plastic/Li-ion assembly)"
+              ],
+              [
+                "Manufacturing Share",
+                "~75–80% of 5-year lifecycle",
+                "Low operational wattage means embodied factory energy outweighs play electricity"
+              ],
+              [
+                "Use, per year (India)",
+                "~1.05 kg CO₂ / year",
+                "4 W average × 1 hr/day = 1.46 kWh/year × India grid factor 0.716 kg CO₂/kWh (CEA)"
+              ],
+              [
+                "5-year lifetime total",
+                "~20–27 kg CO₂e (estimate)",
+                "Manufacturing plus 5 years of daily handheld use"
+              ]
+            ]
+          },
+          "note": "**Key insight:** Nearly 80% of the PSP-3000’s lifetime carbon was locked in during semiconductor fabrication and assembly in 2008. Keeping an existing unit playable—especially by running digital backups from a Memory Stick instead of manufacturing/shipping new UMD discs—avoids virtually all new hardware and media emissions."
+        },
+        {
+          "title": "4. Metals and Materials Inside",
+          "intro": "Estimated material composition per 189 g handheld unit (scaled from small portable consumer electronics and Li-ion pouch cell characterizations):",
+          "table": {
+            "columns": [
+              "Material",
+              "Estimated Amount",
+              "Where It Is"
+            ],
+            "rows": [
+              [
+                "Plastics (ABS / PC)",
+                "~75–85 g (~42% of weight)",
+                "Outer shell, UMD door, buttons, internal frame"
+              ],
+              [
+                "Copper",
+                "~18–24 g",
+                "Multi-layer PCB traces, UMD drive motor windings, speaker coils, flex cables"
+              ],
+              [
+                "Steel / Aluminum",
+                "~25–30 g",
+                "Internal EMI shields, UMD chassis frame, LCD backing plate, screws"
+              ],
+              [
+                "Cobalt",
+                "~3.5–4.5 g",
+                "PSP-S110 Lithium-Ion battery cathode (LiCoO₂)"
+              ],
+              [
+                "Lithium",
+                "~0.4–0.6 g",
+                "PSP-S110 Lithium-Ion battery electrolyte and cathode"
+              ],
+              [
+                "Neodymium & Praseodymium",
+                "~0.4–0.6 g",
+                "Stereo speaker magnets and UMD spindle/sled stepper motors"
+              ],
+              [
+                "Silver",
+                "~40–60 mg",
+                "Lead-free SAC solder joints, tactile dome contacts, flex traces"
+              ],
+              [
+                "Gold",
+                "~12–20 mg",
+                "Memory Stick PRO Duo slot pins, battery terminals, IC wire bonding, PCB plating"
+              ],
+              [
+                "Palladium",
+                "~3–6 mg",
+                "Multi-layer ceramic capacitors (MLCCs) on the TA-09x motherboard"
+              ],
+              [
+                "Indium",
+                "~5–8 mg",
+                "Indium Tin Oxide (ITO) transparent electrodes in the 4.3\" LCD"
+              ],
+              [
+                "Gallium",
+                "~0.2–0.5 mg",
+                "White LED backlight diodes (unlike 2006 CCFL laptops, the PSP-3000 uses LED backlighting)"
+              ],
+              [
+                "Tin",
+                "~1.5–2.2 g",
+                "RoHS-compliant lead-free solder on main and daughter PCBs"
+              ]
+            ]
+          }
+        },
+        {
+          "title": "5. Hazardous Substances and Safe Disposal",
+          "table": {
+            "columns": [
+              "Substance",
+              "Where",
+              "Why It Matters",
+              "How to Dispose of It Safely"
+            ],
+            "rows": [
+              [
+                "Lithium-Ion Battery",
+                "Removable 1200 mAh PSP- S110 pack",
+                "Swelling is common in 2008- era packs; fire/thermal runaway risk if punctured or crushed",
+                "Remove from console immediately if swollen. Tape exposed gold terminals, bag separately, and drop at an authorized battery/e-waste collection center."
+              ],
+              [
+                "Brominated Flame Retardants (BFRs)",
+                "PCB substrate, ribbon cables, internal connectors",
+                "Releases toxic dioxins and furans if burned in open air",
+                "Never incinerate shells or wires to extract copper. Hand over to a CPCB/SPCB- authorized e-waste dismantler."
+              ],
+              [
+                "Class 1 Laser Diode",
+                "UMD optical pickup assembly",
+                "Low-power visible/IR laser; eye hazard if powered on with casing removed",
+                "Keep drive housing intact; do not power the UMD laser assembly outside the closed shell."
+              ],
+              [
+                "Mercury & Lead",
+                "Absent (RoHS Compliant)",
+                "Manufactured in 2008 after EU RoHS (July 2006)",
+                "Uses an LED backlight (zero mercury) and lead-free solder, reducing acute toxicity compared to pre-2006 electronics."
+              ]
+            ]
+          },
+          "hazard_meter": {
+            "note": "Hazard scores are the project team's assessment (1 = low, 10 = severe), based on toxicity, how easily people are exposed during unsafe handling, and the amount in this console.",
+            "items": [
+              {
+                "name": "Lithium-Ion Battery",
+                "score": 8,
+                "reason": "Swelling is common in 2008- era packs; fire/thermal runaway risk if punctured or crushed"
+              },
+              {
+                "name": "Brominated Flame Retardants (BFRs)",
+                "score": 6,
+                "reason": "Releases toxic dioxins and furans if burned in open air"
+              },
+              {
+                "name": "Class 1 Laser Diode",
+                "score": 4,
+                "reason": "Low-power visible/IR laser; eye hazard if powered on with casing removed"
+              },
+              {
+                "name": "Mercury & Lead",
+                "score": 2,
+                "reason": "Manufactured in 2008 after EU RoHS (July 2006)"
+              }
+            ]
+          }
+        },
+        {
+          "title": "6. Upgrade, Repair, and Second-Life Potential",
+          "table": {
+            "columns": [
+              "Parameter",
+              "Value"
+            ],
+            "rows": [
+              [
+                "Storage Upgrade",
+                "Replace proprietary Memory Stick PRO Duo with a MicroSD- to-Memory Stick adapter supporting up to 64 GB–128 GB"
+              ],
+              [
+                "Battery Replacement",
+                "Tool-free battery door; easily swapped for fresh 1200 mAh or 1800 mAh replacement cells"
+              ],
+              [
+                "Screen & Shell Mods",
+                "Drop-in replacement LCDs and aftermarket transparent/ colored shells are widely available"
+              ],
+              [
+                "UMD Drive Bypass",
+                "Running legally backed-up games directly from MicroSD storage eliminates noise, mechanical wear, and battery drain from a failing UMD laser"
+              ],
+              [
+                "Suggested Second-Life Uses",
+                "Dedicated retro handheld (PSP, PS1, GBA/SNES emulation), portable MP3/video player, TV-out retro console via component AV cable, or spare-parts donor (LCD, analog stick, buttons)"
+              ],
+              [
+                "Data & Privacy Clearing",
+                "Format the Memory Stick PRO Duo and run Settings → System Settings → Restore Default Settings to wipe Wi-Fi credentials and PSN login tokens before resale"
+              ],
+              [
+                "Safe Dismantling Order",
+                "1. Pop off battery cover & remove Li-ion pack → 2. Unscrew 7 Phillips #0 screws & lift faceplate → 3. Unclip LCD & button flex cables → 4. Lift TA-09x motherboard → 5. Unscrew UMD drive assembly → 6. Separate plastics and metal shields"
+              ]
+            ]
+          }
+        },
+        {
+          "title": "7. Regulation and Compliance",
+          "table": {
+            "columns": [
+              "Parameter",
+              "Value"
+            ],
+            "rows": [
+              [
+                "Model / Regulatory Code",
+                "PSP-3000 Series (PSP-3004 for India/Europe)"
+              ],
+              [
+                "India E-Waste Category",
+                "CEEW5 – Consumer Electrical & Electronics (Handheld video game consoles under E-Waste (Management) Rules, 2022)"
+              ],
+              [
+                "Producer Responsibility",
+                "Under Extended Producer Responsibility (EPR), Sony India provides authorized take-back/collection channels for end-of- life PlayStation hardware"
+              ],
+              [
+                "Batteries",
+                "Battery Waste Management Rules, 2022 (India): Landfilling and incineration of portable Li-ion packs are prohibited; all must be recycled or refurbished"
+              ],
+              [
+                "EU RoHS & EMC",
+                "Complies with EU RoHS Directive (2002/95/EC) restricting lead, mercury, cadmium, hexavalent chromium, PBB, and PBDE, plus R&TTE/EN55022 Class B EMC standards"
+              ]
+            ]
+          }
+        },
+        {
+          "title": "8. Supply Chain and Ethics",
+          "table": {
+            "columns": [
+              "Parameter",
+              "Value"
+            ],
+            "rows": [
+              [
+                "3TG Conflict Minerals Inside",
+                "Tin (lead-free solder), Tantalum (miniature SMD capacitors on the compact motherboard), and Gold (connectors and IC bonding)"
+              ],
+              [
+                "Battery Cobalt",
+                "~4 g of cobalt in the LiCoO₂ cell, historically sourced predominantly from artisanal and industrial mining in the DRC"
+              ],
+              [
+                "Regulatory Context",
+                "Manufactured in 2008—prior to the US Dodd-Frank Act Section 1502 (2010) and EU Conflict Minerals Regulation 2017/821"
+              ],
+              [
+                "Why Reuse & Recycling Help",
+                "Extending device life or recovering precious/battery metals reduces demand for primary virgin mining of cobalt, tin, tantalum, and gold"
+              ]
+            ]
+          }
+        },
+        {
+          "title": "Conclusion",
+          "table": {
+            "columns": [
+              "Option",
+              "Value (India)",
+              "CO₂ & Circularity Benefit"
+            ],
+            "rows": [
+              [
+                "Repair & Reuse (working console or parts donor)",
+                "₹4,500–₹8,500 (pre-owned market)",
+                "Avoids manufacturing a new handheld (~15–22 kg CO₂e saved) and preserves collectible/retro utility"
+              ],
+              [
+                "Recycle (precious & base metal recovery)",
+                "₹150–₹300 theoretical metal value; ₹20–₹50 scrap payout",
+                "Recovers copper, gold, and cobalt, but loses high-value engineered components"
+              ]
+            ]
+          },
+          "note": "Because a PSP-3000 weighs only 189 g, its raw scrap metal value is minimal, whereas its second-hand retro gaming value is 20–50 times higher. Replacing a battery or adding a MicroSD adapter keeps the console fully functional for years, strongly reinforcing the Repair → Reuse → Recycle hierarchy."
+        }
+      ],
+      "sources": [
+        [
+          "Sony Interactive Entertainment (2008) – New PSP (PlayStation Portable) (PSP-3000) Official Press Release & Product Overview.",
+          "https://sonyinteractive.com/en/press-releases/2008/new-psp-playstationportable-comes-with-advanced-lcd-screen-and-built-in-microphone/"
+        ],
+        [
+          "Sony Computer Entertainment Europe (2008) – PSP-3004 Safety and Support Manual (Regulatory & Laser Compliance).",
+          "https://www.playstation.com/content/dam/global_pdc/en/corporate/support/manuals/psp-docs/psp-3004/PSP-3004_SS$en.pdf"
+        ],
+        [
+          "iFixit – PSP 300x Complete Hardware Teardown Guide.",
+          "https://www.ifixit.com/Teardown/PSP+300x+Teardown/1298"
+        ],
+        [
+          "Greenly (2025) – The Carbon Footprint of Gaming: Handhelds, Consoles, and Physical vs. Digital Media.",
+          "https://www.gamesindustry.biz/manufacture-and-shipping-of-physical-games-is-100-times-more-carbon-intensive-than-digital-new-study-finds"
+        ],
+        [
+          "Central Electricity Authority (CEA), India – CO₂ Baseline Database User Guide v19 (Grid Emission Factor: 0.716 tCO₂/MWh).",
+          "https://cea.nic.in/wp-content/uploads/baseline/2024/01/User_Guide__Version_19.0.pdf"
+        ],
+        [
+          "Ministry of Environment, Forest and Climate Change (MoEFCC), India – E-Waste (Management) Rules, 2022 & Battery Waste Management Rules, 2022.",
+          ""
+        ]
+      ]
     }
   ]
 }
