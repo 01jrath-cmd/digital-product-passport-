@@ -647,11 +647,21 @@ def language_popup():
 def language_switcher(show_home=False):
     codes = list(LANGS)
     st.session_state["lang_select"] = current_lang()      # keep the box in step with the link
-    left, right = st.columns([3, 1], vertical_alignment="bottom")   # Home top-left, language top-right
-    if show_home:
-        left.button(ui("home"), on_click=go_to)
-    right.selectbox(ui("language"), codes, format_func=lambda c: LANGS[c],
-                    key="lang_select", on_change=switch_language)
+    st.markdown(TOPBAR_CSS, unsafe_allow_html=True)
+    with st.container(key="topbar"):                       # one row: Home on the left, language on the right
+        left, right = st.columns([1, 1], vertical_alignment="center")
+        if show_home:
+            left.button(ui("home"), on_click=go_to)
+        right.selectbox(ui("language"), codes, format_func=lambda c: "🌐 " + LANGS[c],
+                        key="lang_select", on_change=switch_language, label_visibility="collapsed")
+
+
+# Keep the top bar on ONE line on phones too (Streamlit normally stacks columns on small screens)
+TOPBAR_CSS = """<style>
+.st-key-topbar [data-testid="stHorizontalBlock"] { flex-wrap: nowrap !important; gap: 0.6rem !important; }
+.st-key-topbar [data-testid="stColumn"] { min-width: 0 !important; width: auto !important; flex: 1 1 0 !important; }
+.st-key-topbar [data-testid="stColumn"]:last-child [data-testid="stSelectbox"] { max-width: 190px; margin-left: auto; }
+</style>"""
 
 
 def switch_language():
